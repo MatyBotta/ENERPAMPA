@@ -34,8 +34,16 @@ li{
 }
 .logo {
     margin-left: 30px;
+    margin-top: 10px;
 }
-
+.logo1{
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.logo2{
+    margin-left: 30px;
+    margin-top: 10px;
+}
 .logo a {
     text-decoration: none;
     color: #fff;
@@ -166,7 +174,22 @@ p {
 .about {
     background: #171717;
 }
-
+h2{
+    font-weight: normal;
+    text-align: center;
+}
+.about .cuadro1{
+    width: 80%;
+    height: 60%;
+}
+.about .cuadro2{
+    width: 80%;
+    height: 60%;
+}
+.about .cuadro3{
+    width: 80%;
+    height: 60%;
+}
 .marcas{
     background: url(imagenes/fondo1.png) no-repeat center;
     background-attachment: fixed;
@@ -179,6 +202,10 @@ p {
     padding-top: 100px;
     background: #171717;
     padding-bottom: 0;
+}
+
+.li{
+    text-decoration: none;
 }
 
 
