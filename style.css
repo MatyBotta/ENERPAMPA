@@ -92,32 +92,8 @@ p {
     padding: 0 100px;
 }
 
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 40px;
-    border: 2px solid #9c27b0;
-    color: #fff;
-    text-decoration: none;
-    background: #9c27b0;
-}
-
-.btn:hover {
-    background: none;
-    
-}
-
-.btn-home {
-    display: flex;
-}
-
-.btn-home a {
-    margin: 0 10px;
-}
-
-
 .content {
-    height: 50vh;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +101,7 @@ p {
 }
 
 .sau {
-    padding: 100px;
+    padding: 60px;
     background: #1f1d1d
 }
 
@@ -137,16 +113,58 @@ p {
 
 }
 
-.box-container .box {
-    height: 11rem;
-    width: 17rem;
+.box-container .box1 {
+    min-height: 40%;
+    min-width: 28%;
+    margin: 2.5%;
+    border-radius: 20px;
+    background: #101010;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    border-color:#516ba1
+}
+.box-container .box2 {
+    min-height: 30%;
+    min-width: 25%;
+    margin: 2.5%;
+    border-radius: 20px;
+    background: #101010;
+    border: none;
+    border-color: #516ba1;
+    transition: 0.5s;
+    cursor: pointer;
+    border-color:#516ba1
+}
+.box-container .box3 {
+    min-height: 30%;
+    min-width: 25%;
+    margin: 2.5%;
+    border-radius: 20px;
+    background: #101010;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    border-color:#516ba1
+}
+.box-container .box4 {
+    height: 40%;
+    width: 25%;
     background: #101010;
     text-align: center;
     border-radius: 1rem;
     box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
     margin: 2rem;   
 }
-
+.box-container .box5 {
+    height: 40%;
+    width: 25%;
+    background: #101010;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
+    margin: 2rem;   
+}
 .box-container .box i {
     height: 3rem;
     width: 3rem;
@@ -159,19 +177,50 @@ p {
     margin: 1rem 0;
 
 }
-
-.box-container .box h3 {
-    font-size: 20px;
-    color: #9c27b0;
-
+/*sombra de las cajas*/
+.box-container .box1:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background: #516ba1;
+    color: #000;
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
 }
-
+.box-container .box2:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background: #516ba1;
+    color: #000;
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
+}
+.box-container .box3:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background: #516ba1;
+    color: #000;
+    z-index: 2;
+    box-shadow: 2px 2px 2px #000;
+}
+/*diseño de las letras*/
+.box-container .box1 h3 {
+    font-size: 20px;
+    color: #fff;
+}
+.box-container .box2 h3 {
+    font-size: 20px;
+    color: #fff;
+}
+.box-container .box3 h3 {
+    font-size: 20px;
+    color: #fff;
+}
 .box-container .box p {
     padding: 0 15px;
     font-size: 16px;
 }
 
-.about {
+.about { /*edita el nosotros*/
     background: #171717;
 }
 h2{
