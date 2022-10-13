@@ -102,7 +102,11 @@ p {
 
 .sau {
     padding: 60px;
-    background: #1f1d1d
+    background-image: url(imagenes/1x/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .box-container {
@@ -123,6 +127,9 @@ p {
     transition: 0.5s;
     cursor: pointer;
     border-color:#516ba1
+}
+.box-container .box1 .capa1 {
+    width: 100%;
 }
 .box-container .box2 {
     min-height: 30%;
