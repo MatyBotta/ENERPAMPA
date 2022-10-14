@@ -91,20 +91,18 @@ p {
     color: #fff;
     padding: 0 100px;
 }
-
-.content {
-    height: 20%;
+/*INICIO DISEÑO DE LAS CAJAS DE LOS PRODUCTOS*/
+.imagenesprod{
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.sau {
-    padding: 60px;
+    flex-direction:row;
+    align-items:center;
     background: #101010;
 }
-
+.fondo{
+    margin: 0;
+    background: #101010;
+}
 .contenedor1{
     width: 30%;
     display: flex;
@@ -114,12 +112,13 @@ p {
 }
 .contenedor1 figure{
    position:relative;
-    height: 600px;
+    height: 540px;
     cursor: pointer;
     width: 300px;
     overflow: hidden;
     border-radius: 0px;
     box-shadow: 0px;
+    margin-top: -13px;
 }
 .contenedor1 figure img{
     width: 100%;
@@ -165,7 +164,7 @@ p {
     margin: auto;
 }
 .contenedor2{
-    width: 0%;
+    width:353%;
     display:flex;
     justify-content: right;
     height: 20vh;
@@ -173,9 +172,9 @@ p {
 }
 .contenedor2 figure{
    position:relative;
-    height: 300px;
+    height: 220px;
     cursor: pointer;
-    width: 300px;
+    width: 220px;
     overflow: hidden;
     border-radius: 0px;
     box-shadow: 0px;
@@ -224,7 +223,7 @@ p {
     margin: auto;
 }
 .contenedor3{
-    width: 142%;
+    width: 170%;
     display:flex;
     justify-content: right;
     height: 20vh;
@@ -232,9 +231,9 @@ p {
 }
 .contenedor3 figure{
    position:relative;
-    height: 300px;
+    height: 270px;
     cursor: pointer;
-    width: 300px;
+    width: 350px;
     overflow: hidden;
     border-radius: 0px;
     box-shadow: 0px;
@@ -282,23 +281,183 @@ p {
     max-width: 220px;
     margin: auto;
 }
-.box-container .box4 {
-    height: 40%;
-    width: 25%;
-    background: #101010;
-    text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
-    margin: 2rem;   
+.contenedor4{
+    width: 170%;
+    display:flex;
+    justify-content: right;
+    height: 20vh;
+    margin-top: 147px;
+    margin-right: 30px;
 }
-.box-container .box5 {
-    height: 40%;
-    width: 25%;
-    background: #101010;
+.contenedor4 figure{
+   position:relative;
+    height: 270px;
+    cursor: pointer;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0px;
+}
+.contenedor4 figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+.contenedor4 figure .capa4{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,103,123,0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+   text-align: center;
+}
+.contenedor4 figure:hover > .capa4 {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor4 figure:hover > .capa4 h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+.contenedor4 figure:hover > img{
+    transform: scale(1.3);
+}
+.contenedor4 figure .capa4 h3{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+     margin-top: 30px;
+}
+.contenedor4 figure .capa4 p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+.contenedor5{
+    width: 250%;
+    display:flex;
+    justify-content: right;
+    height: 20vh;
+    margin-bottom: -100px
+}
+.contenedor5 figure{
+   position:relative;
+    height: 540px;
+    cursor: pointer;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0px;
+}
+.contenedor5 figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+.contenedor5 figure .capa5{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 14, 168, 0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
     text-align: center;
-    border-radius: 1rem;
-    box-shadow: 0 .3rem 5rem rgba(0, 0 , 0, .5);
-    margin: 2rem;   
+}
+.contenedor5 figure:hover > .capa5 {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor5 figure:hover > .capa5 h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+.contenedor5 figure:hover > img{
+    transform: scale(1.3);
+}
+.contenedor5 figure .capa5 h3{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+     margin-top: 30px;
+}
+.contenedor5 figure .capa5 p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
+}
+.contenedor6{
+    width:353%;
+    display:flex;
+    justify-content: right;
+    height: 20vh;
+    margin-top: -130px
+}
+.contenedor6 figure{
+   position:relative;
+    height: 300px;
+    cursor: pointer;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0px;
+}
+.contenedor6 figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+.contenedor6 figure .capa6{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 14, 168, 0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+.contenedor6 figure:hover > .capa6 {
+    opacity: 1;
+    visibility: visible;
+}
+.contenedor6 figure:hover > .capa6 h3{
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+.contenedor6 figure:hover > img{
+    transform: scale(1.3);
+}
+.contenedor6 figure .capa6 h3{
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+     margin-top: 30px;
+}
+.contenedor6 figure .capa6 p{
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 220px;
+    margin: auto;
 }
 .box-container .box i {
     height: 3rem;
@@ -312,8 +471,7 @@ p {
     margin: 1rem 0;
 
 }
-/*sombra de las cajas*/
-
+/*FINAL DISEÑO DE LAS CAJAS DE LOS PRODUCTOS*/
 /*diseño de las letras*/
 .box-container .box1 h3 {
     font-size: 20px;
@@ -331,7 +489,13 @@ p {
     padding: 0 15px;
     font-size: 16px;
 }
-
+.nosotros{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background: #101010;
+}
 .about { /*edita el nosotros*/
     background: #171717;
 }
@@ -339,17 +503,27 @@ h2{
     font-weight: normal;
     text-align: center;
 }
-.about .cuadro1{
+.cuadro1{
     width: 80%;
     height: 60%;
 }
-.about .cuadro2{
+.cuadro2{
     width: 80%;
     height: 60%;
 }
-.about .cuadro3{
-    width: 80%;
-    height: 60%;
+.cuadro3{
+    flex-direction: column;
+    display: flex;
+    align-items: left;
+    width: 40%;
+    height: 20%;
+    background: #516ba1;
+}
+.slidemarcas{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items:center
 }
 .marcas{
     background: url(imagenes/fondo1.png) no-repeat center;
@@ -358,9 +532,15 @@ h2{
     text-align: center;
 }
 
-
+.ubicacion{
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background: #171717;
+}
 .contact {
-    padding-top: 100px;
+    padding-top: 50px;
     background: #171717;
     padding-bottom: 0;
 }
@@ -375,10 +555,6 @@ h2{
     .title {
         margin-bottom: 0;
         font-size: 40px;
-    }
-
-    .sau {
-        height: 100vh;
     }
 
     .navbar {
