@@ -11,8 +11,8 @@ $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
 if($info[0] !== $mail)
 {
-    $in = "INSERT INTO usuario (Nombre, Apellido, Contrasenia, Mail) values 
-    ('$Nombre','$Apellido','$contrasenia','$mail')";
+    $in = "INSERT INTO usuario (Nombre, Apellido, Contrasenia, Mail, Tipo) values 
+    ('$Nombre','$Apellido','$contrasenia','$mail', 'Cliente')";
     $con =  $conexion -> query($in);
 }
 if(empty($con) === false)
