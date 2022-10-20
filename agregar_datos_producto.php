@@ -1,20 +1,8 @@
 <?php
-include("db.php");
 session_start();
-$codigo = $_POST['prod'];
-$_SESSION['prod'] = $codigo;
-$comprobacion = "SELECT Codigo from productos where Codigo = '$codigo'";
-$revisar =  $conexion -> query($comprobacion);
-$info = $revisar -> fetch_array();
-if(empty($info[0]) === false)
-{
-    include("agregar-producto.html");
-    echo '<script>alert("Este producto ya se encuentra en la base de datos")</script>';
-}
-else
-{
+$codigo = $_SESSION['prod'];
 ?>
-<h2 id="h2">Ingresar datos del producto</h2>
+<h2 id="h2">Ingresar datos del producto con codigo: <?php echo $codigo ?></h2>
                   <br>
             <form action="ingreso_producto.php" method="post">
             <h3>Nombre (obligatorio)</h3>
@@ -41,5 +29,5 @@ else
             <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">
         <br>
         <button type="submit">Enviar</button>
+        <a href = "agregar-producto.php">Cancelar</a>
         <?php
-}
