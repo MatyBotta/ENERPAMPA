@@ -10,6 +10,9 @@ $codigo = $_SESSION['prod'];
         <br>
             <h3>Marca (obligatorio)</h3>
             <input step="any" type="text" name="marca" value="" >
+            <br>
+            <h3>Cantidad (obligatorio)</h3>
+            <input step="any" type="text" name="cantidad" value="" >
         <fieldset id="cat">
         <legend>Categoria (obligatorio)</legend>
         <input type="radio" id= 1 value= 1 name="cat"><label for="A">Control de Potencia</label>

@@ -6,13 +6,14 @@ $codigo = $_SESSION['prod'];
 $nombre = $_POST['nombre'];
 $marca = $_POST['marca'];
 $cat = $_POST['cat'];
+$cant = $_POST['cantidad'];
 $carac[0] = $_POST['carac1'];
 $carac[1] = $_POST['carac2'];
 $carac[2] = $_POST['carac3'];
 $carac[3] = $_POST['carac4'];
 $carac[4] = $_POST['carac5'];
 $carac[5] = $_POST['carac6'];
-if($nombre == null || $marca == null || $cat == null || $carac[0] == null)
+if($nombre == null || $marca == null || $cat == null || $carac[0] == null || $cant == null)
 {
     $_SESSION['p'] = 10;
     include("agregar_datos_producto.php");
@@ -45,8 +46,8 @@ else
     $revisar =  $conexion -> query($comprobacion);
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca) values 
-    ($ID,'$nombre','$cat','$codigo','$marca')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente')";
     $con =  $conexion -> query($in);
     for($i = 0; $i < 6; $i++)
     {

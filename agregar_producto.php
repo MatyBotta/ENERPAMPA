@@ -23,7 +23,7 @@ if(empty($info[0]) === false)
         {
         $a = $visado[0] + 1;
         $_SESSION['prod'] = 'R'.$a.'='.$codigo;
-        $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo'";
+        $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo' and Estado != 'Eliminado'";
         $revisar2 =  $conexion -> query($comprobacion2);
         $info2 = $revisar2 -> fetch_array();
         ?>
