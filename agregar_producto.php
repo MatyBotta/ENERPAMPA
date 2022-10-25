@@ -37,7 +37,7 @@ if(empty($info[0]) === false)
     <body>
     <p>Si el producto que quiere ingresar no se encuentra y desea repetir el codigo presione "Continuar", si fue un error seleccione "Cancelar".</p>
     <a href = "agregar_datos_producto.php">Continuar</a>
-    <a href = "agregar-producto.php">Cancelar</a>
+    <a href = "agregar-producto.html">Cancelar</a>
     </body>
     </html>
     <?php
@@ -50,7 +50,7 @@ if(empty($info[0]) === false)
         <body>
         <p>Si este no es el producto que quiere ingresar y desea repetir el codigo presione "Continuar", si fue un error seleccione "Cancelar".</p>
         <a href = "agregar_datos_producto.php">Continuar</a>
-        <a href = "agregar-producto.php">Cancelar</a>
+        <a href = "agregar-producto.html">Cancelar</a>
         </body>
         </html>
         <?php

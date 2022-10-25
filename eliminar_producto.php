@@ -42,7 +42,7 @@ if(empty($info[0]) === false)
         <p> Marca: <?php echo $info[1] ?></p>
         <p> ID: <?php echo $info[2] ?></p>
         <a href = "eliminacion.php">Confirmar</a>
-        <a href = "eliminar-producto.php">Cancelar</a>
+        <a href = "eliminar-producto.html">Cancelar</a>
         <?php
     }
 }
@@ -50,6 +50,6 @@ else
 {
     ?>
     <p>No existe un producto con determinado codigo.</p>
-    <a href = "eliminar-producto.php">Ingresar otro codigo</a>
+    <a href = "eliminar-producto.html">Ingresar otro codigo</a>
     <?php
 }
