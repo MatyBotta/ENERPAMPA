@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 include("db.php");
 $codigo = $_POST['prod'];
 $comprobacion = "SELECT Nombre, Marca, ID from productos where Codigo like '%$codigo' and Estado != 'Eliminado'";
@@ -21,7 +24,6 @@ if(empty($info[0]) === false)
         $info2[2] = 0;
         for($i = 1; $i <= $visado[0]; $i++)
         {
-            echo $info2[2];
             $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo like '%R_=$codigo' and Estado != 'Eliminado' and ID > $info2[2] order by ID asc";
             $revisar2 =  $conexion -> query($comprobacion2);
             $info2 = $revisar2 -> fetch_array();
@@ -36,6 +38,7 @@ if(empty($info[0]) === false)
     }
     else
     {
+        $_SESSION['eleccion'] = $info[2];
         ?> 
         <p>¿Desea eliminar el producto de codigo <?php echo $codigo ?>?</p>
         <p> Nombre: <?php echo $info[0] ?></p>

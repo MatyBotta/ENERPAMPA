@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $codigo = $_SESSION['prod'];
 ?>
 <h2 id="h2">Ingresar datos del producto con codigo: <?php echo $codigo ?></h2>
