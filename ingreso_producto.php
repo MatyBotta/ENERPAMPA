@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 include("db.php");
 $x = 0;
 $codigo = $_SESSION['prod'];
@@ -30,7 +33,7 @@ else
         $cat = 'Automatización';
         break;
     case 3:
-        $cat = 'istribución eléctrica domestica';
+        $cat = 'Distribución eléctrica domiciliaria y comercial';
         break;
     case 4:
         $cat = 'Accesorios';

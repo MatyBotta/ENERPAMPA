@@ -1,9 +1,19 @@
 <?php
-session_start();
-include("db.php");
-if(empty($_POST['eleccion']) === false)
+if(!isset($_SESSION))
 {
-    $ID = $_POST['eleccion'];
+    session_start();
+}
+include("db.php");
+if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false)
+{
+    if(empty($_POST['eleccion']) === false)
+    {
+        $ID = $_POST['eleccion'];
+    }
+    if(empty($_SESSION['eleccion']) === false)
+    {
+        $ID = $_SESSION['eleccion'];
+    }
     $eliminar  = "UPDATE productos set Estado = 'Eliminado' where ID = $ID";
     $delete =  $conexion -> query($eliminar);
 
@@ -16,6 +26,6 @@ else
 {
     ?>
     <p> No ingreso ninguna opcion. </p>
-    <a href = "eliminar-producto.php">Volver a ingresar codigo</a>
+    <a href = "eliminar-producto.html">Volver a ingresar codigo</a>
     <?php
 }

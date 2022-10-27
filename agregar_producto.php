@@ -1,6 +1,9 @@
 <?php
 include("db.php");
-session_start();
+if(!isset($_SESSION))
+{
+    session_start();
+}
 $codigo = $_POST['prod'];
 $_SESSION['prod'] = $codigo ;
 $comprobacion = "SELECT Nombre, Marca, ID from productos where Codigo = '$codigo'";
@@ -14,7 +17,7 @@ if(empty($info[0]) === false)
     <p> Marca: <?php echo $info[1] ?></p>
     <p> ID: <?php echo $info[2] ?></p>
     <?php
-    $comprobacion = "SELECT Count(*) from productos where Codigo like '%R_=$codigo'";
+    $comprobacion = "SELECT Count(*) from productos where Codigo like '%R_=$codigo' and Estado != 'Eliminado'";
     $revisar =  $conexion -> query($comprobacion);
     $visado = $revisar -> fetch_array();
     if($visado[0] != 0)
@@ -26,11 +29,18 @@ if(empty($info[0]) === false)
         $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo' and Estado != 'Eliminado'";
         $revisar2 =  $conexion -> query($comprobacion2);
         $info2 = $revisar2 -> fetch_array();
-        ?>
-        <p> Nombre: <?php echo $info2[0] ?></p>
-        <p> Marca: <?php echo $info2[1] ?></p>
-        <p> ID: <?php echo $info2[2] ?></p>
-        <?php
+        if(empty($info2[0]) === false)
+        {
+            ?>
+            <p> Nombre: <?php echo $info2[0] ?></p>
+            <p> Marca: <?php echo $info2[1] ?></p>
+            <p> ID: <?php echo $info2[2] ?></p>
+            <?php
+        }
+        else
+        {
+            $visado[0] ++;
+        }
         }
     ?> 
     <html>
