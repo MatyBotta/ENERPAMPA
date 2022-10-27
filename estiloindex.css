@@ -131,7 +131,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 41, 141, 0.4)
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -156,12 +156,11 @@ p {
     margin-top: 30px;
 }
 .contenedor1 figure .capa1 p{
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-    margin-top: 30px;
-    line-height: 40px;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
+    position: absolute;
 }
 .contenedor2{
     width:0%;
@@ -250,7 +249,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #072193;
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -276,11 +275,10 @@ p {
 }
 .contenedor3 figure .capa3 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 .contenedor4{
     width: 180.5%;
@@ -310,7 +308,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #072193;
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -336,11 +334,10 @@ p {
 }
 .contenedor4 figure .capa4 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 .contenedor5{
     width: 268.5%;
@@ -370,7 +367,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #072193;
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -396,11 +393,10 @@ p {
 }
 .contenedor5 figure .capa5 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 .contenedor6{
     width:352%;
@@ -429,7 +425,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #072193;
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -455,11 +451,10 @@ p {
 }
 .contenedor6 figure .capa6 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 .contenedor7{
     width:352%;
@@ -488,7 +483,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #072193;
+    background: rgba(3, 27, 248, 0.4);
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -497,7 +492,7 @@ p {
 .contenedor7 figure:hover > .capa7 {
     opacity: 1;
     visibility: visible;
-    background: #072193;
+   
 }
 .contenedor7 figure:hover > .capa7 h3{
     margin-top: 70px;
@@ -515,11 +510,10 @@ p {
 }
 .contenedor7 figure .capa7 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 .box-container .box i {
     height: 3rem;
@@ -620,6 +614,10 @@ h2{
 }
 .card .contenido-card p{
     color: #000;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 1rem;
+    vertical-align: middle;
 }
 
 

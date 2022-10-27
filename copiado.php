@@ -33,7 +33,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             <h3>Nombre</h3>
             <input step="any" type="text"  name="nombre" value="" placeholder = "<?php echo $info1[2]?>">           
         <br>
-            <h3>Codigo</h3>
+            <h3>Codigo(Obligatorio cambiar)</h3>
                 <input step="any" type="text"  name="codigo" value="" placeholder = "<?php echo $info1[4]?>">           
             <br>
             <h3>Marca</h3>
@@ -117,13 +117,13 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         ?>
         <br>
         <button type="submit">Enviar</button>
-        <a href = "editar-producto.html">Cancelar</a>
+        <a href = "nuevo_producto_copiado.html">Cancelar</a>
         <?php
         }
         else
         {
             ?>
             <p> No ingreso ninguna opcion. </p>
-            <a href = "editar-producto.html">Volver a ingresar codigo</a>
+            <a href = "nuevo_producto_copiado.html">Volver a ingresar codigo</a>
             <?php
         }

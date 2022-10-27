@@ -16,7 +16,7 @@ if(empty($info[0]) === false)
     $visado = $revisar -> fetch_array();
     if($visado[0] != 0)
     {
-        ?> 
+        ?>  
         <p>Seleccione el producto que desea eliminar</p>
         <form action="eliminacion.php" method="post"> 
         <input type="radio" id="A" value= <?php echo $info[2] ?> name="eleccion" ><label for="A"><?php echo $info[0] ?>, <?php echo $info[1] ?>, ID: <?php echo $info[2] ?></label>

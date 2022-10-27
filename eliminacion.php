@@ -10,7 +10,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     {
         $ID = $_POST['eleccion'];
     }
-    if(empty($_SESSION['eleccion']) === false)
+    elseif(empty($_SESSION['eleccion']) === false)
     {
         $ID = $_SESSION['eleccion'];
     }
