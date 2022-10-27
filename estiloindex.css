@@ -131,7 +131,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,103,123,0.7);
+    background: rgba(30, 41, 141, 0.4)
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -157,11 +157,11 @@ p {
 }
 .contenedor1 figure .capa1 p{
     color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
+    font-weight: 500;
+    margin-bottom: 120px;
+    transition: all 400ms ease-out;
+    margin-top: 30px;
+    line-height: 40px;
 }
 .contenedor2{
     width:0%;
@@ -250,7 +250,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,103,123,0.7);
+    background: #072193;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -310,7 +310,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,103,123,0.7);
+    background: #072193;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -370,7 +370,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(42, 14, 168, 0.7);
+    background: #072193;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -429,7 +429,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(42, 14, 168, 0.7);
+    background: #072193;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -488,7 +488,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(42, 14, 168, 0.7);
+    background: #072193;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -497,6 +497,7 @@ p {
 .contenedor7 figure:hover > .capa7 {
     opacity: 1;
     visibility: visible;
+    background: #072193;
 }
 .contenedor7 figure:hover > .capa7 h3{
     margin-top: 70px;
