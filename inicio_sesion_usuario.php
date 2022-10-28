@@ -12,35 +12,31 @@ $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
 if($info[0] === $mail)
 {
-    if($info[1] === $constrasenia)
+    if($info[1] === $contrasenia)
     {
-        if($info[1] === 'Trabajador')
+        if($info[2] === 'Trabajador')
         {
             $_SESSION['mail'] = $mail;
             // inicio de sesion exitoso para trabajador
-            include("trabajador.php"); 
+            include("panel_control.html"); 
         }
         else
         {
-            $x = 30;
-            $_SESSION['x'] = $x;
             $_SESSION['mail'] = $mail;
             // inicio de sesion exitoso para cliente
-            include("xxxxx.php"); 
+            include("index.html");
         }
     }
     else
     {
-        // contraseña erronea
-        $x = 40;
-        $_SESSION['x'] = $x;
-        include("xxxxx.php");
+        echo "contraseña erronea";
+
+        include("iniciar_sesion.html");
     }
 }
 else
 {
-    // usuario no registrado
-    $x = 50;
-    $_SESSION['x'] = $x;
-    include("xxxxx.php");
+    echo "usuario no registrado";
+
+    include("iniciar_sesion.html");
 }

@@ -7,7 +7,7 @@ $codigo = $_SESSION['prod'];
 ?>
 <h2 id="h2">Ingresar datos del producto con codigo: <?php echo $codigo ?></h2>
                   <br>
-            <form action="ingreso_producto.php" method="post">
+            <form action="ingreso_producto.php" method="post" enctype = "multipart/form-data">
             <h3>Nombre (obligatorio)</h3>
             <input step="any" type="text"  name="nombre" value="">           
         <br>
@@ -34,6 +34,8 @@ $codigo = $_SESSION['prod'];
             <input type="text" name="carac5" value="" placeholder = "Caracteristica 5">
             <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">
         <br>
+        <h3>Imagen (obligatorio)</h3>
+            <input step="any" type="file" name="imagen" accept = "image/*" value="">
         <button type="submit">Enviar</button>
         <a href = "agregar-producto.php">Cancelar</a>
         <?php

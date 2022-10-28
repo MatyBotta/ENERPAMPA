@@ -16,7 +16,8 @@ $carac[2] = $_POST['carac3'];
 $carac[3] = $_POST['carac4'];
 $carac[4] = $_POST['carac5'];
 $carac[5] = $_POST['carac6'];
-if($nombre == null || $marca == null || $cat == null || $carac[0] == null || $cant == null)
+$file = basename($_FILES["imagen"]["name"]);
+if($nombre == null || $marca == null || $cat == null || $carac[0] == null || $cant == null || $file == null)
 {
     $_SESSION['p'] = 10;
     include("agregar_datos_producto.php");
@@ -49,8 +50,9 @@ else
     $revisar =  $conexion -> query($comprobacion);
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado) values 
-    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente',
+     '$file')";
     $con =  $conexion -> query($in);
     for($i = 0; $i < 6; $i++)
     {
@@ -63,6 +65,7 @@ else
     }
     if(empty($con) === false && empty($con2) === false)
     {
+        echo $file;
         echo 'hola';
     }
 }

@@ -9,10 +9,16 @@ $Nombre = $_POST['nombre'];
 $Apellido = $_POST['apellido'];
 $mail = $_POST['mail'];
 $contrasenia = $_POST['contrasenia'];
-$seleccionar = "SELECT Mail FROM usuario where Mail = '$mail'";
+$seleccionar = "SELECT * FROM usuario where Mail = '$mail'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
-if($info[0] !== $mail)
+if(empty($info[0]) == true)
+{
+    $in = "INSERT INTO usuario (Nombre, Apellido, Contrasenia, Mail, Tipo) values 
+    ('$Nombre','$Apellido','$contrasenia','$mail', 'Cliente')";
+    $con =  $conexion -> query($in);
+}
+elseif($info[0] !== $mail)
 {
     $in = "INSERT INTO usuario (Nombre, Apellido, Contrasenia, Mail, Tipo) values 
     ('$Nombre','$Apellido','$contrasenia','$mail', 'Cliente')";
@@ -20,15 +26,11 @@ if($info[0] !== $mail)
 }
 if(empty($con) === false)
 {
-    // registro realizado
-    $x = 10;
-    $_SESSION['x'] = $x;
-    include("xxxxx.php");
+    echo "registro realizado";
+    include("index.html");
 }
 else
 {
-        // registro no realizado
-    $x = 20;
-    $_SESSION['x'] = $x;
-    include("xxxxx.php");
+    echo "Mail ya utilizado";
+    include("registrarse.html");
 }
