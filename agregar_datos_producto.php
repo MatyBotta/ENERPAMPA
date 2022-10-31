@@ -22,8 +22,8 @@ $codigo = $_SESSION['prod'];
         <input type="radio" id= 2 value= 2 name="cat"><label for="B">Automatización</label>
         <input type="radio" id= 3 value= 3 name="cat"><label for="C">Distribución eléctrica domiciliaria y comercial</label>
         <input type="radio" id= 4 value= 4 name="cat"><label for="D">Accesorios</label>
-        <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial</label>
-        <input type="radio" id= 6 value= 6 name="cat"><label for="E">Monitoreo de redes e instrumentos</label>
+        <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial y monitoreo de redes e instrumentos</label>
+        <input type="radio" id= 6 value= 6 name="cat"><label for="F">Iluminacion</label>
 </fieldset>
         <br>
             <h3>Caracteristicas</h3>
@@ -34,8 +34,14 @@ $codigo = $_SESSION['prod'];
             <input type="text" name="carac5" value="" placeholder = "Caracteristica 5">
             <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">
         <br>
-        <h3>Imagen (obligatorio)</h3>
+        <h3>Imagen (obligatorio)</h3> 
             <input step="any" type="file" name="imagen" accept = "image/*" value="">
+        <h3>Precio</h3>
+            <input step="any" type="number" name="precio" value="">
+        <br>
+        <h3> Fecha Precio</h3>
+            <input step="any" type="date" name="fecha" value="">
+        <br>
         <button type="submit">Enviar</button>
         <a href = "agregar-producto.php">Cancelar</a>
         <?php

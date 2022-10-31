@@ -8,7 +8,6 @@ $x = 0;
 $codigo = $_SESSION['prod'];
 $nombre = $_POST['nombre'];
 $marca = $_POST['marca'];
-$cat = $_POST['cat'];
 $cant = $_POST['cantidad'];
 $carac[0] = $_POST['carac1'];
 $carac[1] = $_POST['carac2'];
@@ -16,8 +15,8 @@ $carac[2] = $_POST['carac3'];
 $carac[3] = $_POST['carac4'];
 $carac[4] = $_POST['carac5'];
 $carac[5] = $_POST['carac6'];
-$file = basename($_FILES["imagen"]["name"]);
-if($nombre == null || $marca == null || $cat == null || $carac[0] == null || $cant == null || $file == null)
+$file = $_FILES["imagen"]["name"];
+if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true)
 {
     $_SESSION['p'] = 10;
     include("agregar_datos_producto.php");
@@ -25,34 +24,38 @@ if($nombre == null || $marca == null || $cat == null || $carac[0] == null || $ca
 }
 else
 {
+    $fecha = $_POST['fecha'];
+    $precio = $_POST['precio'];
+    $cat = $_POST['cat'];
     switch($cat)
-{
-    case 1:
-        $cat = 'Control de Potencia';
-        break;
-    case 2:
-        $cat = 'Automatización';
-        break;
-    case 3:
-        $cat = 'Distribución eléctrica domiciliaria y comercial';
-        break;
-    case 4:
-        $cat = 'Accesorios';
-        break;
-    case 5:
-        $cat = 'Distribución eléctrica industrial';
-        break;
-    case 6:
-        $cat = 'Monitoreo de redes e instrumentos';
-        break;
-}
+    {
+        case 1:
+            $cat = 'Control de Potencia';
+            break;
+        case 2:
+            $cat = 'Automatización';
+            break;
+        case 3:
+            $cat = 'Distribución eléctrica domiciliaria y comercial';
+            break;
+        case 4:
+            $cat = 'Accesorios';
+            break;
+        case 5:
+            $cat = 'Distribución eléctrica industrial y monitoreo de redes e instrumentos';
+                break;
+        case 6:
+            $cat = 'Iluminacion';
+            break;
+    }
+    $ruta = 'imagenes_subidas/'.$file;
+    move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
     $comprobacion = "SELECT ID from productos order by ID desc";
     $revisar =  $conexion -> query($comprobacion);
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen) values 
-    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente',
-     '$file')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente','$file', $precio, '$fecha')";
     $con =  $conexion -> query($in);
     for($i = 0; $i < 6; $i++)
     {
@@ -65,8 +68,9 @@ else
     }
     if(empty($con) === false && empty($con2) === false)
     {
-        echo $file;
-        echo 'hola';
+        ?>
+        <a href = "agregar-producto.html">Agregar otro producto</a>
+            <?php
     }
 }
 ?> 

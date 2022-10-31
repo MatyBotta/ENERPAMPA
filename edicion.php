@@ -29,7 +29,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     }
 ?>
 <h2 id="h2">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h2>
-            <form action="subir_copiado.php" method="post">
+            <form action="subir_edicion.php" method="post" enctype = "multipart/form-data">
             <h3>Nombre</h3>
             <input step="any" type="text"  name="nombre" value="" placeholder = "<?php echo $info1[2]?>">           
         <br>
@@ -47,8 +47,8 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <input type="radio" id= 2 value= 2 name="cat"><label for="B">Automatización</label>
         <input type="radio" id= 3 value= 3 name="cat"><label for="C">Distribución eléctrica domiciliaria y comercial</label>
         <input type="radio" id= 4 value= 4 name="cat"><label for="D">Accesorios</label>
-        <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial</label>
-        <input type="radio" id= 6 value= 6 name="cat"><label for="E">Monitoreo de redes e instrumentos</label>
+        <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial y monitoreo de redes e instrumentos</label>
+        <input type="radio" id= 6 value= 6 name="cat"><label for="F">Iluminacion</label>
 </fieldset>
         <br>
             <h3>Caracteristicas</h3>
@@ -116,6 +116,16 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             }
         ?>
         <br>
+            <h3>Imagen</h3>
+            <input step="any" type="file" name="imagen" accept = "image/*" value="" placeholder = "<?php echo $info1[7]?>">
+        <br>
+        
+            <h3>Precio</h3>
+            <input step="any" type="number" name="precio" value="" placeholder = "<?php echo $info1[8]?>">
+        <br>
+        <h3> Fecha Precio</h3>
+            <input step="any" type="date" name="fecha" placeholder = "<?php echo $info1[10]?>" value="">
+        <br><br>
         <button type="submit">Enviar</button>
         <a href = "editar-producto.html">Cancelar</a>
         <?php

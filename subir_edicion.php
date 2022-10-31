@@ -44,6 +44,32 @@ if(!isset($_SESSION))
     {
         $codigo = $info1[4]; 
     }
+    if (empty($_FILES['imagen']) == true)
+    {
+        $file = $info1[7]; 
+    }
+    else
+    {
+        $file = $_FILES['imagen']['name'];
+        $ruta = 'imagenes_subidas/'.$file;
+        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
+    }
+    if(empty($_POST['precio']) == true)
+    {
+        $precio = $info1[8]; 
+    }
+    else
+    {
+        $precio = $_POST['precio']; 
+    }
+    if(empty($_POST['fecha']) == true)
+    {
+        $fecha = $info1[10]; 
+    }
+    else
+    {
+        $fecha = $_POST['fecha']; 
+    }
     if (empty($_POST['cat']) == true)
     {
         $cat = $info1[1]; 
@@ -66,14 +92,14 @@ if(!isset($_SESSION))
                 $cat = 'Accesorios';
                 break;
             case 5:
-                $cat = 'Distribución eléctrica industrial';
+                $cat = 'Distribución eléctrica industrial y monitoreo de redes e instrumentos';
                 break;
             case 6:
-                $cat = 'Monitoreo de redes e instrumentos';
+                $cat = 'Iluminacion';
                 break;
         }
     }
-    $actua = "UPDATE productos set Categoria = '$cat', Nombre = '$nombre', Marca = '$marca', Codigo = '$codigo', Cantidad = $cant where ID = $ID";
+    $actua = "UPDATE productos set Categoria = '$cat', Nombre = '$nombre', Marca = '$marca', Codigo = '$codigo', Cantidad = $cant, Imagen = '$file', Precio = $precio, Fecha_Prec = '$fecha' where ID = $ID";
     $lizacion =  $conexion -> query($actua);
     for($i = 1; $i <= 6; $i++)
     {

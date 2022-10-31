@@ -44,6 +44,32 @@ if(!isset($_SESSION))
         echo "Codigo no modificado";
         include("nuevo_producto_copiado.html"); 
     }
+    if (empty($_FILES['imagen']) == true)
+    {
+        $file = $info1[7]; 
+    }
+    else
+    {
+        $file = $_FILES['imagen']['name'];
+        $ruta = 'imagenes_subidas/'.$file;
+        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
+    }
+    if(empty($_POST['precio']) == true)
+    {
+        $precio = $info1[8]; 
+    }
+    else
+    {
+        $precio = $_POST['precio']; 
+    }
+    if(empty($_POST['fecha']) == true)
+    {
+        $fecha = $info1[10]; 
+    }
+    else
+    {
+        $fecha = $_POST['fecha']; 
+    }
     if (empty($_POST['cat']) == true)
     {
         $cat = $info1[1]; 
@@ -66,10 +92,10 @@ if(!isset($_SESSION))
                 $cat = 'Accesorios';
                 break;
             case 5:
-                $cat = 'Distribución eléctrica industrial';
+                $cat = 'Distribución eléctrica industrial y monitoreo de redes e instrumentos';
                 break;
             case 6:
-                $cat = 'Monitoreo de redes e instrumentos';
+                $cat = 'Iluminacion';
                 break;
         }
     }
@@ -78,8 +104,8 @@ if(!isset($_SESSION))
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
     echo $ID;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado) values 
-    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente', '$file', $precio, '$fecha')";
     $con =  $conexion -> query($in);
     for($i = 1; $i <= 6; $i++)
     {
