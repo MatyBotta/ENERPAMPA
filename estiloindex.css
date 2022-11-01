@@ -131,7 +131,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -150,6 +150,7 @@ p {
 }
 .contenedor1 figure .capa1 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -157,6 +158,7 @@ p {
 }
 .contenedor1 figure .capa1 p{
     font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0 1rem;
     vertical-align: middle;
@@ -249,7 +251,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -268,6 +270,7 @@ p {
 }
 .contenedor3 figure .capa3 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -275,6 +278,7 @@ p {
 }
 .contenedor3 figure .capa3 p{
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem;
@@ -308,7 +312,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -327,6 +331,7 @@ p {
 }
 .contenedor4 figure .capa4 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -334,6 +339,7 @@ p {
 }
 .contenedor4 figure .capa4 p{
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem;
@@ -367,7 +373,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -386,6 +392,7 @@ p {
 }
 .contenedor5 figure .capa5 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -393,6 +400,7 @@ p {
 }
 .contenedor5 figure .capa5 p{
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem;
@@ -425,7 +433,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -444,6 +452,7 @@ p {
 }
 .contenedor6 figure .capa6 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -451,6 +460,7 @@ p {
 }
 .contenedor6 figure .capa6 p{
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem;
@@ -483,7 +493,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 27, 248, 0.4);
+    background: #0B1C6A;
     transition: all 400ms ease-out;
     opacity: 0;
     visibility: hidden;
@@ -503,6 +513,7 @@ p {
 }
 .contenedor7 figure .capa7 h3{
     color: #fff;
+    font-family: 'Cocogoose';
     font-weight: 400;
     margin-bottom: 120px;
     transition: all 400ms ease-out;
@@ -510,22 +521,11 @@ p {
 }
 .contenedor7 figure .capa7 p{
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0 1rem;
     vertical-align: middle;
-}
-.box-container .box i {
-    height: 3rem;
-    width: 3rem;
-    line-height: 3rem;
-    text-align: center;
-    border-radius: 50%;
-    color: #fff;
-    background: #9c27b0;
-    font-size: 2rem;
-    margin: 1rem 0;
-
 }
 /*FINAL DISEÑO DE LAS CAJAS DE LOS PRODUCTOS*/
 /*diseño de las letras*/
@@ -570,7 +570,7 @@ h2{
 .container-card{
 	width: 100%;
 	display: flex;
-	max-width: 1100px;
+	max-width: 1000px;
 }
 .title-cards{
 	width: 100%;
