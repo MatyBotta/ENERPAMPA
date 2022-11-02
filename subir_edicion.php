@@ -70,6 +70,48 @@ if(!isset($_SESSION))
     {
         $fecha = $_POST['fecha']; 
     }
+    if(empty($_POST['moneda']) == true)
+    {
+        $moneda = $info1[11]; 
+    }
+    else
+    {
+        $moneda = $_POST['moneda']; 
+        switch($moneda)
+        {
+            case 1:
+                {
+                    $moneda = 'Peso argentino';
+                    break;
+                }
+            case 2:
+                {
+                    $moneda = 'Dolar estadounidense';
+                    break;
+                }
+        }
+    }
+    if(empty($_POST['IVA']) == true)
+    {
+        $IVA = $info1[12]; 
+    }
+    else
+    {
+        $IVA = $_POST['IVA']; 
+        switch($IVA)
+        {
+            case 1:
+                {
+                    $IVA = 10.5;
+                    break;
+                }
+            case 2:
+                {
+                    $IVA = 21;
+                    break;
+                }
+        }
+    }
     if (empty($_POST['cat']) == true)
     {
         $cat = $info1[1]; 
@@ -99,7 +141,7 @@ if(!isset($_SESSION))
                 break;
         }
     }
-    $actua = "UPDATE productos set Categoria = '$cat', Nombre = '$nombre', Marca = '$marca', Codigo = '$codigo', Cantidad = $cant, Imagen = '$file', Precio = $precio, Fecha_Prec = '$fecha' where ID = $ID";
+    $actua = "UPDATE productos set Categoria = '$cat', Nombre = '$nombre', Marca = '$marca', Codigo = '$codigo', Cantidad = $cant, Imagen = '$file', Precio = $precio, Fecha_Prec = '$fecha', Moneda = '$moneda', IVA = $IVA where ID = $ID";
     $lizacion =  $conexion -> query($actua);
     for($i = 1; $i <= 6; $i++)
     {

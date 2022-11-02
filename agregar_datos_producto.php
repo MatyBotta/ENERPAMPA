@@ -42,6 +42,17 @@ $codigo = $_SESSION['prod'];
         <h3> Fecha Precio</h3>
             <input step="any" type="date" name="fecha" value="">
         <br>
+        <fieldset id="moneda">
+        <legend>Moneda (obligatorio)</legend>
+        <input type="radio" id= 1 value= 1 name="moneda"><label for="A">Peso argentino</label>
+        <input type="radio" id= 2 value= 2 name="moneda"><label for="B">Dolar estadounidense</label>
+        </fieldset>
+        <br>
+        <fieldset id="IVA">
+        <legend>Tipo de IVA (obligatorio)</legend>
+        <input type="radio" id= 1 value= 1 name="IVA"><label for="A">10.5%</label>
+        <input type="radio" id= 2 value= 2 name="IVA"><label for="B">21%</label>
+        </fieldset>
         <button type="submit">Enviar</button>
         <a href = "agregar-producto.php">Cancelar</a>
         <?php

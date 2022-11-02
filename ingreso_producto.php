@@ -16,7 +16,7 @@ $carac[3] = $_POST['carac4'];
 $carac[4] = $_POST['carac5'];
 $carac[5] = $_POST['carac6'];
 $file = $_FILES["imagen"]["name"];
-if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true)
+if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true || empty($_POST['IVA']) == true || empty($_POST['moneda']) == true)
 {
     $_SESSION['p'] = 10;
     include("agregar_datos_producto.php");
@@ -27,6 +27,26 @@ else
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];
+    $moneda = $_POST['cat'];
+    $IVA = $_POST['IVA'];
+    switch($moneda)
+    {
+        case 1:
+                $moneda = 'Peso argentino';
+                break;
+        case 2:
+                $moneda = 'Dolar estadounidense';
+                break;
+    }
+    switch($IVA)
+    {
+        case 1:
+                $IVA = 10.5;
+                break;
+        case 2:
+                $IVA = 21;
+                break;
+    }
     switch($cat)
     {
         case 1:
@@ -54,8 +74,8 @@ else
     $revisar =  $conexion -> query($comprobacion);
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec) values 
-    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente','$file', $precio, '$fecha')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec, Moneda, IVA) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente','$file', $precio, '$fecha', '$moneda', $IVA)";
     $con =  $conexion -> query($in);
     for($i = 0; $i < 6; $i++)
     {

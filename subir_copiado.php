@@ -54,6 +54,48 @@ if(!isset($_SESSION))
         $ruta = 'imagenes_subidas/'.$file;
         move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
     }
+    if(empty($_POST['moneda']) == true)
+    {
+        $moneda = $info1[11]; 
+    }
+    else
+    {
+        $moneda = $_POST['moneda']; 
+        switch($moneda)
+        {
+            case 1:
+                {
+                    $moneda = 'Peso argentino';
+                    break;
+                }
+            case 2:
+                {
+                    $moneda = 'Dolar estadounidense';
+                    break;
+                }
+        }
+    }
+    if(empty($_POST['IVA']) == true)
+    {
+        $IVA = $info1[12]; 
+    }
+    else
+    {
+        $IVA = $_POST['IVA']; 
+        switch($IVA)
+        {
+            case 1:
+                {
+                    $IVA = 10.5;
+                    break;
+                }
+            case 2:
+                {
+                    $IVA = 21;
+                    break;
+                }
+        }
+    }
     if(empty($_POST['precio']) == true)
     {
         $precio = $info1[8]; 
@@ -103,9 +145,8 @@ if(!isset($_SESSION))
     $revisar =  $conexion -> query($comprobacion);
     $info = $revisar -> fetch_array();
     $ID = $info[0] + 1;
-    echo $ID;
-    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec) values 
-    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente', '$file', $precio, '$fecha')";
+    $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec, Moneda, IVA) values 
+    ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente','$file', $precio, '$fecha', '$moneda', $IVA)";
     $con =  $conexion -> query($in);
     for($i = 1; $i <= 6; $i++)
     {
