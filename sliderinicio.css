@@ -1,8 +1,12 @@
+*{
+    margin: 0;
+}
 .slider {
     width: 75vw;
     height: auto;
     margin: auto;
     overflow: hidden;
+    background: #fff;
 }
 
 .slider .slide-track {
