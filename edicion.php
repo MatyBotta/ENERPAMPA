@@ -126,6 +126,17 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <h3> Fecha Precio</h3>
             <input step="any" type="date" name="fecha" placeholder = "<?php echo $info1[10]?>" value="">
         <br><br>
+        <fieldset id="moneda">
+        <legend>Moneda ("<?php echo $info1[11]?>" es la opcion actual)</legend>
+        <input type="radio" id= 1 value= 1 name="moneda"><label for="A">Peso argentino</label>
+        <input type="radio" id= 2 value= 2 name="moneda"><label for="B">Dolar estadounidense</label>
+        </fieldset>
+        <br>
+        <fieldset id="IVA">
+        <legend>Tipo de IVA ("<?php echo $info1[12]?>" es la opcion actual)</legend>
+        <input type="radio" id= 1 value= 1 name="IVA"><label for="A">10.5%</label>
+        <input type="radio" id= 2 value= 2 name="IVA"><label for="B">21%</label>
+        </fieldset>
         <button type="submit">Enviar</button>
         <a href = "editar-producto.html">Cancelar</a>
         <?php

@@ -16,8 +16,6 @@ if(empty($info[0]) === false)
     $visado = $revisar2 -> fetch_array();
     if($visado[0] != 0)
     {
-        for($i = 1; $i <= $visado[0]; $i++)
-        {
             ?>
             <p>Seleccione el producto que desea editar</p>
             <form action="copiado.php" method="post"> 
@@ -37,7 +35,6 @@ if(empty($info[0]) === false)
             <button type="submit">Enviar</button>
             </form>
             <?php
-        }
     ?> 
     <html>
     <body>
