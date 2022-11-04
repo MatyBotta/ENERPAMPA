@@ -8,6 +8,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
 {
     if(empty($_POST['eleccion']) === false)
     {
+        echo "hola";
         $ID = $_POST['eleccion'];
     }
     if(empty($_SESSION['eleccion']) === false)

@@ -24,7 +24,6 @@ for($i = 0; $i < $visado[0]; $i ++)
     $con2 =  $conexion -> query($contar2);
     $visado2 = $con2 -> fetch_array();
     $ID_carac = 0;
-    $visado2[0] = $visado2[0]/2;
     for($x = 0; $x < $visado2[0]; $x ++)
     {
         $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
@@ -45,13 +44,13 @@ for($i = 0; $i < $visado[0]; $i ++)
 
 
     <?php
+    $carac[0] = null;
+    $carac[1] = null;
+    $carac[2] = null;
+    $carac[3] = null;
+    $carac[4] = null;
+    $carac[5] = null;
 }
-$carac[0] = null;
-$carac[1] = null;
-$carac[2] = null;
-$carac[3] = null;
-$carac[4] = null;
-$carac[5] = null;
 
 ?>
 </table>

@@ -4,6 +4,7 @@ if(!isset($_SESSION))
 {
     session_start();
 }
+$_SESSION['eleccion'] = null;
 $codigo = $_POST['prod'];
 $_SESSION['prod'] = $codigo;
 $comprobacion = "SELECT Nombre, Marca, ID from productos where Codigo = '$codigo'  and Estado != 'Eliminado'";
