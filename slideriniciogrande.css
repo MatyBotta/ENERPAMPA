@@ -16,9 +16,9 @@ img {
 /* Slideshow container */
 
 .slideshow-container {
-  width: 1320px;
+  width: 800px;
   height: 300px;
-  position: relative;
+  position: relative¡;
   margin: 15px;
   margin-top: -9px;
 }
@@ -70,7 +70,7 @@ img {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
-  position: absolute;
+  position: relative;
   top: 0;
 }
 
