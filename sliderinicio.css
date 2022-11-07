@@ -2,11 +2,12 @@
     margin: 0;
 }
 .slider {
-    width: 75vw;
+    width: 100vw;
     height: auto;
     margin: auto;
     overflow: hidden;
     background: #fff;
+    position: relative;
 }
 
 .slider .slide-track {
