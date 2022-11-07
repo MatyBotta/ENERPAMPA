@@ -1,27 +1,27 @@
 *{
     margin: 0;
 }
-.slider {
+.slider1 {
     width: 100vw;
-    height: auto;
-    margin: auto;
+    height: 10vw;
+    margin-top: -10vw;
     overflow: hidden;
     background: #fff;
     position: relative;
 }
 
-.slider .slide-track {
+.slider1 .slide-track1 {
     display: flex;
     animation: scroll 40s linear infinite;
     -webkit-animation: scroll 40s linear infinite;
     width: calc(200px * 14);
 }
 
-.slider .slide {
+.slider1 .slide1 {
     width: 200px;
 }
 
-.slider .slide img {
+.slider1 .slide1 img {
     width: 100%;
 }
 
