@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2022 a las 15:43:16
+-- Tiempo de generación: 07-11-2022 a las 15:46:45
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -74,9 +74,6 @@ INSERT INTO `carac_prod` (`ID_Prod`, `Caracteristica`, `ID_carac_prod`) VALUES
 (26, 'E27', 1),
 (26, '40W', 2),
 (26, '6500K', 3),
-(27, 'gbhngcfh', 1),
-(28, 'ghjgh', 1),
-(29, 'dfgfg', 1),
 (1, 'Luminaria', 1),
 (1, '50W', 2),
 (1, '6500K', 3),
@@ -165,18 +162,18 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantidad`, `Estado`, `Imagen`, `Precio`, `Ult. Act.`, `Fecha_Prec`, `Moneda`, `IVA`) VALUES
-(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Vigente', '', 1318, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', '', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', '', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', '', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', '', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', '', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 240, 'Vigente', '', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 100, 'Vigente', '', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 120, 'Vigente', '', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 100, 'Vigente', '', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 110, 'Vigente', '', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 1000, 'Vigente', '', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Vigente', 'Recurso 1.png', 1318, '2022-11-02', '2022-11-07', 'Peso argentino', 21),
+(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', '404206.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', '404206.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', 'Recurso 4.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', 'Recurso 7.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', 'Recurso 8.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 240, 'Vigente', 'Recurso 10.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 100, 'Vigente', 'Recurso 10.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 120, 'Vigente', 'Recurso 10.png', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 100, 'Vigente', 'Recurso 10.png', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 110, 'Vigente', 'Recurso 10.png', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 1000, 'Vigente', 'Recurso 10.png', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (13, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'GU10 7W PH', 120, 'Vigente', '', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
 (14, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'R1=GU10 7W PH', 180, 'Vigente', '', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
 (15, 'Iluminacion', 'LAMPARA LED DICRO', 'INTERELEC', '402290', 30, 'Vigente', '6.png', 118, '2022-11-02', '2022-11-02', 'Pesos', 21),
