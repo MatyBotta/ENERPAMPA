@@ -24,6 +24,21 @@ if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0
 }
 else
 {
+    $archivo = $_FILES["imagen"]["tmp_name"];
+    $imagen = getimagesize($archivo);
+    $ancho = $imagen[0];
+    $alto = $imagen[1];
+    echo $ancho;
+    echo $alto;
+    if($ancho != "833" || $alto != "833")
+    {
+        ECHO "HOLAA";
+        include("agregar_datos_producto.php");
+        echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
+    }
+else
+{
+    ECHO "HOLAAAAAAA";
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];
@@ -92,5 +107,6 @@ else
         <a href = "agregar-producto.html">Agregar otro producto</a>
             <?php
     }
+}
 }
 ?> 

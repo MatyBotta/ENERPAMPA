@@ -44,7 +44,7 @@ if(!isset($_SESSION))
     {
         $codigo = $info1[4]; 
     }
-    if (empty($_FILES['imagen']) == true)
+    if (empty($_FILES['imagen']['name']) == true)
     {
         $file = $info1[7]; 
     }
@@ -53,8 +53,17 @@ if(!isset($_SESSION))
         $file = $_FILES['imagen']['name'];
         $ruta = 'imagenes_subidas/'.$file;
         move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-    }
-    if(empty($_POST['precio']) == true)
+        $imagen = getimagesize($file);
+        $ancho = $imagen[0];
+        $alto = $imagen[1];
+        if($ancho != 833 || $alto != 833)
+        {
+            include("edicion.php");
+            echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
+        }
+        else
+        {
+            if(empty($_POST['precio']) == true)
     {
         $precio = $info1[8]; 
     }
@@ -161,3 +170,6 @@ if(!isset($_SESSION))
         }
     }
     echo ":)";
+        }
+    }
+    
