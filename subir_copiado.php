@@ -61,9 +61,8 @@ if(!isset($_SESSION))
             include("copiado.php");
             echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
         }
-        else
-        {
-            if(empty($_POST['moneda']) == true)
+    }
+    if(empty($_POST['moneda']) == true)
     {
         $moneda = $info1[11]; 
     }
@@ -179,6 +178,4 @@ if(!isset($_SESSION))
     if(empty($con) === false && empty($con2) === false)
     {
         echo 'hola';
-    }
-        }
     }

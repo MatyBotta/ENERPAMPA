@@ -61,9 +61,8 @@ if(!isset($_SESSION))
             include("edicion.php");
             echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
         }
-        else
-        {
-            if(empty($_POST['precio']) == true)
+    }
+    if(empty($_POST['precio']) == true)
     {
         $precio = $info1[8]; 
     }
@@ -170,6 +169,4 @@ if(!isset($_SESSION))
         }
     }
     echo ":)";
-        }
-    }
     
