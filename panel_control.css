@@ -59,3 +59,10 @@ body{
 .main h2{
     margin-top: 20px;
 }
+.title {
+    margin-left: 300px;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+}
