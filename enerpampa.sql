@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2022 a las 15:46:45
+-- Tiempo de generación: 08-11-2022 a las 14:18:48
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -162,9 +162,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantidad`, `Estado`, `Imagen`, `Precio`, `Ult. Act.`, `Fecha_Prec`, `Moneda`, `IVA`) VALUES
-(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Vigente', 'Recurso 1.png', 1318, '2022-11-02', '2022-11-07', 'Peso argentino', 21),
-(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', '404206.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', '404206.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Vigente', 'Recurso 1.png', 1318, '2022-11-02', '2022-11-07', 'Pesos', 21),
+(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', 'Recurso 1.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', 'Recurso 1.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', 'Recurso 4.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', 'Recurso 7.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', 'Recurso 8.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),

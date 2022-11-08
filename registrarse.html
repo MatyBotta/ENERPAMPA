@@ -8,44 +8,20 @@
     <link rel="stylesheet" href="estiloregistro.css">
     <title> REGISTRO ENERPAMPA</title>
 </head>
-<body>
-    <header>
-        <div class="head">
 
-            <div class="logo">
-                <img src="Imagenes/LOGO.ico" width="80" alt="">
-            </div>
-            <nav class="navbar">
-                <tr>
-                <a href="https://www.instagram.com/enerpampa.sa/"><img src="Imagenes/insta.png" width="20" alt=""></a>
-                <a href="https://www.facebook.com/people/Enerpampa-SA-Distribuidor-de-Materiales-El%C3%A9ctricos/100063664860017/?ref=page_internal&mt_nav=0"><img src="Imagenes/face.png" width="20" alt=""></a>
-            </tr>
-            </nav>
-        </div>
-        <hr/>
-        <h2>Ingresar datos del usuario</h2>
-        
-    </header>
-    
-    <section class="formulario">
-        <div class="fondo">
-        <form action="carga_usuario.php" method="post"  > 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3>Mail</h3>   
-        <p><input type="mail" name="mail" id="prod"></p> 
-        <h3>Contraseña</h3>   
-        <p><input type="text" name="contrasenia" id="prod"></p>
-        <h3>Nombre</h3>   
-        <p><input type="text" name="nombre" id="prod"></p>
-        <h3>Apellido</h3>   
-        <p><input type="text" name="apellido" id="prod"></p>
-        <ul><li><button type="submit">Ingresar</button></li></ul>
-        <a href = "iniciar_sesion.html">Si ya tienes una cuenta, <button class="sign-up-btn">Iniciar Sesion</button></a>
-        </form>
-        </div>
-    </body>
+<body>
+  <section class="form-register">
+    <h4>Formulario Registro</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
+    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+    <input class="botons" type="submit" value="Registrar">
+    <p><a href="iniciar_sesion.html">Ya tengo Cuenta</a></p>
+  </section>
+
+</body>
 </html>
+
+   

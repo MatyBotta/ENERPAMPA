@@ -90,12 +90,12 @@ if(!isset($_SESSION))
         {
             case 1:
                 {
-                    $moneda = 'Peso argentino';
+                    $moneda = 'Pesos';
                     break;
                 }
             case 2:
                 {
-                    $moneda = 'Dolar estadounidense';
+                    $moneda = 'Dolares';
                     break;
                 }
         }
