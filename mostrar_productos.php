@@ -9,61 +9,84 @@ $categoria = 'Iluminacion';
 $contar = "SELECT count(*) from productos where Categoria = '$categoria'";
 $con =  $conexion -> query($contar);
 $visado = $con -> fetch_array();
-?>
-<table border = 1>
-<tr><td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Caracteristica 1</td><td>Carac. 2</td><td>Carac. 3</td><td>Carac. 4</td><td>Carac. 5</td><td>Carac. 6</td><td>Imagen</td>
-<?php
-$ID = 0;
-for($i = 0; $i < $visado[0]; $i ++)
-{
-    $sel = "SELECT * from productos where Categoria = '$categoria' and ID > $ID order by ID asc";
-    $ecc =  $conexion -> query($sel);
-    $ionar = $ecc -> fetch_array();
-    $ID = $ionar[0];
-    $contar2 = "SELECT count(*) from carac_prod where ID_prod = $ionar[0]";
-    $con2 =  $conexion -> query($contar2);
-    $visado2 = $con2 -> fetch_array();
-    $ID_carac = 0;
-    if($ionar[11] == "Pesos")
+if(empty($_POST["var"]) == false)
     {
-        $valor = "$";
-    }
-    else
-    {
-        $valor = "U$"."S";
-    }
-    for($x = 0; $x < $visado2[0]; $x ++)
-    {
-        $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-        $ecc2 =  $conexion -> query($sel2);
-        $ionar2 = $ecc2 -> fetch_array();
-        $ID_carac = $ionar2[2];
-        $carac[$x] = $ionar2[1];
-    }
-    for($x = 0; $x < 6; $x ++)
-    {
-        if(empty($carac[$x]) === true)
+        if(empty($_SESSION['mail']) == false)
         {
-            $carac[$x] = '-';
+            $var = $_POST['var'];
+            $mail = $_SESSION['mail'];
+            $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
+            $validacion =  $conexion -> query($validacion);
+            $ok = $validacion -> fetch_array();
+            if($ok !== 0)
+            {
+                $mas = "UPDATE carrito set Cantidad = Cantidad + 1 where ID_Prod = $var and Mail = '$mail'";
+                $total =  $conexion -> query($mas);
+            }
+            $agregar = "INSERT into carrito (ID_Prod, Mail, Cantidad) values ($var, '$mail', 1)";
+            $agregado =  $conexion -> query($agregar);
+        }
+        else
+        {
+            include("iniciar_sesion.html");
+            $aa = 1;
         }
     }
-    $imagen = $ionar[7];
-    $img="imagenes_subidas/".$imagen;
+if($aa != 0)
+{
     ?>
-    <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[0]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
-
-
+    <table border = 1>
+    <tr><td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Caracteristica 1</td><td>Carac. 2</td><td>Carac. 3</td><td>Carac. 4</td><td>Carac. 5</td><td>Carac. 6</td><td>Imagen</td>
     <?php
-    $carac[0] = null;
-    $carac[1] = null;
-    $carac[2] = null;
-    $carac[3] = null;
-    $carac[4] = null;
-    $carac[5] = null;
+    $ID = 0;
+    for($i = 0; $i < $visado[0]; $i ++)
+    {
+        $sel = "SELECT * from productos where Categoria = '$categoria' and ID > $ID order by ID asc";
+        $ecc =  $conexion -> query($sel);
+        $ionar = $ecc -> fetch_array();
+        $ID = $ionar[0];
+        $contar2 = "SELECT count(*) from carac_prod where ID_prod = $ionar[0]";
+        $con2 =  $conexion -> query($contar2);
+        $visado2 = $con2 -> fetch_array();
+        $ID_carac = 0;
+        if($ionar[11] == "Pesos")
+        {
+            $valor = "$";
+        }
+        else
+        {
+            $valor = "U$"."S";
+        }
+        for($x = 0; $x < $visado2[0]; $x ++)
+        {
+            $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
+            $ecc2 =  $conexion -> query($sel2);
+            $ionar2 = $ecc2 -> fetch_array();
+            $ID_carac = $ionar2[2];
+            $carac[$x] = $ionar2[1];
+        }
+        for($x = 0; $x < 6; $x ++)
+        {
+            if(empty($carac[$x]) === true)
+            {
+                $carac[$x] = '-';
+            }
+        }
+        $imagen = $ionar[7];
+        $img="imagenes_subidas/".$imagen;
+        ?>
+        <form action="mostrar_productos.php" method="post"> 
+        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[0]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td border = "0"><button type="submit" id = "var" name = "var" value = <?php echo $ionar[0]?>>Añadir al carrito</button></td></tr>
+        <?php
+        $carac[0] = null;
+        $carac[1] = null;
+        $carac[2] = null;
+        $carac[3] = null;
+        $carac[4] = null;
+        $carac[5] = null;
+    }
+    
+    ?>
+    </table>
+    <?php
 }
-
-?>
-</table>
-
-<?php
-?>

@@ -56,10 +56,10 @@ if(!isset($_SESSION))
         $imagen = getimagesize($file);
         $ancho = $imagen[0];
         $alto = $imagen[1];
-        if($ancho != 833 || $alto != 833)
+        if($ancho != 100 || $alto != 100)
         {
             include("edicion.php");
-            echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
+            echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
         }
     }
     if(empty($_POST['precio']) == true)

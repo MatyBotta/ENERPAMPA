@@ -30,15 +30,13 @@ else
     $alto = $imagen[1];
     echo $ancho;
     echo $alto;
-    if($ancho != "833" || $alto != "833")
+    if($ancho != 100 || $alto != 100)
     {
-        ECHO "HOLAA";
         include("agregar_datos_producto.php");
-        echo '<script>alert("Por favor, la imagen debe de ser 200x200")</script>';
+        echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
     }
 else
 {
-    ECHO "HOLAAAAAAA";
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];

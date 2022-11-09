@@ -66,3 +66,17 @@ body{
     text-align: center;
     color: #000;
 }
+.prod{
+    float: right;
+}
+.agregar-producto {
+    width: 40000px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
