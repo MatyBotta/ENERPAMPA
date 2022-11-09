@@ -16,15 +16,18 @@ if(empty($_POST["var"]) == false)
             $var = $_POST['var'];
             $mail = $_SESSION['mail'];
             $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
-            $validacion =  $conexion -> query($validacion);
+            $validacion =  $conexion -> query($validar);
             $ok = $validacion -> fetch_array();
-            if($ok !== 0)
+            if(empty($ok) === false)
             {
                 $mas = "UPDATE carrito set Cantidad = Cantidad + 1 where ID_Prod = $var and Mail = '$mail'";
                 $total =  $conexion -> query($mas);
             }
-            $agregar = "INSERT into carrito (ID_Prod, Mail, Cantidad) values ($var, '$mail', 1)";
-            $agregado =  $conexion -> query($agregar);
+            else
+            {
+                $agregar = "INSERT into carrito (ID_Prod, Mail, Cantidad) values ($var, '$mail', 1)";
+                $agregado =  $conexion -> query($agregar);
+            }
         }
         else
         {
@@ -32,7 +35,7 @@ if(empty($_POST["var"]) == false)
             $aa = 1;
         }
     }
-if($aa != 0)
+if(empty($aa) === true)
 {
     ?>
     <table border = 1>
