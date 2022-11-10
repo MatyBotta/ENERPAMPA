@@ -1,4 +1,4 @@
-/* reset */
+
 *{
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Sidebar start here  */
+/* Empieza el menu  */
 .sidebar{
     position: fixed;
     background: #516ba1;
@@ -47,7 +47,7 @@ body{
     transition: 0.4s;
 }
 
-/* Sidebar end Here  */
+/* Termina el menu  */
 
 /* Main Content Section Start Here  */
 
@@ -82,6 +82,7 @@ body{
   }
 .agregar-producto h3 {
 color: white;  
+margin-bottom: 10px;
 }
 .agregar-producto button{
     width: 100%;
@@ -99,5 +100,170 @@ color: white;
     border: 1px solid #1f53c5;
     font-family: 'calibri';
     font-size: 18px;
-    color: white;
+    color: black;
   }
+  .eliminar-producto{
+    width: 400px;
+    background: #516ba1;
+    padding: 30px;
+    margin: 600px;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .controls2{
+    width: 100%;
+    background: #f2f3f5;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  .eliminar-producto button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .eliminar-producto h3{
+    color:#fff;
+    margin-bottom: 20px;
+  }
+  .editar-producto{
+    width: 400px;
+    background: #516ba1;
+    padding: 30px;
+    margin: 600px;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .controls3{
+    width: 100%;
+    background: #f2f3f5;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  .editar-producto button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .editar-producto h3{
+    color:#fff;
+    margin-bottom: 20px;
+  }
+  .reactivar-producto{
+    width: 400px;
+    background: #516ba1;
+    padding: 30px;
+    margin: 600px;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .controls4{
+    width: 100%;
+    background: #f2f3f5;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  .reactivar-producto button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .reactivar-producto h3{
+    color:#fff;
+    margin-bottom: 20px;
+  }
+  .reactivar-producto-otros{
+    width: 400px;
+    background: #516ba1;
+    padding: 30px;
+    margin: 600px;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .controls5{
+    width: 100%;
+    background: #f2f3f5;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  .reactivar-producto-otros button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .reactivar-producto-otros h3{
+    color:#fff;
+    margin-bottom: 20px;
+  }
+  .eliminar{
+    width: 400px;
+    background: #516ba1;
+    padding: 30px;
+    margin: 600px;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .controls6{
+    width: 100%;
+    background: #f2f3f5;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  .eliminar button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+.eliminar h3{
+    color:#fff;
+    margin-bottom: 20px;
+}

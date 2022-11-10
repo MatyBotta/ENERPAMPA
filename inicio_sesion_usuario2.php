@@ -15,31 +15,18 @@ if($info[0] === $mail)
 {
     if($info[1] === $contrasenia)
     {
-        if($info[2] === 'Trabajador')
-        {
-            $_SESSION['mail'] = $mail;
-            $hola = 1;
-            // inicio de sesion exitoso para trabajador
-            include("panel_control.html"); 
-        }
-        else
-        {
             $_SESSION['mail'] = $mail;
             // inicio de sesion exitoso para cliente
-            include("index.php");
-        }
+            include("mostrar_productos.php");
     }
     else
     {
-        echo "chauuu";
-        echo "contraseña erronea";
-        $hola = 1;
-        include("iniciar_sesion.html");
+        //contrasenia erronea
+        include("iniciar_sesion2.html");
     }
 }
 else
 {
-    echo "usuario no registrado";
-    $hola = 1;
-    include("iniciar_sesion.html");
+    //usuario no registrado";
+    include("iniciar_sesion2.html");
 }
