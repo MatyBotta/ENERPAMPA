@@ -11,9 +11,10 @@ $codigo = $_SESSION['prod'];
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>SECCION PRODUCTO</title>
+          
             <link rel="stylesheet" href="productos_empleados.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <title>SECCION PRODUCTO</title>
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           </head>
 <h2 id="h2">Ingresar datos del producto con codigo: <?php echo $codigo ?></h2>
@@ -37,8 +38,29 @@ $codigo = $_SESSION['prod'];
         <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial y monitoreo de redes e instrumentos</label>
         <input type="radio" id= 6 value= 6 name="cat"><label for="F">Iluminacion</label>
         </div>
+<fieldset id="cat" class="formulario">
+
+		<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Default radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <label class="form-check-label" for="exampleRadios2">
+    Second default radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+  <label class="form-check-label" for="exampleRadios3">
+    Disabled radio
+  </label>
+</div>
 </fieldset>
         <br>
+        
             <h3>Caracteristicas</h3>
             <input class="c1" type="text" name="carac1" value="" placeholder = "Caracteristica 1 (obligatorio)">
             <input class="c2" type="text" name="carac2" value="" placeholder = "Caracteristica 2">
@@ -46,7 +68,7 @@ $codigo = $_SESSION['prod'];
             <input class="c4" type="text" name="carac4" value="" placeholder = "Caracteristica 4">
             <input class="c5" type="text" name="carac5" value="" placeholder = "Caracteristica 5">
             <input class="c6" type="text" name="carac6" value="" placeholder = "Caracteristica 6">
-        <br>
+            
         <h3>Imagen (obligatorio)</h3> 
             <input step="any" type="file" name="imagen" accept = "image/*" value="">
         <h3>Precio</h3>
