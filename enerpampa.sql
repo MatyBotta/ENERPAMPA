@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2022 a las 15:57:19
+-- Tiempo de generación: 11-11-2022 a las 15:40:06
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -124,7 +124,10 @@ INSERT INTO `carac_prod` (`ID_Prod`, `Caracteristica`, `ID_carac_prod`) VALUES
 (14, '3000K', 3),
 (27, 'E27', 1),
 (27, '60W', 2),
-(27, '6000K', 3);
+(27, '6000K', 3),
+(28, 'GU10', 1),
+(28, '15W', 2),
+(28, '3000K', 3);
 
 -- --------------------------------------------------------
 
@@ -144,7 +147,11 @@ CREATE TABLE `carrito` (
 
 INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`) VALUES
 (1, 'hola', 2),
-(3, 'hola', 1);
+(3, 'hola', 1),
+(1, 'hola@a.com', 1),
+(2, 'hola@a.com', 1),
+(3, 'hola@a.com', 1),
+(4, 'hola@a.com', 1);
 
 -- --------------------------------------------------------
 
@@ -199,7 +206,8 @@ INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantid
 (24, 'Iluminacion', 'LAMPARA GLOBO', 'PHILIPS', '929001229491', 28, 'Vigente', 'Recurso 17.png', 1790, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (25, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP2400LP-Q1 30W', 15, 'Vigente', 'bulbon.png', 775, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (26, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP3200LP-Q1 40W', 10, 'Vigente', 'bulbon.png', 893, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(27, 'Iluminacion', 'LAMPARA BULBON', 'MACROLED', 'BAP-60-E27CW', 6, 'Vigente', 'BULBOM2.png', 4209.98, '2022-11-08', '2022-11-08', 'Pesos', 10.5);
+(27, 'Iluminacion', 'LAMPARA BULBON', 'MACROLED', 'BAP-60-E27CW', 6, 'Vigente', 'BULBOM2.png', 4209.98, '2022-11-08', '2022-11-08', 'Pesos', 10.5),
+(28, 'Iluminacion', 'LAMPARA LED AR111', 'LUCCIOLA', '2LE009NSC056', 41, 'Vigente', 'Recurso S1.png', 544.3, '2022-11-11', '2022-11-11', '6', 10.5);
 
 -- --------------------------------------------------------
 

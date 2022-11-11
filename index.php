@@ -35,7 +35,7 @@
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">ConTacto</a>
             <a href="#productos">Productos</a>
-            <a href = "mostrar_productos.php"> Mostar Productos </a>
+            <a href = "mostrar_productos.php"> Mostrar Productos </a>
             <?php
             if(!isset($_SESSION))
             {
@@ -50,6 +50,7 @@
             else
             {
                 ?>
+                <a href="carrito.php">Carrito</a>
                 <a href="cerrar_sesion.php">Cerrar sesion</a>
                 <?php
             }

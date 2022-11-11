@@ -27,8 +27,7 @@ $codigo = $_SESSION['prod'];
             <br>
             <h3>Cantidad (obligatorio)</h3>
             <input class="cantidad" step="any" type="text" name="cantidad" value="" >
-<fieldset id="cat" class="formulario">
-
+        <fieldset id="cat">
 		<div class="radio">
         <h2>Categoria (obligatorio)</h2>
         <input type="radio" id= 1 value= 1 name="cat"><label for="A">Control de Potencia</label>
