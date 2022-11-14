@@ -40,7 +40,7 @@ else
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];
-    $moneda = $_POST['cat'];
+    $moneda = $_POST['moneda'];
     $IVA = $_POST['IVA'];
     switch($moneda)
     {
@@ -69,7 +69,7 @@ else
             $cat = 'Automatización';
             break;
         case 3:
-            $cat = 'Distribución eléctrica terciaria';
+            $cat = 'Distribución eléctrica domiciliaria y comercial';
             break;
         case 4:
             $cat = 'Accesorios';

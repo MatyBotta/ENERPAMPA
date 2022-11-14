@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Yesteryear&display=swap');
+
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+form ::selection{
+	background-color: rgb(17, 13, 223);
+	color: white;
+}
+
+body{
+	font-size: 16px;
+	background-color: #516ba1;
+	width: 100%;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+.head {
+    margin-top: -80px;
+    align-items: center;
+    height: 120px;
+    position: relative;
+    width: 100%;
+    
+}
+
+.navbar {
+    margin-top: 0;
+    
+}
+.navbar p{
+    font-size: 10px;
+    text-decoration: none;
+}
+.logo {
+    margin-left: 0px;
+    margin-top: 100px;
+}
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+	width: 80px;
+    background: #3f3f3f;
+}
+header{
+	margin-bottom: 20;
+	margin: 0 auto;
+	background: #1101f3;
+	text-align: center;
+	font-size: 10px;
+}
+
+h1{
+	padding-top: 1.4em;
+	padding-bottom: .3em;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 3em;
+	text-shadow: 0 0.083em 0.083em rgba(18, 18, 20, 0.6);
+
+}
+
+h1 + p{
+	color: #0f0e0f;
+	font-size: 1em;
+	line-height: 150%;
+}
+
+#main-container{
+	margin: 0 auto;
+	background-color: #E9EAFB;
+}
+
+form{
+	color: #676278;
+	margin: 0 auto;
+	padding: 0 5%;
+}
+
+form div{
+	padding-top: 2em;
+}
+
+label, input{
+	display: block;
+}
+
+label{
+	padding-bottom: .5em;
+	color: #676278;
+}
+
+input[type="text"], [type="number"], [type="email"], select{
+	width: 100%;
+	height: 3em;
+	border: 1px solid #d6dce0;
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-size: 1.125em;
+	text-indent: 0.889em;
+	color: #817b94;
+}
+
+input[type="radio"]{
+	display: inline-block;
+	margin: .50em;
+}
+
+select{
+	background-color: white;
+	font-size: 1em;
+	color: #676278;
+}
+
+::placeholder{
+	text-indent: 0.889em;
+	/*font-size: 14px;*/
+	font-size: 0.778em;
+	color: #858096;
+}
+
+textarea{
+	padding: 0.667em;
+	width: 100%;
+	height: 3em;
+	border: 1px solid #d6dce0;
+	font-size: 1.125em;
+	color: #817b94;
+	resize: none;
+}
+
+button{
+	margin-top: 3em;
+	margin-bottom: 3em;
+	width: 100%;
+	height: 3em;
+	border-radius: 1.5em;
+	border: none;
+	background-color: #1101f3;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+button:hover {
+	background: #504d97;
+}
+
+@media only screen and (max-width: 800px){
+	/* Do 800 */
+	header{
+		width: 100%;
+	}
+
+	h1 + p{
+		padding: 0 3em 3em 3em;
+	}
+
+	#main-container{
+		width: 100%;
+	}
+}
+
+@media (max-width: 1200px) and (min-width: 800px){
+	/* Od 800 do 1200 */
+	header{
+		width: 70%;
+	}
+
+	body{
+		margin: 5em 0 5em 0;
+	}
+
+	h1 + p{
+		padding: 0 4em 3em 4em;
+	}
+
+	#main-container{
+		width: 70%;
+	}
+}
+
+@media (min-width: 1200px){
+	/* Od 1200 */
+	h1 + p{
+		padding: 0 7em 3em 7em;
+	}
+
+	header{
+		width: 50%;
+	}
+
+	body{
+		margin: 5em 0 5em 0;
+	}
+
+	#main-container{
+		width: 50%;
+	}
+}
