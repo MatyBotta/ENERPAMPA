@@ -4,8 +4,7 @@ if(!isset($_SESSION))
     session_start();
 }
 include("db.php");
-//$categoria = $_POST['categoria'];
-$categoria = 'Iluminacion';
+$categoria = $_POST['categoria'];
 $contar = "SELECT count(*) from productos where Categoria = '$categoria'";
 $con =  $conexion -> query($contar);
 $visado = $con -> fetch_array();
@@ -39,6 +38,7 @@ if(empty($aa) === true)
 {
     ?>
     <a href = "index.php"> Volver </a>
+    <h1><?php echo $categoria ?> </h1>
     <table border = 1>
     <tr><td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Caracteristica 1</td><td>Carac. 2</td><td>Carac. 3</td><td>Carac. 4</td><td>Carac. 5</td><td>Carac. 6</td><td>Imagen</td>
     <?php

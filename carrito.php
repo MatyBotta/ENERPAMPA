@@ -8,6 +8,10 @@ $mail = $_SESSION['mail'];
 $contar = "SELECT count(*) from carrito where Mail = '$mail'";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
+?> 
+<h1>carrito </h1>
+<a href = "index.php"> Volver </a>
+<?php
 if(empty($var[0]) === false)
 {
     ?>

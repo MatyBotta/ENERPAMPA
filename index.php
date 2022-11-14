@@ -35,7 +35,6 @@
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">ConTacto</a>
             <a href="#productos">Productos</a>
-            <a href = "mostrar_productos.php"> Mostrar Productos </a>
             <?php
             if(!isset($_SESSION))
             {
@@ -191,9 +190,10 @@
         <br>
         <h2 class="title" id="productos">Productos:</h2>
         <br> 
+        <form action="mostrar_productos.php" method="post">
         <p></p>
             <div class="contenedor1">
-                <a href="#contenedor1">
+                <button type = "submit" value = "Distribucion electrica industrial" id = "categoria" name = "categoria">
                      <figure>
                          <img src="imagenes/1x/DIST. INDUSTRIAL.jpg">
                          <div class="capa1">
@@ -201,10 +201,10 @@
                              <p>Todo lo necesario en maniobra y monitoreo de redes de baja tensión, interruptores de potencia, ductos, bandejas, cables subterraneos y protecciones</p>
                          </div>
                      </figure>
-                 </a>
+        </button>
              </div>
              <div class="contenedor2">
-                 <a href="#">
+             <button type = "submit" value = "Distribucion electrica terciaria" id = "categoria" name = "categoria">
                       <figure>
                           <img src="imagenes/1x/bombinia.jpg">
                           <div class="capa2">
@@ -212,10 +212,10 @@
                               <p>CUADRITO 2</p>
                           </div>
                       </figure>
-                  </a>
+        </button>
               </div>
               <div class="contenedor3">
-                <a href="#">
+              <button type = "submit" value = "Control de potencia" id = "categoria" name = "categoria">
                      <figure>
                          <img src="imagenes/1x/CONTROL DE POTENCIA.jpg">
                          <div class="capa3">
@@ -223,10 +223,10 @@
                              <p>Linea completa de salida motor, contactores, variadores, arrancadores, motores y sus respectivas protecciones.</p>
                          </div>
                      </figure>
-                 </a>
+        </button>
              </div>
              <div class="contenedor4">
-                <a href="#">
+             <button type = "submit" value = "Automatizacion" id = "categoria" name = "categoria">
                      <figure>
                          <img src="imagenes/1x/AUTOMATIZACION.jpg">
                          <div class="capa4">
@@ -234,10 +234,10 @@
                              <p>Arquitecturas de sistemas automatizados con PLC, HMI, sensores y sistemas scada.</p>
                          </div>
                      </figure>
-                 </a>
+        </button>
              </div>
              <div class="contenedor5">
-                <a href="#">
+             <button type = "submit" value = "Distribucion electrica terciaria" id = "categoria" name = "categoria">
                      <figure>
                          <img src="imagenes/1x/DIST. COMERCIAL.jpg">
                          <div class="capa5">
@@ -248,7 +248,7 @@
                  </a>
              </div>
              <div class="contenedor6">
-                <a href="#">
+             <button type = "submit" value = "Iluminacion" id = "categoria" name = "categoria">
                      <figure>
                          <img src="imagenes/1x/ILUMINACIÓN.jpg">
                          <div class="capa6">
@@ -256,10 +256,10 @@
                              <p>Provedores de instrumentos para el control del consumo de energia y su comunicacion para administrar el consumo.</p>
                          </div>
                      </figure>
-                 </a>
+        </button>
                 </div>
                 <div class="contenedor7">
-                    <a href="#">
+                <button type = "submit" value = "Accesorios" id = "categoria" name = "categoria">
                          <figure>
                              <img src="imagenes/1x/ACCESORIOS.jpg">
                              <div class="capa7">
@@ -267,7 +267,7 @@
                                  <p>Gama completa en instrumentos de medicion, herramientas, accesorios que hacen a la instalacion y al trabajo en la misma.</p>
                              </div>
                          </figure>
-                     </a>
+        </button>
                     </div>
         <br>
         <br>
