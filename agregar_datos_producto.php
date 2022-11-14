@@ -6,88 +6,119 @@ if(!isset($_SESSION))
 $codigo = $_SESSION['prod'];
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          
-            <link rel="stylesheet" href="productos_empleados.css"/>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <title>SECCION PRODUCTO</title>
-            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-          </head>
-<h2 id="h2">Ingresar datos del producto con codigo: <?php echo $codigo ?></h2>
-                  <br>
-            <form action="ingreso_producto.php" method="post" enctype = "multipart/form-data">
-            <h3>Nombre (obligatorio)</h3>
-            <input class="nombre" step="any" type="text"  name="nombre" value="">           
-        <br>
-            <h3>Marca (obligatorio)</h3>
-            <input class="marca" step="any" type="text" name="marca" value="" >
-            <br>
-            <h3>Cantidad (obligatorio)</h3>
-            <input class="cantidad" step="any" type="text" name="cantidad" value="" >
-        <fieldset id="cat">
-		<div class="radio">
-        <h2>Categoria (obligatorio)</h2>
-        <input type="radio" id= 1 value= 1 name="cat"><label for="A">Control de Potencia</label>
-        <input type="radio" id= 2 value= 2 name="cat"><label for="B">Automatización</label>
-        <input type="radio" id= 3 value= 3 name="cat"><label for="C">Distribución eléctrica domiciliaria y comercial</label>
-        <input type="radio" id= 4 value= 4 name="cat"><label for="D">Accesorios</label>
-        <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial y monitoreo de redes e instrumentos</label>
-        <input type="radio" id= 6 value= 6 name="cat"><label for="F">Iluminacion</label>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Agregar producto</title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<div class="head">
+
+        <div class="logo">
+            <img src="Imagenes/LOGO.ico" width="115" alt="">
         </div>
-<fieldset id="cat" class="formulario">
+        <nav class="navbar">
+            <a href="editar-producto.html">Inicio</a>
+        </nav>
+    </div>
+	<br>
+	<br>
+	<header>
+		<h1 id="title">Ingresar datos del producto: <?php echo $codigo ?></h1>
+	</header>
+	<div id="main-container">
+		<form id="survey-form" action = "ingreso_producto.php" enctype = "multipart/form-data">
+			<div>
+				<label id="name-label" for="name">Nombre del producto (obligatorio):</label>
+				<input id="nombre" type="text" name="nombre" placeholder="…" required>
+			</div>
 
-		<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Default radio
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Second default radio
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
-  <label class="form-check-label" for="exampleRadios3">
-    Disabled radio
-  </label>
-</div>
-</fieldset>
+			<div>
+				<label id="marca-label" for="marca">Marca (obligatorio):</label>
+				<input id="marca" type="text" name="marca" placeholder="…" required>
+			</div>
+
+			<div>
+				<label id="number-label" for="number">Cantidad (obligatorio):</label>
+				<input id="cantidad" type="number" name="cantidad" placeholder="…" min="0" max="10000" required>
+			</div>
+
+			<div>
+				<label>Comentario 1 (obligatorio):</label>
+				<textarea id="carac1" type="text" name="carac1" placeholder="…" required></textarea>
+			</div>
+
+			<div>
+				<label>Comentario 2 (opcional):</label>
+				<textarea id="carac2" type="text" name="carac2" placeholder="…"></textarea>
+			</div>
+			<div>
+				<label>Comentario 3 (opcional):</label>
+				<textarea id="carac3" type="text" name="carac3" placeholder="…"></textarea>
+			</div>
+			<div>
+				<label>Comentario 4 (opcional):</label>
+				<textarea id="carac4" type="text" name="carac4" placeholder="…"></textarea>
+			</div>
+			<div>
+				<label>Comentario 5 (opcional):</label>
+				<textarea id="carac5" type="text" name="carac5" placeholder="…"></textarea>
+			</div>
+			<div>
+				<label>Comentario 6 (opcional):</label>
+				<textarea id="carac6" type="text" name="carac6" placeholder="…"></textarea>
+			</div>
+			<div>
+				<h3>Imagen (obligatorio)</h3> 
+				<br>
+            	<input step="any" type="file" name="imagen" accept = "image/*" value="">
+			</div>
+
+			<div>
+				<h3>Precio (obligatorio):</h3>
+				<input id="precio" step="any" type="number" name="precio" min="0" max="10000" value="">
+			</div>
+			<div>
+				<h3> Fecha Precio:</h3>
+				<br>
+            	<input id="fecha" step="any" type="date" name="fecha" value="">
         <br>
-        
-            <h3>Caracteristicas</h3>
-            <input class="c1" type="text" name="carac1" value="" placeholder = "Caracteristica 1 (obligatorio)">
-            <input class="c2" type="text" name="carac2" value="" placeholder = "Caracteristica 2">
-            <input class="c3" type="text" name="carac3" value="" placeholder = "Caracteristica 3">
-            <input class="c4" type="text" name="carac4" value="" placeholder = "Caracteristica 4">
-            <input class="c5" type="text" name="carac5" value="" placeholder = "Caracteristica 5">
-            <input class="c6" type="text" name="carac6" value="" placeholder = "Caracteristica 6">
-            
-        <h3>Imagen (obligatorio)</h3> 
-            <input step="any" type="file" name="imagen" accept = "image/*" value="">
-        <h3>Precio</h3>
-            <input step="any" type="number" name="precio" value="">
-        <br>
-        <h3> Fecha Precio</h3>
-            <input step="any" type="date" name="fecha" value="">
-        <br>
-        <fieldset id="moneda">
-        <legend>Moneda (obligatorio)</legend>
-        <input type="radio" id= 1 value= 1 name="moneda"><label for="A">Peso argentino</label>
-        <input type="radio" id= 2 value= 2 name="moneda"><label for="B">Dolar estadounidense</label>
-        </fieldset>
-        <br>
-        <fieldset id="IVA">
-        <legend>Tipo de IVA (obligatorio)</legend>
-        <input type="radio" id= 1 value= 1 name="IVA"><label for="A">10.5%</label>
-        <input type="radio" id= 2 value= 2 name="IVA"><label for="B">21%</label>
-        </fieldset>
-        <button type="submit">Enviar</button>
-        <a href = "agregar-producto.php">Cancelar</a>
-        <?php
+			</div>
+					<div>
+					<h3>Moneda (obligatorio)</h3>
+					</div>
+					<br>
+					<label for="A">Peso argentino</label>
+					<input id="moneda" type="radio" id= 1 value= 1 name="moneda">
+					<div>
+					<label for="B">Dolar estadounidense</label>
+					<input  id="moneda" type="radio" id= 2 value= 2 name="moneda">
+					</div>
+			<div>
+				
+					<div>
+					<h3>Tipo de IVA (obligatorio)</h3>
+					</div>
+					<br>
+					<label for="A">10.5%</label>
+					<input id="IVA" type="radio" id= 1 value= 1 name="IVA">
+					<div>
+					<label for="B">21%</label>
+					<input id="IVA" type="radio" id= 2 value= 2 name="IVA">
+				</div>
+				
+			</div>
+			<button type="submit" id="submit">Enviar</button>
+
+		</form>
+	</div>
+
+</body>
+
+</html>

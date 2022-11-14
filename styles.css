@@ -8,37 +8,71 @@
 }
 
 form ::selection{
-	background-color: rgb(145,99,172);
+	background-color: rgb(17, 13, 223);
 	color: white;
 }
 
 body{
 	font-size: 16px;
-	background-color: #363d4a;
+	background-color: #516ba1;
 	width: 100%;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
+.head {
+    margin-top: -80px;
+    align-items: center;
+    height: 120px;
+    position: relative;
+    width: 100%;
+    
+}
 
+.navbar {
+    margin-top: 0;
+    
+}
+.navbar p{
+    font-size: 10px;
+    text-decoration: none;
+}
+.logo {
+    margin-left: 0px;
+    margin-top: 100px;
+}
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+	width: 80px;
+    background: #3f3f3f;
+}
 header{
+	margin-bottom: 20;
 	margin: 0 auto;
-	background: rgb(145,99,172);
-	background: linear-gradient(90deg, rgba(145,99,172,1) 0%, rgba(75,75,149,1) 100%);
+	background: #1101f3;
 	text-align: center;
+	font-size: 10px;
 }
 
 h1{
 	padding-top: 1.4em;
 	padding-bottom: .3em;
 	color: white;
-	font-family: Yesteryear, Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
 	font-size: 3em;
-	text-shadow: 0 0.083em 0.083em rgba(62, 62, 107, 0.6);
+	text-shadow: 0 0.083em 0.083em rgba(18, 18, 20, 0.6);
 
 }
 
 h1 + p{
-	color: #c7bddb;
+	color: #0f0e0f;
 	font-size: 1em;
 	line-height: 150%;
 }
@@ -77,9 +111,9 @@ input[type="text"], [type="number"], [type="email"], select{
 	color: #817b94;
 }
 
-input[type="radio"], [type="checkbox"]{
+input[type="radio"]{
 	display: inline-block;
-	margin: .5em;
+	margin: .50em;
 }
 
 select{
@@ -98,7 +132,7 @@ select{
 textarea{
 	padding: 0.667em;
 	width: 100%;
-	height: 15em;
+	height: 3em;
 	border: 1px solid #d6dce0;
 	font-size: 1.125em;
 	color: #817b94;
@@ -112,7 +146,7 @@ button{
 	height: 3em;
 	border-radius: 1.5em;
 	border: none;
-	background-color: #73be6f;
+	background-color: #1101f3;
 	color: white;
 	font-size: 1em;
 	font-weight: bold;

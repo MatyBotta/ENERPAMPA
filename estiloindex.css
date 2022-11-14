@@ -41,7 +41,7 @@ li{
     margin-top: 20px;
 }
 .logo2{
-    margin-left: 30px;
+    margin-left: 0px;
     margin-top: 10px;
 }
 .logo a {
@@ -61,7 +61,9 @@ li{
 }
 
 .navbar a:hover {
+    width: 20%;
     background: #3f3f3f;
+    
 }
 
 .header {
