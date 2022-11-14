@@ -45,7 +45,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <legend>Categoria ("<?php echo $info1[1]?>" es la categoria actual)</legend>
         <input type="radio" id= 1 value= 1 name="cat"><label for="A">Control de Potencia</label>
         <input type="radio" id= 2 value= 2 name="cat"><label for="B">Automatización</label>
-        <input type="radio" id= 3 value= 3 name="cat"><label for="C">Distribución eléctrica domiciliaria y comercial</label>
+        <input type="radio" id= 3 value= 3 name="cat"><label for="C">Distribución eléctrica terciaria</label>
         <input type="radio" id= 4 value= 4 name="cat"><label for="D">Accesorios</label>
         <input type="radio" id= 5 value= 5 name="cat"><label for="E">Distribución eléctrica industrial y monitoreo de redes e instrumentos</label>
         <input type="radio" id= 6 value= 6 name="cat"><label for="F">Iluminacion</label>

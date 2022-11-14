@@ -136,7 +136,7 @@ if(!isset($_SESSION))
                 $cat = 'Automatización';
                 break;
             case 3:
-                $cat = 'Distribución eléctrica domiciliaria y comercial';
+                $cat = 'Distribución eléctrica terciaria';
                 break;
             case 4:
                 $cat = 'Accesorios';
