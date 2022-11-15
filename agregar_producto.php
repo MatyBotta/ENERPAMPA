@@ -68,5 +68,5 @@ if(empty($info[0]) === false)
 }
 else
 {
-    include("agregar_datos_producto.php");
+    include("agregar_datos_productos.php");
 }

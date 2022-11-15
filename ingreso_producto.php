@@ -19,7 +19,7 @@ $file = $_FILES["imagen"]["name"];
 if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true || empty($_POST['IVA']) == true || empty($_POST['moneda']) == true)
 {
     $_SESSION['p'] = 10;
-    include("agregar_datos_producto.php");
+    include("agregar_datos_productos.php");
     echo '<script>alert("Por favor ingrese todos los campos obligatorios")</script>';
 }
 else
@@ -28,11 +28,9 @@ else
     $imagen = getimagesize($archivo);
     $ancho = $imagen[0];
     $alto = $imagen[1];
-    echo $ancho;
-    echo $alto;
     if($ancho != 100 || $alto != 100)
     {
-        include("agregar_datos_producto.php");
+        include("agregar_datos_productos.php");
         echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
     }
 else
