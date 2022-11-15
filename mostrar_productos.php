@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+         <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css" />
+            
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -102,5 +113,7 @@ if(empty($aa) === true)
     
     ?>
     </table>
+</body>
+</html>
     <?php
 }

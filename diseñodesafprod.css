@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #516ba1;
+  }
+  .principal{
+    width: 600px;
+    height: 300px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .principal button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .principal a{
+    color: white;
+    text-decoration: none;
+  }
+  .principal a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  .msg {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .msg h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  .msg button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .msg a{
+    color: white;
+    text-decoration: none;
+  }
+  .msg a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  .editar{
+    width: 400px;
+    height: 300px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .editar button{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+  .editar a{
+    color: white;
+    text-decoration: none;
+  }
+  .editar a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  

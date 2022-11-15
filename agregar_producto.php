@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+         <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñoagregarprod.css" />
+            
+          </head>
+         <body>  
 <?php
 include("db.php");
 if(!isset($_SESSION))
@@ -11,11 +22,29 @@ $revisar =  $conexion -> query($comprobacion);
 $info = $revisar -> fetch_array();
 if(empty($info[0]) === false)
 {
+    $contar2 = "SELECT count(*) from carac_prod where ID_prod = $info[2]";
+    $con2 =  $conexion -> query($contar2);
+    $visado2 = $con2 -> fetch_array();
+    $ID_carac = 0;
+    for($x = 0; $x < $visado2[0]; $x ++)
+    {
+        $sel2 = "SELECT * from carac_prod where ID_prod = $info[2] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
+        $ecc2 =  $conexion -> query($sel2);
+        $ionar2 = $ecc2 -> fetch_array();
+        $ID_carac = $ionar2[2];
+        $carac[$x] = $ionar2[1];
+    }
     ?>
+    <section class="datos">
     <p> El codigo <?php echo $codigo ?> ya fue ingresado anteriormente</p>
+    <hr>
+    <?php
+    ?>
     <p> Nombre: <?php echo $info[0] ?></p>
     <p> Marca: <?php echo $info[1] ?></p>
     <p> ID: <?php echo $info[2] ?></p>
+    <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p>
+    <hr>
     <?php
     $comprobacion = "SELECT Count(*) from productos where Codigo like '%R_=$codigo' and Estado != 'Eliminado'";
     $revisar =  $conexion -> query($comprobacion);
@@ -29,12 +58,26 @@ if(empty($info[0]) === false)
         $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo' and Estado != 'Eliminado'";
         $revisar2 =  $conexion -> query($comprobacion2);
         $info2 = $revisar2 -> fetch_array();
+        $contar2 = "SELECT count(*) from carac_prod where ID_prod = $info[2]";
+        $con2 =  $conexion -> query($contar2);
+        $visado2 = $con2 -> fetch_array();
+        $ID_carac = 0;
+        for($x = 0; $x < $visado2[0]; $x ++)
+        {
+            $sel2 = "SELECT * from carac_prod where ID_prod = $info2[2] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
+            $ecc2 =  $conexion -> query($sel2);
+            $ionar2 = $ecc2 -> fetch_array();
+            $ID_carac = $ionar2[2];
+            $carac[$x] = $ionar2[1];
+        }
         if(empty($info2[0]) === false)
         {
             ?>
             <p> Nombre: <?php echo $info2[0] ?></p>
             <p> Marca: <?php echo $info2[1] ?></p>
             <p> ID: <?php echo $info2[2] ?></p>
+            <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p>
+            <hr>
             <?php
         }
         else
@@ -43,24 +86,20 @@ if(empty($info[0]) === false)
         }
         }
     ?> 
-    <html>
-    <body>
+
     <p>Si el producto que quiere ingresar no se encuentra y desea repetir el codigo presione "Continuar", si fue un error seleccione "Cancelar".</p>
-    <a href = "agregar_datos_producto.php">Continuar</a>
-    <a href = "agregar-producto.html">Cancelar</a>
-    </body>
-    </html>
+    <button><a href = "agregar_datos_productos.php">Continuar</a></button>
+    <button><a href = "agregar-producto.html">Cancelar</a></button>
     <?php
     }
     else
     {
         $_SESSION['prod'] = 'R1='.$codigo;
         ?> 
-        <html>
-        <body>
         <p>Si este no es el producto que quiere ingresar y desea repetir el codigo presione "Continuar", si fue un error seleccione "Cancelar".</p>
-        <a href = "agregar_datos_producto.php">Continuar</a>
-        <a href = "agregar-producto.html">Cancelar</a>
+        <button><a href = "agregar_datos_productos.php">Continuar</a></button>
+        <button><a href = "agregar-producto.html">Cancelar</a></button>
+        </section>
         </body>
         </html>
         <?php

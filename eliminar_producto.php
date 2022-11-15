@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+         <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css" />
+            
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -16,7 +27,7 @@ if(empty($info[0]) === false)
     $visado = $revisar -> fetch_array();
     if($visado[0] != 0)
     {
-        ?>  
+        ?>
         <p>Seleccione el producto que desea eliminar</p>
         <form action="eliminacion.php" method="post"> 
         <input type="radio" id="A" value= <?php echo $info[2] ?> name="eleccion" ><label for="A"><?php echo $info[0] ?>, <?php echo $info[1] ?>, ID: <?php echo $info[2] ?></label>
@@ -32,18 +43,7 @@ if(empty($info[0]) === false)
             <?php
         }
         ?>
-        <!DOCTYPE html>
-<html lang="es">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>SECCION PRODUCTO</title>
-            <link rel="stylesheet" href="panel_control.css" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-          </head>
-         
+        
         <button type="submit">Enviar</button>
         </form>
         <?php
@@ -52,19 +52,24 @@ if(empty($info[0]) === false)
     {
         $_SESSION['eleccion'] = $info[2];
         ?> 
-        <p>¿Desea eliminar el producto de codigo <?php echo $codigo ?>?</p>
-        <p> Nombre: <?php echo $info[0] ?></p>
-        <p> Marca: <?php echo $info[1] ?></p>
-        <p> ID: <?php echo $info[2] ?></p>
-        <a href = "eliminacion.php">Confirmar</a>
-        <a href = "eliminar-producto.html">Cancelar</a>
+        <section class="principal">
+        <h2>¿Desea eliminar el producto de codigo <?php echo $codigo ?>?</h2>
+        <h3> Nombre: <?php echo $info[0] ?></h3>
+        <h3> Marca: <?php echo $info[1] ?></h3>
+        <h3> ID: <?php echo $info[2] ?></h3>
+        <button><a href = "eliminacion.php">Confirmar</a></button>
+        <button><a href = "eliminar-producto.html">Cancelar</a></button>
+        </section>
         <?php
     }
 }
 else
 {
     ?>
-    <p>No existe un producto con determinado codigo.</p>
-    <a href = "eliminar-producto.html">Ingresar otro codigo</a>
+    <section class="msg">
+    <h2>No existe un producto con determinado codigo.</h2>
+    <button><a href = "eliminar-producto.html">Ingresar otro codigo</a></button>
+    </section>
+    </body>
     <?php
 }
