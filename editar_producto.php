@@ -1,12 +1,10 @@
 <!DOCTYPE html>
          <html lang="es">
-
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
-            <link rel="stylesheet" href="diseñodesafprod.css" />
-            
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
           </head>
          <body>  
 <?php
@@ -43,6 +41,18 @@ if(empty($info[0]) === false)
                 $carac[$x] = $ionar2[1];
             }
             ?>
+            <div class="head">
+
+    <div class="logo">
+    <img src="Imagenes/LOGO.ico" width="115" alt="">
+    </div>
+    <nav class="navbar">
+    <a href="panel_control.html">Inicio</a>
+    </nav>
+    </div>
+    <br>
+    <br>
+            <section class="selec">
             <p>Seleccione el producto que desea editar</p>
             <br>
             <form action="edicion.php" method="post"> 
@@ -73,15 +83,11 @@ if(empty($info[0]) === false)
             }
             ?>
             <button type="submit">Enviar</button>
-            </form>
+            </form >
+        </section>
             <?php
         }
     ?> 
-    <html>
-    <body>
-    <a href = "editar-producto.html">Cancelar</a>
-    </body>
-    </html>
     <?php
     }
     else
@@ -106,17 +112,21 @@ if(empty($info[0]) === false)
         <p> Marca: <?php echo $info[1] ?></p>
         <p> ID: <?php echo $info[2] ?></p>
         <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p>
-        <html>
-        <body>
         <button><a href = "edicion.php">Continuar</a></button>
         <button><a href = "editar-producto.html">Cancelar</a></button>
         </section>
-        </body>
-        </html>
-        <?php
+        <?php  
     }
 }
 else
-{
-    echo "Codigo no registrado en el sistema";
+{   
+?>
+<div class="editar">
+    <p>Codigo no registrado en el sistema</p>
+    <button><a href = "editar-producto.html">Volver a inicio</a></button>
+</div>
+<?php  
 }
+?>
+</body>
+</html>

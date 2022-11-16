@@ -24,8 +24,8 @@ $codigo = $_SESSION['prod'];
             <img src="Imagenes/LOGO.ico" width="115" alt="">
         </div>
         <nav class="navbar">
-            <a href="editar-producto.html">Inicio</a>
         </nav>
+        <a href="panel_control.html">Inicio</a>
     </div>
 	<br>
 	<br>

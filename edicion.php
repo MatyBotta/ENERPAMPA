@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+         <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="editar.css"/>
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -29,7 +38,22 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         $info3[$i] = $revisar3 -> fetch_array();
     }
 ?>
-<h2 id="h2">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h2>
+<div class="head">
+
+<div class="logo">
+    <img src="Imagenes/LOGO.ico" width="115" alt="">
+</div>
+<nav class="navbar">
+</nav>
+<a href="panel_control.html">Inicio</a>
+</div>
+<br>
+<br>
+<header>
+<h2 id="title">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h2>
+</header>
+            <div id="main-container">
+            <br>
             <form action="subir_edicion.php" method="post" enctype = "multipart/form-data">
             <h3>Nombre</h3>
             <input step="any" type="text"  name="nombre" value="" placeholder = "<?php echo $info1[2]?>">           
@@ -139,7 +163,6 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <input type="radio" id= 2 value= 2 name="IVA"><label for="B">21%</label>
         </fieldset>
         <button type="submit">Enviar</button>
-        <a href = "editar-producto.html">Cancelar</a>
         <?php
         }
         else
@@ -147,5 +170,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             ?>
             <p> No ingreso ninguna opcion. </p>
             <a href = "editar-producto.html">Volver a ingresar codigo</a>
+        </body>
+        </html>
             <?php
         }
