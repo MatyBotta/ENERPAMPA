@@ -15,11 +15,17 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     ?>
+    <!doctype html>
+    <html>
+        <body>
+    
     <table border = "1">
-    <h2 style="text-align: left; font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
-    <h4 style="text-align: left; font-weight:60; color:#000a35;">Gral. Mansilla 640              gleviu@enerpampa.com -> 7547-6554 </h4>
-    <h4 style="text-align: left; font-weight:60; color:#000a35;">(1752) Lomas del Mirador        cguglielmo@enerpampa.com -> 7533-2216</h4>
-    <h4 style="text-align: left; font-weight:60; color:#000a35;">ventas@enerpmapa.com            tvazquez@enerpampa.com -> 2106-0462</h4>
+    <section>   
+    <h2 style="text-align:left; width:120px; height:80px;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
+    <h3 style="text-align:left;">Gral. Mansilla 640</h3><h3 style="text-align:right;">tvazquez@enerpampa.com -> 2106-0462</h3>              
+    <h3 style="text-align:left;">(1752) Lomas del Mirador</h3><h3 style="text-align:right;">gleviu@enerpampa.com -> 7547-6554 </h3>     
+    <h3 style="text-align:left;">ventas@enerpmapa.com</h3><h3 style="text-align:right;">cguglielmo@enerpampa.com -> 7533-2216</h3>   
+   
     <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cant.</td></tr>
     <?php
     $ID = 0;
@@ -57,3 +63,5 @@ else
     echo "Aun no ha seleccionado ningun producto";
 }
 ?>
+</body>
+</html>

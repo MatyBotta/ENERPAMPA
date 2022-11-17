@@ -62,8 +62,8 @@ $codigo = $_SESSION['prod'];
         <br>
             <h3>Caracteristicas</h3>
             <input type="text" name="carac1" value="" placeholder = "Caracteristica 1 (obligatorio)">
-            <input type="text" name="carac2" value="" placeholder = "Caracteristica 2">
-            <input type="text" name="carac3" value="" placeholder = "Caracteristica 3">
+            <input type="text" name="carac2" value="" placeholder = "Caracteristica 2 (obligatorio)">
+            <input type="text" name="carac3" value="" placeholder = "Caracteristica 3 (obligatorio)">
             <input type="text" name="carac4" value="" placeholder = "Caracteristica 4">
             <input type="text" name="carac5" value="" placeholder = "Caracteristica 5">
             <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">

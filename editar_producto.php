@@ -5,6 +5,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
             <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
           </head>
          <body>  
 <?php
@@ -53,7 +54,7 @@ if(empty($info[0]) === false)
     <br>
     <br>
             <section class="selec">
-            <p>Seleccione el producto que desea editar</p>
+            <p allign=center>Seleccione el producto que desea editar</p>
             <br>
             <form action="edicion.php" method="post"> 
             <input type="radio" id="A" value= <?php echo $info[2] ?> name="eleccion" ><label for="A"><?php echo $info[0] ?>, <?php echo $info[1] ?>, ID: <?php echo $info[2] ?>, <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p></label>

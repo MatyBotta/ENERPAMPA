@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -20,6 +29,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     if($delete === true)
     {
         ECHO ":)";
+        $_SESSION['eleccion'] = null;
     }
 }
 else
@@ -27,5 +37,6 @@ else
     ?>
     <p> No ingreso ninguna opcion. </p>
     <a href = "eliminar-producto.html">Volver a ingresar codigo</a>
+</body>
     <?php
 }

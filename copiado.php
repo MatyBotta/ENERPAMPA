@@ -142,6 +142,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <button type="submit">Enviar</button>
         <a href = "nuevo_producto_copiado.html">Cancelar</a>
         <?php
+        $_SESSION['eleccion'] = null;
         }
         else
         {

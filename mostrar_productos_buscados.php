@@ -15,14 +15,14 @@ if(!isset($_SESSION))
     session_start();
 }
 include("db.php");
-if(empty($_POST['categoria']) === false)
+$categoria = $_SESSION['categoria'];
+$busqueda = $_POST['prod'];
+$palabras = explode(" ", $busqueda);
+$cant = count($palabras);
+echo $cant;
+if($cant === 1)
 {
-    $categoria = $_POST['categoria'];
-    $_SESSION['categoria'] = $categoria;
-}
-else
-{
-    $categoria = $_SESSION['categoria'];
+
 }
 $contar = "SELECT count(*) from productos where Categoria = '$categoria'";
 $con =  $conexion -> query($contar);
@@ -32,6 +32,7 @@ if(empty($_POST["var"]) == false)
         if(empty($_SESSION['mail']) == false)
         {
             $var = $_POST['var'];
+
             $mail = $_SESSION['mail'];
             $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
             $validacion =  $conexion -> query($validar);

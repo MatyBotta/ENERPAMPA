@@ -16,7 +16,7 @@ $carac[3] = $_POST['carac4'];
 $carac[4] = $_POST['carac5'];
 $carac[5] = $_POST['carac6'];
 $file = $_FILES["imagen"]["name"];
-if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true || empty($_POST['IVA']) == true || empty($_POST['moneda']) == true)
+if($nombre == null || $marca == null || empty($_POST['cat']) == true || $carac[0] == null || $carac[1] == null || $carac[2] == null || $cant == null || $file == null || empty($_POST['precio']) == true || empty($_POST['fecha']) == true || empty($_POST['IVA']) == true || empty($_POST['moneda']) == true)
 {
     $_SESSION['p'] = 10;
     include("agregar_datos_productos.php");

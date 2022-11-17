@@ -17,7 +17,6 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
 {
     if(empty($_POST['eleccion']) === false)
     {
-        echo "hola";
         $ID = $_POST['eleccion'];
     }
     if(empty($_SESSION['eleccion']) === false)
@@ -164,12 +163,19 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         </fieldset>
         <button type="submit">Enviar</button>
         <?php
+        $_SESSION['eleccion'] = null;
         }
         else
         {
             ?>
-            <p> No ingreso ninguna opcion. </p>
-            <a href = "editar-producto.html">Volver a ingresar codigo</a>
+             <section class="mesg">
+            <div class="grupo-1">
+                </div>
+                <div class="box">
+                <h2 class="title"> NO INGRESO NINGUNA OPCION</h2>
+                <button id="inicio"><a href = "editar-producto.html"><h2>Volver a ingresar codigo</h2></a></button>
+                </div>
+    </section>
         </body>
         </html>
             <?php
