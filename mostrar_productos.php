@@ -24,7 +24,7 @@ else
 {
     $categoria = $_SESSION['categoria'];
 }
-$contar = "SELECT count(*) from productos where Categoria = '$categoria'";
+$contar = "SELECT count(*) from productos where Categoria = '$categoria' and Estado = 'Vigente'";
 $con =  $conexion -> query($contar);
 $visado = $con -> fetch_array();
 if(empty($_POST["var"]) == false)
@@ -70,7 +70,7 @@ if(empty($aa) === true)
     $ID = 0;
     for($i = 0; $i < $visado[0]; $i ++)
     {
-        $sel = "SELECT * from productos where Categoria = '$categoria' and ID > $ID order by ID asc";
+        $sel = "SELECT * from productos where Categoria = '$categoria' and Estado = 'Vigente' and ID > $ID order by ID asc";
         $ecc =  $conexion -> query($sel);
         $ionar = $ecc -> fetch_array();
         $ID = $ionar[0];
