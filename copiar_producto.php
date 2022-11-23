@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+         <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+          </head>
+         <body>  
 <?php
 include("db.php");
 if(!isset($_SESSION))
@@ -36,27 +46,23 @@ if(empty($info[0]) === false)
             </form>
             <?php
     ?> 
-    <html>
-    <body>
+    
     <a href = "nuevo_producto_copiado.html">Cancelar</a>
-    </body>
-    </html>
+    
     <?php
     }
     else
     {
         $_SESSION['eleccion'] = $info[2];
         ?> 
-        <p> El codigo ingresado pertenece a:</p>
-        <p> Nombre: <?php echo $info[0] ?></p>
-        <p> Marca: <?php echo $info[1] ?></p>
-        <p> ID: <?php echo $info[2] ?></p>
-        <html>
-        <body>
-        <a href = "copiado.php">Continuar</a>
-        <a href = "nuevo_producto_copiado.html">Cancelar</a>
-        </body>
-        </html>
+        <section class="msg">
+        <h2> El codigo ingresado pertenece a:</h2>
+        <h2> Nombre: <?php echo $info[0] ?></h2>
+        <h2> Marca: <?php echo $info[1] ?></h2>
+        <h2> ID: <?php echo $info[2] ?></h2>
+        <button><a href = "copiado.php">Continuar</a></button>
+        <button><a href = "nuevo_producto_copiado.html">Cancelar</a></button>
+    </section>
         <?php
     }
 }
@@ -64,3 +70,6 @@ else
 {
     echo "Codigo no registrado en el sistema";
 }
+?>
+</body>
+</html>

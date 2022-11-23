@@ -28,10 +28,14 @@ if(empty($info[0]) === false)
     if($visado[0] != 0)
     {
         ?>
-        <p>Seleccione el producto que desea eliminar</p>
+        <section class="msg">
+        <h2>SELECCIONE EL PRODUCTO QUE DESEE ELIMINAR</h2>
+        <br>
         <form action="eliminacion.php" method="post"> 
-        <input type="radio" id="A" value= <?php echo $info[2] ?> name="eleccion" ><label for="A"><?php echo $info[0] ?>, <?php echo $info[1] ?>, ID: <?php echo $info[2] ?></label>
-        <?php
+        <li><input type="radio" id="A" value= <?php echo $info[2] ?> name="eleccion" ><label for="A"><?php echo $info[0] ?>, <?php echo $info[1] ?>, ID: <?php echo $info[2] ?></label></li>
+    <br>
+    <?php
+       
         $info2[2] = 0;
         for($i = 1; $i <= $visado[0]; $i++)
         {
@@ -39,13 +43,15 @@ if(empty($info[0]) === false)
             $revisar2 =  $conexion -> query($comprobacion2);
             $info2 = $revisar2 -> fetch_array();
             ?>
-            <input type="radio" id="A" value= <?php echo $info2[2] ?> name="eleccion" ><label for="A"><?php echo $info2[0] ?>, <?php echo $info2[1] ?>, ID: <?php echo $info2[2] ?></label>
+            <li><input type="radio" id="A" value= <?php echo $info2[2] ?> name="eleccion" ><label for="A"><?php echo $info2[0] ?>, <?php echo $info2[1] ?>, ID: <?php echo $info2[2] ?></label></li>
             <?php
         }
         ?>
         
         <button type="submit">Enviar</button>
+        <button> Volver</button>
         </form>
+    </section>
         <?php
     }
     else

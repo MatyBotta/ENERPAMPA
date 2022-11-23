@@ -82,7 +82,7 @@ if(empty($aa) === true)
 {
     ?>
     <a href = "index.php"> Volver </a>
-    <a href = "Mostrar_productos.php">Ver todos los productos</a>
+    <a href = "mostrar_productos.php">Ver todos los productos</a>
     <h1><?php echo $categoria ?> </h1>
     <form action="mostrar_productos_buscados.php" method="post"  > 
         <br>

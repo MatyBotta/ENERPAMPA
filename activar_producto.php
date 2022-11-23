@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+         <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+          </head>
+         <body>  
 <?php
 include("db.php");
 if(!isset($_SESSION))
@@ -40,16 +50,14 @@ if(empty($info[0]) === false)
     {
         $_SESSION['eleccion'] = $info[2];
         ?> 
+        <section class="msg">
         <p> Nombre: <?php echo $info[0] ?></p>
         <p> Marca: <?php echo $info[1] ?></p>
         <p> ID: <?php echo $info[2] ?></p>
-        <html>
-        <body>
         <p>Si este es el producto que desea reactivar presione "Continuar", si fue un error seleccione "Cancelar".</p>
-        <a href = "activacion.php">Continuar</a>
-        <a href = "volver-activar-producto.html">Cancelar</a>
-        </body>
-        </html>
+        <button><a href = "activacion.php">Continuar</a></button>
+        <button><a href = "volver-activar-producto.html">Cancelar</a></button>
+    </section>
         <?php
     }
 }
@@ -68,10 +76,14 @@ else
     }
     else
     {
-        echo "No hay ningun producto dado de baja con el codigo ingresado.";
         ?>
+         <section class="msg">
+        <h2>No hay ningun producto dado de baja con el codigo ingresado.</h2>
         <br>
-        <a href = "volver-activar-producto.html">Ingresar otro codigo</a>
+        <button><a href = "volver-activar-producto.html">Ingresar otro codigo</a></button>
+        </section>
         <?php
     }
 }
+?>
+</body>
