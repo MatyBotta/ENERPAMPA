@@ -38,7 +38,7 @@ else
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];
-    $moneda = $_POST['cat'];
+    $moneda = $_POST['moneda'];
     $IVA = $_POST['IVA'];
     switch($moneda)
     {
