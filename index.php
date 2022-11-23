@@ -28,9 +28,6 @@
             <a href="https://new.abb.com/south-america/el-latam-tour"><img src="Imagenes/1x/Recurso 5.png" width="100" alt=""></a>
         </div>
         <nav class="navbar">
-            <tr>
-            <a href="https://www.instagram.com/enerpampa.sa/"><img src="Imagenes/insta.png" width="20" alt=""></a>
-            <a href="https://www.facebook.com/people/Enerpampa-SA-Distribuidor-de-Materiales-El%C3%A9ctricos/100063664860017/?ref=page_internal&mt_nav=0"><img src="Imagenes/face.png" width="20" alt=""></a>
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">ConTacto</a>
@@ -54,7 +51,6 @@
                 <?php
             }
             ?>
-        </tr>
         </nav>
     </div>
     

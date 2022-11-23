@@ -25,6 +25,7 @@ li{
 }
 
 .navbar {
+    width: 60%;
     display: flex;
     margin-right: 10px;
 }
@@ -37,7 +38,7 @@ li{
     margin-top: 10px;
 }
 .logo1{
-    margin-left: 30px;
+    margin-left: -40px;
     margin-top: 20px;
 }
 .logo2{

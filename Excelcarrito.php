@@ -1,4 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+          </head> 
+<style>
+    * {
+margin:0;
+padding:0;
+}
+#columna1 {
+position:absolute;
+top:0px;
+left:0px;
+width:200px;
+margin-top:10px;
+background-color:#ffff55;
+}
+#columna2 {
+margin-left:220px;
+margin-right:20px;
+margin-top:10px;
+background-color:#ffffbb;
+}
+</style>
+<body> 
 <?php
+
 if(!isset($_SESSION))
 {
     session_start();
@@ -15,17 +44,19 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     ?>
-    <!doctype html>
-    <html>
-        <body>
-    
+     
     <table border = "1">
-    <section>   
-    <h2 style="text-align:left; width:120px; height:80px;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
-    <h3 style="text-align:left;">Gral. Mansilla 640</h3><h3 style="text-align:right;">tvazquez@enerpampa.com -> 2106-0462</h3>              
-    <h3 style="text-align:left;">(1752) Lomas del Mirador</h3><h3 style="text-align:right;">gleviu@enerpampa.com -> 7547-6554 </h3>     
-    <h3 style="text-align:left;">ventas@enerpmapa.com</h3><h3 style="text-align:right;">cguglielmo@enerpampa.com -> 7533-2216</h3>   
-   
+    <div id="columna1">
+    <h2 style="text-align:left; width:120px; height:120%;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
+    <p>Gral. Mansilla 640</p>     
+    <p>(1752) Lomas del Mirador</p>   
+    <p>ventas@enerpmapa.com</p> 
+</div>   
+<div id="columna2">
+<p>tvazquez@enerpampa.com -> 2106-0462</p> 
+<p>gleviu@enerpampa.com -> 7547-6554</p> 
+<p>cguglielmo@enerpampa.com -> 7533-2216</p> 
+</div>
     <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cant.</td></tr>
     <?php
     $ID = 0;
@@ -35,22 +66,25 @@ if(empty($var[0]) === false)
         $shop =  $conexion -> query($carrito);
         $ionar = $shop -> fetch_array();
         $ID = $ionar[0];
-        $prod = "SELECT * from productos where ID = $ID";
+        $prod = "SELECT * from productos where ID = $ID and Estado != 'Eliminado'";
         $stock =  $conexion -> query($prod);
         $ionar2 = $stock -> fetch_array();
-        if($ionar2[11] == "Pesos")
+        if(empty($ionar2[0]) === false)
         {
-            $valor = "$";
+            if($ionar2[11] == "Pesos")
+            {
+                $valor = "$";
+            }
+            else
+            {
+                $valor = "U$"."S";
+            }
+            $imagen = $ionar2[7];
+            $img="imagenes_subidas/".$imagen;
+            ?>
+            <tr><td><?php echo $ionar2[2]?></td><td><?php echo $ionar2[3]?></td><td><?php echo $valor.$ionar2[8]?></td><td><?php echo $ionar2[10]?></td><td><?php echo $ionar2[11]?></td><td><?php echo $ionar2[12]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar[1]?></td>
+            <?php
         }
-        else
-        {
-            $valor = "U$"."S";
-        }
-        $imagen = $ionar2[7];
-        $img="imagenes_subidas/".$imagen;
-        ?>
-        <tr><td><?php echo $ionar2[2]?></td><td><?php echo $ionar2[3]?></td><td><?php echo $valor.$ionar2[8]?></td><td><?php echo $ionar2[10]?></td><td><?php echo $ionar2[11]?></td><td><?php echo $ionar2[12]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar[1]?></td></tr>
-        <?php
     }
     ?>
     </table>

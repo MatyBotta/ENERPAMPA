@@ -9,7 +9,7 @@ $contar = "SELECT count(*) from carrito where Mail = '$mail'";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
-<h1>carrito </h1>
+<h1>Carrito</h1>
 <a href = "index.php"> Volver </a>
 <?php
 if(empty($var[0]) === false)
@@ -24,22 +24,25 @@ if(empty($var[0]) === false)
         $shop =  $conexion -> query($carrito);
         $ionar = $shop -> fetch_array();
         $ID = $ionar[0];
-        $prod = "SELECT * from productos where ID = $ID";
+        $prod = "SELECT * from productos where ID = $ID and Estado != 'Eliminado'";
         $stock =  $conexion -> query($prod);
         $ionar2 = $stock -> fetch_array();
-        if($ionar2[11] == "Pesos")
+        if(empty($ionar2[0]) === false)
         {
-            $valor = "$";
+            if($ionar2[11] == "Pesos")
+            {
+                $valor = "$";
+            }
+            else
+            {
+                $valor = "U$"."S";
+            }
+            $imagen = $ionar2[7];
+            $img="imagenes_subidas/".$imagen;
+            ?>
+            <tr><td><?php echo $ionar2[2]?></td><td><?php echo $ionar2[3]?></td><td><?php echo $valor.$ionar2[8]?></td><td><?php echo $ionar2[10]?></td><td><?php echo $ionar2[11]?></td><td><?php echo $ionar2[12]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar[1]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
+            <?php
         }
-        else
-        {
-            $valor = "U$"."S";
-        }
-        $imagen = $ionar2[7];
-        $img="imagenes_subidas/".$imagen;
-        ?>
-        <tr><td><?php echo $ionar2[2]?></td><td><?php echo $ionar2[3]?></td><td><?php echo $valor.$ionar2[8]?></td><td><?php echo $ionar2[10]?></td><td><?php echo $ionar2[11]?></td><td><?php echo $ionar2[12]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar[1]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
-        <?php
     }
     ?>
     </table>
