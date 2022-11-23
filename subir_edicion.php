@@ -51,9 +51,10 @@ if(!isset($_SESSION))
     else
     {
         $file = $_FILES['imagen']['name'];
+        $file2 = $_FILES['imagen']["tmp_name"];
         $ruta = 'imagenes_subidas/'.$file;
+        $imagen = getimagesize($file2);
         move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-        $imagen = getimagesize($file);
         $ancho = $imagen[0];
         $alto = $imagen[1];
         if($ancho != 100 || $alto != 100)

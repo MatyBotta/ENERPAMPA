@@ -28,8 +28,13 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
 
     if($delete === true)
     {
-        ECHO ":)";
-        $_SESSION['eleccion'] = null;
+        ?>
+        <section class="msg">
+        <h1>Producto desafectado correctamente.</h1>
+        <button><a href = "eliminar-producto.html">Volver</a></button>
+        </section>
+
+        <?php
     }
 }
 else
