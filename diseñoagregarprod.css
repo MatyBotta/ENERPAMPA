@@ -55,7 +55,7 @@ body{
     margin-left: 15px;
 }
 a:hover {
-	width: 100px;
+	width: 60px;
     background: #3f3f3f;
 }
 header{
@@ -204,7 +204,7 @@ button:hover {
 	}
 
 	header{
-		width: 50%;
+		width: 10%;
 	}
 
 	body{

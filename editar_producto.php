@@ -122,10 +122,11 @@ if(empty($info[0]) === false)
 else
 {   
 ?>
-<div class="editar">
-    <p>Codigo no registrado en el sistema</p>
+<section class="msg">
+    <h2>Codigo no registrado en el sistema</h2>
+    <br>
     <button><a href = "editar-producto.html">Volver a inicio</a></button>
-</div>
+</section>
 <?php  
 }
 ?>

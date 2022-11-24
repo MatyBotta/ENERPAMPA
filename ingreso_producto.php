@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+         <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -100,7 +110,15 @@ else
     if(empty($con) === false && empty($con2) === false)
     {
         ?>
-        <a href = "agregar-producto.html">Agregar otro producto</a>
+        <section class="msg">
+        <h2>¡Producto agregado exitosamente!</h2>
+        <br>
+        <br>
+        <p><a href = "agregar-producto.html">Agregar otro producto</a></p>
+        <br>
+        <p><a href = "panel_control.html">Volver al panel</a></p>
+        </section>
+        </body>
             <?php
     }
 }

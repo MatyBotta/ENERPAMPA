@@ -5,6 +5,8 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
             <link rel="stylesheet" href="editar.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
           </head>
          <body>  
 <?php
@@ -168,14 +170,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         else
         {
             ?>
-             <section class="mesg">
-            <div class="grupo-1">
-                </div>
-                <div class="box">
-                <h2 class="title"> NO INGRESO NINGUNA OPCION</h2>
+                <section class="msg">
+                <h2> NO INGRESO NINGUNA OPCION</h2>
                 <button id="inicio"><a href = "editar-producto.html"><h2>Volver a ingresar codigo</h2></a></button>
-                </div>
-    </section>
+            </section>
         </body>
         </html>
             <?php
