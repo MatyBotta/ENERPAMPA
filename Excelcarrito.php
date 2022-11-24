@@ -44,19 +44,16 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     ?>
-     
-    <table border = "1">
-    <div id="columna1">
+    
     <h2 style="text-align:left; width:120px; height:120%;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
-    <p>Gral. Mansilla 640</p>     
-    <p>(1752) Lomas del Mirador</p>   
-    <p>ventas@enerpmapa.com</p> 
-</div>   
-<div id="columna2">
-<p>tvazquez@enerpampa.com -> 2106-0462</p> 
-<p>gleviu@enerpampa.com -> 7547-6554</p> 
-<p>cguglielmo@enerpampa.com -> 7533-2216</p> 
-</div>
+    <table >
+    <tr><td>Gral. Mansilla 640</td><td><td>tvazquez@enerpampa.com</td></td><td> tel: 0112106-0462</td></tr>  
+    <tr><td>(1752) Lomas del Mirador</td><td><td>gleviu@enerpampa.com</td></td><td> tel: 0117547-6554</td></tr>
+    <td>ventas@enerpmapa.com</td><td><td>cguglielmo@enerpampa.com</td></td><td> tel: 0117533-2216</td></tr>
+</table>
+<br>
+<br>
+<table border = "1">
     <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cant.</td></tr>
     <?php
     $ID = 0;
@@ -88,7 +85,7 @@ if(empty($var[0]) === false)
     }
     ?>
     </table>
-    <p style="text-align: center;">Los valores son referenciales, por favor solicitar cotizacion.</p>
+    <h3 font = "bold" style="text-align: center;">Los valores son referenciales, por favor solicitar cotizacion.</h3>
     <?php
 }
 else

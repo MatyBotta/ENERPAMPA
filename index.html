@@ -34,8 +34,7 @@
             <a href="#nosotros">Nosotros</a>
             <a href="#contacto">ConTacto</a>
             <a href="#productos">Productos</a>
-            <a href="carrito.php">Carrito</a>
-            <a href="cerrar_sesion.php">Cerrar sesion</a>
+            <a href="iniciar_sesion.html">Iniciar sesion</a>
         
         </nav>
     </div>
@@ -172,84 +171,85 @@
         <br>
         <h2 class="title" id="productos">Productos:</h2>
         <br> 
+        <form action="mostrar_productos.php" method="post">
         <p></p>
-            <div class="contenedor1">
-                <a href="#contenedor1">
+        <div class="contenedor1">
+            <button type = "submit" value = "Distribucion electrica industrial" id = "categoria" name = "categoria">
+                 <figure>
+                     <img src="imagenes/1x/DIST. INDUSTRIAL.jpg">
+                     <div class="capa1">
+                         <h3>Distribucion electrica industrial</h3>
+                         <p>Todo lo necesario en maniobra y monitoreo de redes de baja tensión, interruptores de potencia, ductos, bandejas, cables subterraneos y protecciones</p>
+                     </div>
+                 </figure>
+    </button>
+         </div>
+         <div class="contenedor2">
+         <button type = "submit" value = "Distribucion electrica terciaria" id = "categoria" name = "categoria">
+                  <figure>
+                      <img src="imagenes/1x/bombinia.jpg">
+                      <div class="capa2">
+                          <h3>Distribucion electrica domestica</h3>
+                          <p>CUADRITO 2</p>
+                      </div>
+                  </figure>
+    </button>
+          </div>
+          <div class="contenedor3">
+          <button type = "submit" value = "Control de potencia" id = "categoria" name = "categoria">
+                 <figure>
+                     <img src="imagenes/1x/CONTROL DE POTENCIA.jpg">
+                     <div class="capa3">
+                         <h3>Control de potencia</h3>
+                         <p>Linea completa de salida motor, contactores, variadores, arrancadores, motores y sus respectivas protecciones.</p>
+                     </div>
+                 </figure>
+    </button>
+         </div>
+         <div class="contenedor4">
+         <button type = "submit" value = "Automatizacion" id = "categoria" name = "categoria">
+                 <figure>
+                     <img src="imagenes/1x/AUTOMATIZACION.jpg">
+                     <div class="capa4">
+                         <h3>AUTOMATIZACION</h3>
+                         <p>Arquitecturas de sistemas automatizados con PLC, HMI, sensores y sistemas scada.</p>
+                     </div>
+                 </figure>
+    </button>
+         </div>
+         <div class="contenedor5">
+         <button type = "submit" value = "Distribucion electrica terciaria" id = "categoria" name = "categoria">
+                 <figure>
+                     <img src="imagenes/1x/DIST. COMERCIAL.jpg">
+                     <div class="capa5">
+                         <h3>Distribucion electrica terciara</h3>
+                         <p>Gama o linea completa de conductores, canalizaciones, gabinetes y todo lo que respecta a protecciones de personas e instalaciones.</p>
+                     </div>
+                 </figure>
+             </a>
+         </div>
+         <div class="contenedor6">
+         <button type = "submit" value = "Iluminacion" id = "categoria" name = "categoria">
+                 <figure>
+                     <img src="imagenes/1x/ILUMINACIÓN.jpg">
+                     <div class="capa6">
+                         <h3>ILUMINACIÓN</h3>
+                         <p>Provedores de instrumentos para el control del consumo de energia y su comunicacion para administrar el consumo.</p>
+                     </div>
+                 </figure>
+    </button>
+            </div>
+            <div class="contenedor7">
+            <button type = "submit" value = "Accesorios" id = "categoria" name = "categoria">
                      <figure>
-                         <img src="imagenes/1x/DIST. INDUSTRIAL.jpg">
-                         <div class="capa1">
-                             <h3>Distribucion electrica industrial</h3>
-                             <p>Todo lo necesario en maniobra y monitoreo de redes de baja tensión, interruptores de potencia, ductos, bandejas, cables subterraneos y protecciones</p>
+                         <img src="imagenes/1x/ACCESORIOS.jpg">
+                         <div class="capa7">
+                             <h3>ACCESORIOS</h3>
+                             <p>Gama completa en instrumentos de medicion, herramientas, accesorios que hacen a la instalacion y al trabajo en la misma.</p>
                          </div>
                      </figure>
-                 </a>
-             </div>
-             <div class="contenedor2">
-                 <a href="#">
-                      <figure>
-                          <img src="imagenes/1x/bombinia.jpg">
-                          <div class="capa2">
-                              <h3>Distribucion electrica domestica</h3>
-                              <p>CUADRITO 2</p>
-                          </div>
-                      </figure>
-                  </a>
-              </div>
-              <div class="contenedor3">
-                <a href="#">
-                     <figure>
-                         <img src="imagenes/1x/CONTROL DE POTENCIA.jpg">
-                         <div class="capa3">
-                             <h3>Control de potencia</h3>
-                             <p>Linea completa de salida motor, contactores, variadores, arrancadores, motores y sus respectivas protecciones.</p>
-                         </div>
-                     </figure>
-                 </a>
-             </div>
-             <div class="contenedor4">
-                <a href="#">
-                     <figure>
-                         <img src="imagenes/1x/AUTOMATIZACION.jpg">
-                         <div class="capa4">
-                             <h3>AUTOMATIZACION</h3>
-                             <p>Arquitecturas de sistemas automatizados con PLC, HMI, sensores y sistemas scada.</p>
-                         </div>
-                     </figure>
-                 </a>
-             </div>
-             <div class="contenedor5">
-                <a href="#">
-                     <figure>
-                         <img src="imagenes/1x/DIST. COMERCIAL.jpg">
-                         <div class="capa5">
-                             <h3>Distribucion electrica terciara</h3>
-                             <p>Gama o linea completa de conductores, canalizaciones, gabinetes y todo lo que respecta a protecciones de personas e instalaciones.</p>
-                         </div>
-                     </figure>
-                 </a>
-             </div>
-             <div class="contenedor6">
-                <a href="#">
-                     <figure>
-                         <img src="imagenes/1x/ILUMINACIÓN.jpg">
-                         <div class="capa6">
-                             <h3>ILUMINACIÓN</h3>
-                             <p>Provedores de instrumentos para el control del consumo de energia y su comunicacion para administrar el consumo.</p>
-                         </div>
-                     </figure>
-                 </a>
+    </button>
                 </div>
-                <div class="contenedor7">
-                    <a href="#">
-                         <figure>
-                             <img src="imagenes/1x/ACCESORIOS.jpg">
-                             <div class="capa7">
-                                 <h3>ACCESORIOS</h3>
-                                 <p>Gama completa en instrumentos de medicion, herramientas, accesorios que hacen a la instalacion y al trabajo en la misma.</p>
-                             </div>
-                         </figure>
-                     </a>
-                    </div>
         <br>
         <br>
         <br>

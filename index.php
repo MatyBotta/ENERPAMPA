@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="sliderinicio.css">
     <link rel="stylesheet" href="estilocards.css">
     <link rel="stylesheet" href="slider.css">
+    <style>
+        .navbar a:hover {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: 15%;
+            background: #3f3f3f;
+        }
+    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <title>ENERPAMPA.SA</title>
-
 </head>
 <body>
     <header>
