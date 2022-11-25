@@ -31,7 +31,6 @@ if(empty($info[0]) === false)
     $revisar =  $conexion -> query($comprobacion);
     $visado = $revisar -> fetch_array();
     if($visado[0] != 0)
-    if($visado[0] != 0)
     {
         for($i = 1; $i <= $visado[0]; $i++)
         {

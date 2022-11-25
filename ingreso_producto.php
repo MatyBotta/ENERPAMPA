@@ -43,8 +43,8 @@ else
         include("agregar_datos_productos.php");
         echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
     }
-else
-{
+    else
+    {
     $fecha = $_POST['fecha'];
     $precio = $_POST['precio'];
     $cat = $_POST['cat'];
@@ -98,15 +98,9 @@ else
     $in  = "INSERT INTO productos (ID, Nombre, Categoria, Codigo, Marca, Cantidad, Estado, Imagen, Precio, Fecha_Prec, Moneda, IVA) values 
     ($ID,'$nombre','$cat','$codigo','$marca', '$cant', 'Vigente','$file', $precio, '$fecha', '$moneda', $IVA)";
     $con =  $conexion -> query($in);
-    for($i = 0; $i < 6; $i++)
-    {
-        if($carac[$i] != null)
-        {
-            $in2 = "INSERT INTO carac_prod (ID_prod, Caracteristica, ID_carac_prod) values 
-            ($ID,'$carac[$i]', $i+1)";
-            $con2 =  $conexion -> query($in2);
-        }
-    }
+    $in2 = "INSERT INTO carac_prod (ID_prod, Caracteristica, Caracteristica2, Caracteristica3, Caracteristica4, Caracteristica5, Caracteristica6) values 
+    ($ID,'$carac[0]','$carac[1]','$carac[2]','$carac[3]','$carac[4]','$carac[5]')";
+    $con2 =  $conexion -> query($in2);
     if(empty($con) === false && empty($con2) === false)
     {
         ?>
