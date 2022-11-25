@@ -17,6 +17,27 @@
             width: 15%;
             background: #3f3f3f;
         }
+.prov{
+   
+   display: flex;
+   padding: 20px;
+   background: #171717;
+   flex-flow: row wrap;
+   justify-content: space-between;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.c1{
+   border: 1px solid rgb(70,69,69);
+   background-color:#fff;
+   color: #000;
+   width: 120px;
+   height: 120px;
+   margin: 5px;
+  
+}
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
