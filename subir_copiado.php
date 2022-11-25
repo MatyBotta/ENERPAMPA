@@ -21,12 +21,6 @@ if(!isset($_SESSION))
     $comprobacion2 = "SELECT * from carac_prod where ID_prod = $ID";
     $revisar2 =  $conexion -> query($comprobacion2);
     $info2 = $revisar2 -> fetch_array();
-    for($i = 1; $i <= $info2[0]; $i++)
-    {
-        $comprobacion3 = "SELECT Caracteristica from carac_prod where ID_prod = $ID and ID_carac_prod = $i";
-        $revisar3 =  $conexion -> query($comprobacion3);
-        $info3[$i] = $revisar3 -> fetch_array();
-    }
     if ($nombre == NULL)
     {
         $nombre = $info1[2]; 
@@ -158,23 +152,14 @@ if(!isset($_SESSION))
     $con =  $conexion -> query($in);
     for($i = 1; $i <= 6; $i++)
     {
-        if(empty($carac[$i]) == false || empty($info3[$i][0]) == false)
+        if(empty($info2[$i]) == false && empty($carac[$i]) == true)
         {
-            if(empty($carac[$i]) == false)
-            {
-                $in2 = "INSERT INTO carac_prod (ID_prod, Caracteristica, ID_carac_prod) values 
-                ($ID,'$carac[$i]', $i)";
-                $con2 =  $conexion -> query($in2);
-            }
-            else
-            {
-                $a = $info3[$i][0];
-                $in2 = "INSERT INTO carac_prod (ID_prod, Caracteristica, ID_carac_prod) values 
-                ($ID,'$a', $i)";
-                $con2 =  $conexion -> query($in2); 
-            }
+            $carac[$i] = $info2[$i];
         }
     }
+    $actua2 = "INSERT INTO carac_prod (ID_prod, Caracteristica, Caracteristica2, Caracteristica3, Caracteristica4, Caracteristica5, Caracteristica6) 
+    values ($ID, '$carac[1]', '$carac[2]', '$carac[3]', '$carac[4]', '$carac[5]', '$carac[6]')";
+    $con2 =  $conexion -> query($actua2);
     if(empty($con) === false && empty($con2) === false)
     {
         echo 'hola';

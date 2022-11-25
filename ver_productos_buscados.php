@@ -58,7 +58,7 @@
                     </a>
                   </li>
                 <li>
-                    <a href="index.html">
+                    <a href="index.php">
                       <i class="fa-solid fa-house"></i>
                       <span>Volver</span>
                     </a>
@@ -90,7 +90,7 @@ $cant = count($palabras);
 if($cant === 1)
 {
     $hola = "SELECT count(*) FROM productos p inner join carac_prod c
-    WHERE p.ID = c.ID_Prod and (p.Estado like '%$busqueda%' or p.Cantidad like '%$busqueda%' or p.ID like '%$busqueda%' or p.Codigo like '%$busqueda%' or p.Categoria like '%$busqueda%' or p.Nombre like '%$busqueda%' or p.Marca like '%$busqueda%' or p.Moneda like '%$busqueda%' or c.Caracteristica like '%$busqueda%') ";
+    WHERE p.ID = c.ID_Prod and (p.Estado like '%$busqueda%' or p.Cantidad like '%$busqueda%' or p.ID like '%$busqueda%' or p.Codigo like '%$busqueda%' or p.Categoria like '%$busqueda%' or p.Nombre like '%$busqueda%' or p.Marca like '%$busqueda%' or p.Moneda like '%$busqueda%' or c.Caracteristica like '%$busqueda%' or c.Caracteristica2 like '%$busqueda%' or c.Caracteristica3 like '%$busqueda%' or c.Caracteristica4 like '%$busqueda%' or c.Caracteristica5 like '%$busqueda%' or c.Caracteristica6 like '%$busqueda%') ";
     $con =  $conexion -> query($hola);
     $visado = $con -> fetch_array();
 }
@@ -101,7 +101,7 @@ elseif ($cant > 1)
         $hola2 = "";
         for($i = 0; $i < $cant; $i ++)
             {
-                $hola2 .= " and (p.Estado like '%$palabras[$i]%' or p.Cantidad like '%$palabras[$i]%' or p.ID like '%$palabras[$i]%' or p.Codigo like '%$palabras[$i]%' or p.Categoria like '%$palabras[$i]%' or p.Nombre like '%$palabras[$i]%' or p.Marca like '%$palabras[$i]%' or p.Moneda like '%$palabras[$i]%' or c.Caracteristica like '%$palabras[$i]%') ";
+                $hola2 .= " and (p.Estado like '%$palabras[$i]%' or p.Cantidad like '%$palabras[$i]%' or p.ID like '%$palabras[$i]%' or p.Codigo like '%$palabras[$i]%' or p.Categoria like '%$palabras[$i]%' or p.Nombre like '%$palabras[$i]%' or p.Marca like '%$palabras[$i]%' or p.Moneda like '%$palabras[$i]%' or c.Caracteristica like '%$palabras[$i]%' or c.Caracteristica2 like '%$palabras[$i]%' or c.Caracteristica3 like '%$palabras[$i]%' or c.Caracteristica4 like '%$palabras[$i]%' or c.Caracteristica5 like '%$palabras[$i]%' or c.Caracteristica6 like '%$palabras[$i]%') ";
             }
         $hola .= $hola2;
         $con =  $conexion -> query($hola);
@@ -130,17 +130,16 @@ if(empty($aa) === true)
         for($i = 0; $i < $visado[0]; $i ++)
         {
             $sel = "SELECT * from  productos p inner join carac_prod c
-            WHERE p.ID = c.ID_Prod and (p.Estado like '%$busqueda%' or p.Cantidad like '%$busqueda%' or p.ID like '%$busqueda%' or p.Codigo like '%$busqueda%' or p.Categoria like '%$busqueda%' or p.Nombre like '%$busqueda%' or p.Marca like '%$busqueda%' or p.Moneda like '%$busqueda%' or c.Caracteristica like '%$busqueda%')
+            WHERE p.ID = c.ID_Prod and (p.Estado like '%$busqueda%' or p.Cantidad like '%$busqueda%' or p.ID like '%$busqueda%' or p.Codigo like '%$busqueda%' or p.Categoria like '%$busqueda%' or p.Nombre like '%$busqueda%' or p.Marca like '%$busqueda%' or p.Moneda like '%$busqueda%' or c.Caracteristica like '%$busqueda%' or c.Caracteristica2 like '%$busqueda%' or c.Caracteristica3 like '%$busqueda%' or c.Caracteristica4 like '%$busqueda%' or c.Caracteristica5 like '%$busqueda%' or c.Caracteristica6 like '%$busqueda%')
             and ID > $ID order by ID asc";
             $ecc =  $conexion -> query($sel);
             $ionar = $ecc -> fetch_array();
             if(empty($ionar[0]) === false)
             {
                 $ID = $ionar[0];
-                $contar2 = "SELECT count(*) from carac_prod where ID_prod = $ionar[0]";
+                $contar2 = "SELECT * from carac_prod where ID_prod = $ionar[0]";
                 $con2 =  $conexion -> query($contar2);
-                $visado3 = $con2 -> fetch_array();
-                $ID_carac = 0;
+                $carac = $con2 -> fetch_array();
                 if($ionar[11] == "Pesos")
                 {
                     $valor = "$";
@@ -148,16 +147,8 @@ if(empty($aa) === true)
                 else
                 {
                     $valor = "U$"."S";
-                }
-                for($x = 0; $x < $visado3[0]; $x ++)
-                {
-                    $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-                    $ecc2 =  $conexion -> query($sel2);
-                    $ionar2 = $ecc2 -> fetch_array();
-                    $ID_carac = $ionar2[2];
-                    $carac[$x] = $ionar2[1];
-                }
-                for($x = 0; $x < 6; $x ++)
+                } 
+                for($x = 0; $x <= 6; $x ++)
                 {
                     if(empty($carac[$x]) === true)
                     {
@@ -168,14 +159,14 @@ if(empty($aa) === true)
                 $img="imagenes_subidas/".$imagen;
                 ?>
                 <form action="mostrar_productos.php" method="post"> 
-                <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[4]?></td><td><?php echo $ionar[0]?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar[3]?></td><td><?php echo $ionar[5]?></td><td><?php echo $ionar[6]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[0]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
+                <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[4]?></td><td><?php echo $ionar[0]?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar[3]?></td><td><?php echo $ionar[5]?></td><td><?php echo $ionar[6]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
                 <?php
-                $carac[0] = null;
                 $carac[1] = null;
                 $carac[2] = null;
                 $carac[3] = null;
                 $carac[4] = null;
                 $carac[5] = null;
+                $carac[6] = null;
             }
         }
     }
@@ -197,7 +188,7 @@ if(empty($aa) === true)
                 or p.Nombre like '%$palabras[$x]%' 
                 or p.Marca like '%$palabras[$x]%' 
                 or p.Moneda like '%$palabras[$x]%' 
-                or c.Caracteristica like '%$palabras[$x]%') ";
+                or c.Caracteristica like '%$palabras[$x]%' or c.Caracteristica2 like '%$palabras[$x]%' or c.Caracteristica3 like '%$palabras[$x]%' or c.Caracteristica4 like '%$palabras[$x]%' or c.Caracteristica5 like '%$palabras[$x]%' or c.Caracteristica6 like '%$palabras[$x]%') ";
             }
         $sel .= $hola2;
         $sel .=  " and p.ID > $ID order by p.ID asc";
@@ -206,9 +197,9 @@ if(empty($aa) === true)
         if(empty($ionar[0]) === false)
             {
         $ID = $ionar[0];
-        $contar2 = "SELECT count(*) from carac_prod where ID_prod = $ionar[0]";
+        $contar2 = "SELECT * from carac_prod where ID_prod = $ionar[0]";
         $con2 =  $conexion -> query($contar2);
-        $visado3 = $con2 -> fetch_array();
+        $carac = $con2 -> fetch_array();
         $ID_carac = 0;
         if($ionar[11] == "Pesos")
         {
@@ -218,15 +209,7 @@ if(empty($aa) === true)
         {
             $valor = "U$"."S";
         }
-        for($x = 0; $x < $visado3[0]; $x ++)
-        {
-            $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-            $ecc2 =  $conexion -> query($sel2);
-            $ionar2 = $ecc2 -> fetch_array();
-            $ID_carac = $ionar2[2];
-            $carac[$x] = $ionar2[1];
-        }
-        for($x = 0; $x < 6; $x ++)
+        for($x = 0; $x <= 6; $x ++)
         {
             if(empty($carac[$x]) === true)
             {
@@ -237,14 +220,14 @@ if(empty($aa) === true)
         $img="imagenes_subidas/".$imagen;
         ?>
         <form action="mostrar_productos.php" method="post"> 
-        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[4]?></td><td><?php echo $ionar[0]?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar[3]?></td><td><?php echo $ionar[5]?></td><td><?php echo $ionar[6]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[0]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
+        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[4]?></td><td><?php echo $ionar[0]?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar[3]?></td><td><?php echo $ionar[5]?></td><td><?php echo $ionar[6]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td></tr>
         <?php
-        $carac[0] = null;
         $carac[1] = null;
         $carac[2] = null;
         $carac[3] = null;
         $carac[4] = null;
         $carac[5] = null;
+        $carac[6] = null;
     }
     }
     }

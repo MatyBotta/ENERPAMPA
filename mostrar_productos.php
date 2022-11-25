@@ -84,10 +84,9 @@ if(empty($aa) === true)
                 $taken[0] = 0;
             }
         }
-        $contar2 = "SELECT count(*) from carac_prod where ID_prod = $ionar[0]";
+        $contar2 = "SELECT * from carac_prod where ID_prod = $ionar[0]";
         $con2 =  $conexion -> query($contar2);
-        $visado2 = $con2 -> fetch_array();
-        $ID_carac = 0;
+        $carac = $con2 -> fetch_array();
         if($ionar[11] == "Pesos")
         {
             $valor = "$";
@@ -96,15 +95,7 @@ if(empty($aa) === true)
         {
             $valor = "U$"."S";
         }
-        for($x = 0; $x < $visado2[0]; $x ++)
-        {
-            $sel2 = "SELECT * from carac_prod where ID_prod = $ionar[0] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-            $ecc2 =  $conexion -> query($sel2);
-            $ionar2 = $ecc2 -> fetch_array();
-            $ID_carac = $ionar2[2];
-            $carac[$x] = $ionar2[1];
-        }
-        for($x = 0; $x < 6; $x ++)
+        for($x = 0; $x <= 6; $x ++)
         {
             if(empty($carac[$x]) === true)
             {
@@ -115,14 +106,14 @@ if(empty($aa) === true)
         $img="imagenes_subidas/".$imagen;
         ?>
         <form action="mostrar_productos.php" method="post"> 
-        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[0]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td><button type="submit" id = "var" name = "var" value = <?php echo $ionar[0]?>>Añadir al carrito</button></td><?php if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
+        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td><button type="submit" id = "var" name = "var" value = <?php echo $ionar[0]?>>Añadir al carrito</button></td><?php if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
         <?php
-        $carac[0] = null;
         $carac[1] = null;
         $carac[2] = null;
         $carac[3] = null;
         $carac[4] = null;
         $carac[5] = null;
+        $carac[6] = null;;
     }
     
     ?>
