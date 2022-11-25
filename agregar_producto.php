@@ -17,23 +17,14 @@ if(!isset($_SESSION))
 }
 $codigo = $_POST['prod'];
 $_SESSION['prod'] = $codigo ;
-$comprobacion = "SELECT Nombre, Marca, ID from productos where Codigo = '$codigo'";
+$comprobacion = "SELECT Nombre, Marca, ID, Codigo from productos where Codigo = '$codigo' or Codigo like '%R_=$codigo'";
 $revisar =  $conexion -> query($comprobacion);
 $info = $revisar -> fetch_array();
 if(empty($info[0]) === false)
 {
-    $contar2 = "SELECT count(*) from carac_prod where ID_prod = $info[2]";
-    $con2 =  $conexion -> query($contar2);
-    $visado2 = $con2 -> fetch_array();
-    $ID_carac = 0;
-    for($x = 0; $x < $visado2[0]; $x ++)
-    {
-        $sel2 = "SELECT * from carac_prod where ID_prod = $info[2] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-        $ecc2 =  $conexion -> query($sel2);
-        $ionar2 = $ecc2 -> fetch_array();
-        $ID_carac = $ionar2[2];
-        $carac[$x] = $ionar2[1];
-    }
+    $sel2 = "SELECT * from carac_prod where ID_prod = $info[2]";
+    $ecc2 =  $conexion -> query($sel2);
+    $carac = $ecc2 -> fetch_array();
     ?>
     <section class="datos">
     <p> El codigo <?php echo $codigo ?> ya fue ingresado anteriormente</p>
@@ -43,10 +34,10 @@ if(empty($info[0]) === false)
     <p> Nombre: <?php echo $info[0] ?></p>
     <p> Marca: <?php echo $info[1] ?></p>
     <p> ID: <?php echo $info[2] ?></p>
-    <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p>
+    <p> Caracterisitcas basicas: <?php echo $carac[1] ?>, <?php echo $carac[2] ?>, <?php echo $carac[3] ?></p>
     <hr>
     <?php
-    $comprobacion = "SELECT Count(*) from productos where Codigo like '%R_=$codigo' and Estado != 'Eliminado'";
+    $comprobacion = "SELECT Count(*) from productos where Codigo like '%R_=$codigo'and Codigo > '$info[3]'";
     $revisar =  $conexion -> query($comprobacion);
     $visado = $revisar -> fetch_array();
     if($visado[0] != 0)
@@ -55,28 +46,19 @@ if(empty($info[0]) === false)
         {
         $a = $visado[0] + 1;
         $_SESSION['prod'] = 'R'.$a.'='.$codigo;
-        $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo' and Estado != 'Eliminado'";
+        $comprobacion2 = "SELECT Nombre, Marca, ID from productos where Codigo = 'R$i=$codigo'";
         $revisar2 =  $conexion -> query($comprobacion2);
         $info2 = $revisar2 -> fetch_array();
-        $contar2 = "SELECT count(*) from carac_prod where ID_prod = $info[2]";
-        $con2 =  $conexion -> query($contar2);
-        $visado2 = $con2 -> fetch_array();
-        $ID_carac = 0;
-        for($x = 0; $x < $visado2[0]; $x ++)
-        {
-            $sel2 = "SELECT * from carac_prod where ID_prod = $info2[2] and ID_carac_prod > $ID_carac order by ID_carac_prod asc";
-            $ecc2 =  $conexion -> query($sel2);
-            $ionar2 = $ecc2 -> fetch_array();
-            $ID_carac = $ionar2[2];
-            $carac[$x] = $ionar2[1];
-        }
+        $sel2 = "SELECT * from carac_prod where ID_prod = $info2[2]";
+        $ecc2 =  $conexion -> query($sel2);
+        $carac = $ecc2 -> fetch_array();
         if(empty($info2[0]) === false)
         {
             ?>
             <p> Nombre: <?php echo $info2[0] ?></p>
             <p> Marca: <?php echo $info2[1] ?></p>
             <p> ID: <?php echo $info2[2] ?></p>
-            <p> Caracterisitcas basicas: <?php echo $carac[0] ?>, <?php echo $carac[1] ?>, <?php echo $carac[2] ?></p>
+            <p> Caracterisitcas basicas: <?php echo $carac[1] ?>, <?php echo $carac[2] ?>, <?php echo $carac[3] ?></p>
             <hr>
             <?php
         }
@@ -94,7 +76,22 @@ if(empty($info[0]) === false)
     }
     else
     {
-        $_SESSION['prod'] = 'R1='.$codigo;
+        $pos = strpos($info[3], '=');
+        if($pos === true)
+        {
+            $cod = 0; 
+            $i = 0;
+            while($cod < $info[3])
+            {
+                $i ++;
+                $cod = 'R'.$i.'='.$codigo;
+            }
+            $_SESSION['prod'] = $cod;
+        }
+        else
+        {
+            $_SESSION['prod'] = 'R1='.$codigo;
+        }
         ?> 
         <p>Si este no es el producto que quiere ingresar y desea repetir el codigo presione "Continuar", si fue un error seleccione "Cancelar".</p>
         <button><a href = "agregar_datos_productos.php">Continuar</a></button>

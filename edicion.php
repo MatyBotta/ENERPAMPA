@@ -29,15 +29,9 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     $comprobacion1 = "SELECT * from productos where ID = $ID";
     $revisar1 =  $conexion -> query($comprobacion1);
     $info1 = $revisar1 -> fetch_array();
-    $comprobacion2 = "SELECT count(Caracteristica) from carac_prod where ID_prod = $ID";
-    $revisar2 =  $conexion -> query($comprobacion2);
-    $info2 = $revisar2 -> fetch_array();
-    for($i = 1; $i <= $info2[0]; $i++)
-    {
-        $comprobacion3 = "SELECT Caracteristica from carac_prod where ID_prod = $ID and ID_carac_prod = $i";
-        $revisar3 =  $conexion -> query($comprobacion3);
-        $info3[$i] = $revisar3 -> fetch_array();
-    }
+    $comprobacion3 = "SELECT * from carac_prod where ID_prod = $ID";
+    $revisar3 =  $conexion -> query($comprobacion3);
+    $info3 = $revisar3 -> fetch_array();
 ?>
 <div class="head">
 
@@ -78,33 +72,11 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
 </fieldset>
         <br>
             <h3>Caracteristicas</h3>
-            <input type="text" name="carac1" value="" placeholder = "<?php echo $info3[1][0]?>">
+            <input type="text" name="carac1" value="" placeholder = "<?php echo $info3[1]?>">
+            <input type="text" name="carac2" value="" placeholder = "<?php echo $info3[2]?>">
+            <input type="text" name="carac3" value="" placeholder = "<?php echo $info3[3]?>">
             <?php
-            if(empty($info3[2][0]) == true)
-            {
-                ?>
-                <input type="text" name="carac2" value="" placeholder = "Caracteristica 2">
-                <?php
-            }
-            else
-            {
-                ?>
-                <input type="text" name="carac2" value="" placeholder = "<?php echo $info3[2][0]?>">
-                <?php
-            }
-            if(empty($info3[3][0]) == true)
-            {
-                ?>
-                <input type="text" name="carac3" value="" placeholder = "Caracteristica 3">
-                <?php
-            }
-            else
-            {
-                ?>
-                <input type="text" name="carac3" value="" placeholder = "<?php echo $info3[3][0]?>">
-                <?php
-            }
-            if(empty($info3[4][0]) == true)
+            if(empty($info3[4]) == true)
             {
                 ?>
                 <input type="text" name="carac4" value="" placeholder = "Caracteristica 4">
@@ -113,10 +85,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac4" value="" placeholder = "<?php echo $info3[4][0]?>">
+                <input type="text" name="carac4" value="" placeholder = "<?php echo $info3[4]?>">
                 <?php
             }
-            if(empty($info3[5][0]) == true)
+            if(empty($info3[5]) == true)
             {
                 ?>
                 <input type="text" name="carac5" value="" placeholder = "Caracteristica 5">
@@ -125,10 +97,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac5" value="" placeholder = "<?php echo $info3[5][0]?>">
+                <input type="text" name="carac5" value="" placeholder = "<?php echo $info3[5]?>">
                 <?php
             }
-            if(empty($info3[6][0]) == true)
+            if(empty($info3[6]) == true)
             {
                 ?>
                 <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">
@@ -137,7 +109,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac6" value="" placeholder = "<?php echo $info3[6][0]?>">
+                <input type="text" name="carac6" value="" placeholder = "<?php echo $info3[6]?>">
                 <?php
             }
         ?>

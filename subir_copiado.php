@@ -18,7 +18,7 @@ if(!isset($_SESSION))
     $comprobacion1 = "SELECT * from productos where ID = $ID";
     $revisar1 =  $conexion -> query($comprobacion1);
     $info1 = $revisar1 -> fetch_array();
-    $comprobacion2 = "SELECT count(Caracteristica) from carac_prod where ID_prod = $ID";
+    $comprobacion2 = "SELECT * from carac_prod where ID_prod = $ID";
     $revisar2 =  $conexion -> query($comprobacion2);
     $info2 = $revisar2 -> fetch_array();
     for($i = 1; $i <= $info2[0]; $i++)

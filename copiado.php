@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-         <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>SECCION PRODUCTO</title>
-            <link rel="stylesheet" href="diseñoagregarprod.css"/>
-          </head>
-         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -27,7 +18,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     $comprobacion1 = "SELECT * from productos where ID = $ID";
     $revisar1 =  $conexion -> query($comprobacion1);
     $info1 = $revisar1 -> fetch_array();
-    $comprobacion2 = "SELECT count(Caracteristica) from carac_prod where ID_prod = $ID";
+    $comprobacion2 = "SELECT * from carac_prod where ID_prod = $ID";
     $revisar2 =  $conexion -> query($comprobacion2);
     $info2 = $revisar2 -> fetch_array();
     for($i = 1; $i <= $info2[0]; $i++)
@@ -37,22 +28,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         $info3[$i] = $revisar3 -> fetch_array();
     }
 ?>
-<div class="head">
-
-<div class="logo">
-    <img src="Imagenes/LOGO.ico" width="115" alt="">
-</div>
-<nav class="navbar">
-</nav>
-<a href="panel_control.html">Inicio</a>
-</div>
-<br>
-<br>
-            <header>
-            <h1 id="title">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h1>
-            </header>
-            <div id="main-container">
-                <br>
+<h2 id="h2">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h2>
             <form action="subir_copiado.php" method="post" enctype = "multipart/form-data">
             <h3>Nombre</h3>
             <input step="any" type="text"  name="nombre" value="" placeholder = "<?php echo $info1[2]?>">           
@@ -77,32 +53,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <br>
             <h3>Caracteristicas</h3>
             <input type="text" name="carac1" value="" placeholder = "<?php echo $info3[1][0]?>">
+            <input type="text" name="carac2" value="" placeholder = "<?php echo $info3[2]?>">
+            <input type="text" name="carac3" value="" placeholder = "<?php echo $info3[3]?>">
             <?php
-            if(empty($info3[2][0]) == true)
-            {
-                ?>
-                <input type="text" name="carac2" value="" placeholder = "Caracteristica 2">
-                <?php
-            }
-            else
-            {
-                ?>
-                <input type="text" name="carac2" value="" placeholder = "<?php echo $info3[2][0]?>">
-                <?php
-            }
-            if(empty($info3[3][0]) == true)
-            {
-                ?>
-                <input type="text" name="carac3" value="" placeholder = "Caracteristica 3">
-                <?php
-            }
-            else
-            {
-                ?>
-                <input type="text" name="carac3" value="" placeholder = "<?php echo $info3[3][0]?>">
-                <?php
-            }
-            if(empty($info3[4][0]) == true)
+            if(empty($info3[4]) == true)
             {
                 ?>
                 <input type="text" name="carac4" value="" placeholder = "Caracteristica 4">
@@ -111,10 +65,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac4" value="" placeholder = "<?php echo $info3[4][0]?>">
+                <input type="text" name="carac4" value="" placeholder = "<?php echo $info3[4]?>">
                 <?php
             }
-            if(empty($info3[5][0]) == true)
+            if(empty($info3[5]) == true)
             {
                 ?>
                 <input type="text" name="carac5" value="" placeholder = "Caracteristica 5">
@@ -123,10 +77,10 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac5" value="" placeholder = "<?php echo $info3[5][0]?>">
+                <input type="text" name="carac5" value="" placeholder = "<?php echo $info3[5]?>">
                 <?php
             }
-            if(empty($info3[6][0]) == true)
+            if(empty($info3[6]) == true)
             {
                 ?>
                 <input type="text" name="carac6" value="" placeholder = "Caracteristica 6">
@@ -135,7 +89,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             else
             {
                 ?>
-                <input type="text" name="carac6" value="" placeholder = "<?php echo $info3[6][0]?>">
+                <input type="text" name="carac6" value="" placeholder = "<?php echo $info3[6]?>">
                 <?php
             }
         ?>
@@ -164,6 +118,7 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
         <input type="radio" id= 2 value= 2 name="IVA"><label for="B">21%</label>
         </fieldset>
         <button type="submit">Enviar</button>
+        <a href = "nuevo_producto_copiado.html">Cancelar</a>
         <?php
         $_SESSION['eleccion'] = null;
         }
@@ -174,5 +129,3 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
             <a href = "nuevo_producto_copiado.html">Volver a ingresar codigo</a>
             <?php
         }
-        ?>
-        </body>
