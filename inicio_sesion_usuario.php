@@ -11,14 +11,15 @@ $contrasenia = $_POST['contrasenia'];
 $seleccionar = "SELECT Mail, Contrasenia, Tipo FROM usuario where Mail = '$mail'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
-if($info[0] === $mail)
+if(empty($info[0]) === false)
+{
+    if($info[0] === $mail)
 {
     if($info[1] === $contrasenia)
     {
         if($info[2] === 'Trabajador')
         {
             $_SESSION['mail'] = $mail;
-            $hola = 1;
             // inicio de sesion exitoso para trabajador
             include("panel_control.html"); 
         }
@@ -33,13 +34,17 @@ if($info[0] === $mail)
     {
         echo "chauuu";
         echo "contraseña erronea";
-        $hola = 1;
         include("iniciar_sesion.html");
     }
 }
 else
 {
     echo "usuario no registrado";
-    $hola = 1;
+    include("iniciar_sesion.html");
+}
+}
+else
+{
+    echo "usuario no registrado";
     include("iniciar_sesion.html");
 }

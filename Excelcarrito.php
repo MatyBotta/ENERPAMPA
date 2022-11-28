@@ -5,26 +5,6 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
           </head> 
-<style>
-    * {
-margin:0;
-padding:0;
-}
-#columna1 {
-position:absolute;
-top:0px;
-left:0px;
-width:200px;
-margin-top:10px;
-background-color:#ffff55;
-}
-#columna2 {
-margin-left:220px;
-margin-right:20px;
-margin-top:10px;
-background-color:#ffffbb;
-}
-</style>
 <body> 
 <?php
 
@@ -44,14 +24,13 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     ?>
-    
     <h2 style="text-align:left; width:120px; height:120%;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
-    <table >
-    <tr><td>Gral. Mansilla 640</td><td><td>tvazquez@enerpampa.com</td></td><td> tel: 0112106-0462</td></tr>  
-    <tr><td>(1752) Lomas del Mirador</td><td><td>gleviu@enerpampa.com</td></td><td> tel: 0117547-6554</td></tr>
-    <td>ventas@enerpmapa.com</td><td><td>cguglielmo@enerpampa.com</td></td><td> tel: 0117533-2216</td></tr>
-</table>
-<br>
+    <li>Gral. Mansilla 640</li>
+    <li>Lomas del Mirador (1752)</li>
+    <li>ventas@enerpmapa.com</li>
+    <li>tvazquez@enerpampa.com tel: 0112106-0462</li>
+    <li>gleviu@enerpampa.com tel: 0117547-6554</li>
+    <li>cguglielmo@enerpampa.com tel: 0117533-2216</li>
 <br>
 <table border = "1">
     <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cant.</td></tr>
