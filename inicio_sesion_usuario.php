@@ -26,7 +26,7 @@ if($info[0] === $mail)
         {
             $_SESSION['mail'] = $mail;
             // inicio de sesion exitoso para cliente
-            include("index.php");
+            include("index_cliente.html");
         }
     }
     else

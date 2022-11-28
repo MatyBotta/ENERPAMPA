@@ -10,7 +10,7 @@ $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
 <h1>Carrito</h1>
-<a href = "index.php"> Volver </a>
+<a href = "index_cliente.html"> Volver </a>
 <?php
 if(empty($var[0]) === false)
 {

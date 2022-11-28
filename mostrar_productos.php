@@ -55,8 +55,19 @@ if(empty($_POST["var"]) == false)
     }
 if(empty($aa) === true)
 {
+    if(empty($_SESSION['mail']) == false)
+        {
+            ?>
+            <a href = "index_cliente.html"> Volver </a>
+            <?php
+        }
+        else
+        {
+            ?>
+            <a href = "index.html"> Volver </a>
+            <?php
+        }
     ?>
-    <a href = "index.php"> Volver </a>
     <h1><?php echo $categoria ?> </h1>
     <form action="mostrar_productos_buscados.php" method="post"  > 
         <br>
