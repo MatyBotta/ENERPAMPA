@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2022 a las 16:47:00
+-- Tiempo de generación: 28-11-2022 a las 15:48:53
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -121,7 +121,8 @@ INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`) VALUES
 (6, 'hola@a.com', 3),
 (8, 'hola@a.com', 1),
 (12, 'hola@a.com', 1),
-(14, 'hola@a.com', 1);
+(14, 'hola@a.com', 1),
+(3, 'a@a.com', 70);
 
 -- --------------------------------------------------------
 
@@ -153,31 +154,31 @@ INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantid
 (1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Eliminado', '1.png', 1318, '2022-11-02', '2022-11-07', 'Pesos', 21),
 (2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', '1.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', '1.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', 'Recurso 4.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', 'Recurso 7.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', 'Recurso 8.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 240, 'Vigente', 'Recurso 10.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 100, 'Vigente', 'Recurso 10.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 120, 'Vigente', 'Recurso 10.png', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 100, 'Vigente', 'Recurso 10.png', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 110, 'Vigente', 'Recurso 10.png', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 1000, 'Vigente', 'Recurso 10.png', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(13, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'GU10 7W PH', 120, 'Vigente', 'dicro.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(14, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'R1=GU10 7W PH', 180, 'Vigente', 'dicro.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(15, 'Iluminacion', 'LAMPARA LED DICRO', 'INTERELEC', '402290', 30, 'Vigente', 'dicro.png', 118, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(16, 'Iluminacion', 'LAMPARA LED AR111', 'INTERELEC', '403653', 28, 'Vigente', 'ar111.png', 527, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(17, 'Iluminacion', 'LAMPARA LED AR111', 'IDOLER', 'AR111 GU10 15W', 50, 'Vigente', 'ar111.png', 1659, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(18, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP-4800LP-Q1 70W', 20, 'Vigente', 'bulbon.png', 3630, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(19, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP4000LP-Q1 50W', 9, 'Vigente', 'bulbon.png', 1204, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(20, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP-5600LP-Q1 100W', 9, 'Vigente', 'bulbon.png', 4960, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(21, 'Iluminacion', 'LAMPARA LED A60', 'MACROLED', 'BT-60-15CW', 28, 'Vigente', 'Recurso 10.png', 429, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(22, 'Iluminacion', 'LAMPARA LED DICRO', 'MACROLED', 'CPS-DP-GU10-22WW', 19, 'Vigente', 'dicro.png', 363, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(23, 'Iluminacion', 'LAMPARA GLOBO', 'MACROLED', 'G120-18-E27-WW', 10, 'Vigente', 'Recurso 17.png', 1877, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
-(24, 'Iluminacion', 'LAMPARA GLOBO', 'PHILIPS', '929001229491', 28, 'Vigente', 'Recurso 17.png', 1790, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(25, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP2400LP-Q1 30W', 15, 'Vigente', 'bulbon.png', 775, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(26, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP3200LP-Q1 40W', 10, 'Vigente', 'bulbon.png', 893, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(27, 'Iluminacion', 'LAMPARA BULBON', 'MACROLED', 'BAP-60-E27CW', 6, 'Vigente', 'BULBOM2.png', 4209.98, '2022-11-08', '2022-11-08', 'Pesos', 10.5),
-(28, 'Iluminacion', 'LAMPARA LED AR111', 'LUCCIOLA', '2LE009NSC056', 41, 'Vigente', 'Recurso S1.png', 544.3, '2022-11-11', '2022-11-11', 'Pesos', 10.5),
+(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', '2.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', '3.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', '4.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 240, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 100, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 120, 'Vigente', '5.png', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 100, 'Vigente', '5.png', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 110, 'Vigente', '5.png', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 1000, 'Vigente', '5.png', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(13, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'GU10 7W PH', 120, 'Vigente', '6.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(14, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'R1=GU10 7W PH', 180, 'Vigente', '6.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(15, 'Iluminacion', 'LAMPARA LED DICRO', 'INTERELEC', '402290', 30, 'Vigente', '6.png', 118, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(16, 'Iluminacion', 'LAMPARA LED AR111', 'INTERELEC', '403653', 28, 'Vigente', '7.png', 527, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(17, 'Iluminacion', 'LAMPARA LED AR111', 'IDOLER', 'AR111 GU10 15W', 50, 'Vigente', '7.png', 1659, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(18, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP-4800LP-Q1 70W', 20, 'Vigente', '8.png', 3630, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(19, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP4000LP-Q1 50W', 9, 'Vigente', '8.png', 1204, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(20, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP-5600LP-Q1 100W', 9, 'Vigente', '8.png', 4960, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(21, 'Iluminacion', 'LAMPARA LED A60', 'MACROLED', 'BT-60-15CW', 28, 'Vigente', '5.png', 429, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(22, 'Iluminacion', 'LAMPARA LED DICRO', 'MACROLED', 'CPS-DP-GU10-22WW', 19, 'Vigente', '6.png', 363, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(23, 'Iluminacion', 'LAMPARA GLOBO', 'MACROLED', 'G120-18-E27-WW', 10, 'Vigente', '9.png', 1877, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(24, 'Iluminacion', 'LAMPARA GLOBO', 'PHILIPS', '929001229491', 28, 'Vigente', '9.png', 1790, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(25, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP2400LP-Q1 30W', 15, 'Vigente', '8.png', 775, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(26, 'Iluminacion', 'LAMPARA BULBON', 'NRV', 'HP3200LP-Q1 40W', 10, 'Vigente', '8.png', 893, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(27, 'Iluminacion', 'LAMPARA BULBON', 'MACROLED', 'BAP-60-E27CW', 6, 'Vigente', '8.png', 4209.98, '2022-11-08', '2022-11-08', 'Pesos', 10.5),
+(28, 'Iluminacion', 'LAMPARA LED AR111', 'LUCCIOLA', '2LE009NSC056', 41, 'Vigente', '7.png', 544.3, '2022-11-11', '2022-11-11', 'Pesos', 10.5),
 (29, 'Iluminacion', 'Liston led', 'sica', '637151', 37, 'Vigente', '11.png', 3207.54, '2022-11-15', '2022-11-15', 'Pesos', 21),
 (30, 'Iluminacion', 'PANEL LED CUADRADO', 'INTERELEC', '403510', 28, 'Vigente', '13.png', 534.803, '2022-11-15', '2022-11-15', 'Pesos', 21),
 (31, 'Iluminacion', 'PANEL LED CUADRADO', 'INTERELEC', '403514', 7, 'Vigente', '13.png', 1048.8, '2022-11-15', '2022-11-15', 'Pesos', 21),

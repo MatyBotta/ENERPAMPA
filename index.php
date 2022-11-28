@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="estilocards.css">
     <link rel="stylesheet" href="slider.css">
     <style>
-        .navbar a:hover {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            width: 15%;
-            background: #3f3f3f;
-        }
+.navbar a:hover {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    background: #3f3f3f;
+    }
 .prov{
    
    display: flex;
@@ -37,6 +37,7 @@
    margin: 5px;
   
 }
+
 
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -309,7 +310,37 @@
         <br>
         <br>
     </section>
-    
+    <section class="titulo">
+    <h2>Nuestros principales aliados comerciales</h2>
+    </section>
+    <section class="prov">
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/ABB.jpg" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://lct.com.ar/catalogo/"><img src="" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/SCHNEIDER.jpg" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/SAMET.jpg" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/3M.jpg" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="" width="100"></a>
+    </div>
+    <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/" width="100"></a>
+    </div> <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/IMSA.jpg" width="100"></a>
+    </div> <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="" width="100"></a>
+    </div> <div class="c1">
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/SIEMENS.jpg" width="100"></a>
+    </div>
     <section class="nosotros">
         <br>
         <h2 class="title" id="nosotros">Nosotros</h2>

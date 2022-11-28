@@ -43,14 +43,15 @@ if(!isset($_SESSION))
         $file = $info1[7]; 
     }
     else
-    {
+    { 
         $file = $_FILES['imagen']['name'];
         $ruta = 'imagenes_subidas/'.$file;
-        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-        $imagen = getimagesize($file);
+        $archivo = $_FILES["imagen"]["tmp_name"];
+        $imagen = getimagesize($archivo);
         $ancho = $imagen[0];
         $alto = $imagen[1];
-        if($ancho != 100 || $alto != 100)
+        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
+        if($ancho != 100 && $alto != 100)
         {
             include("copiado.php");
             echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';

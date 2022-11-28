@@ -1,0 +1,80 @@
+body{
+	background-color: #516ba1;
+	font-family: Arial;
+}
+
+#main-container{
+	margin: 15px auto;
+	width: 300px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: -35px;
+}
+
+thead
+{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+.controls2 {
+    width: 40%;
+    background: #dce6f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: black;
+  }
+  h3{
+    margin-top: 100px;
+    margin-bottom: 10px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+  }
+
+ .titulo button{
+    position: absolute;
+    width: 10%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin-top: -75px;
+    margin-left: 378px;
+    font-size: 16px;
+ }
+ .titulo h1{
+    margin-left: 550px;
+    font-size: 30px;
+    color: #fff;
+ }
+ .menu a{
+ width: 10%;
+ display: block;
+ padding: 20px 20px;
+ color: #fff;
+ text-decoration: none;
+ text-transform: uppercase;
+ font-size: 15px;
+ }
