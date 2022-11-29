@@ -5,7 +5,7 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
-            <link rel="stylesheet" href="diseñodesafprod.css" />
+            <link rel="stylesheet" href="tabla.css" />
             
           </head>
          <body>  
@@ -51,12 +51,11 @@ else
 {
     echo "No ha realizado ninguna busqueda";
 }
-if(empty($_POST["var"]) == false)
-    {
-        if(empty($_SESSION['mail']) == false)
+if (isset ($_GET['product_id']))
+{
+if(empty($_SESSION['mail']) == false)
         {
-            $var = $_POST['var'];
-
+            $var = $_GET['product_id'];
             $mail = $_SESSION['mail'];
             $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
             $validacion =  $conexion -> query($validar);
@@ -72,27 +71,40 @@ if(empty($_POST["var"]) == false)
                 $agregado =  $conexion -> query($agregar);
             }
         }
+        header('Location:mostrar_productos.php');
+    }
+    if(empty($_SESSION['mail']) == false)
+        {
+            ?>
+             <section class="menu">
+            <a href = "index_cliente.html"> Volver </a>
+            <a href = "mostrar_productos.php"> Volver a ver todos los productos</a>
+
+            </section>
+            <?php
+        }
         else
         {
-            include("iniciar_sesion2.html");
-            $aa = 1;
+            ?>
+             <section class="menu">
+            <a href = "index.html"> Volver </a>
+            <a href = "mostrar_productos.php"> Volver a ver todos los productos</a>
+            </section>
+            <?php
         }
-    }
-if(empty($aa) === true)
-{
     ?>
-    <a href = "index.php"> Volver </a>
-    <a href = "Mostrar_productos.php">Ver todos los productos</a>
+    <section class="titulo">
     <h1><?php echo $categoria ?> </h1>
     <form action="mostrar_productos_buscados.php" method="post"  > 
         <br>
-        <h3>Buscar  :</h3>   
+        <h3>Buscar productos:</h3>   
         <p><input class="controls2" type="text" name="prod" id="prod"></p> 
         <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
 </form>
+</section>
     <table border = 1>
-    <tr><td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Caracteristica 1</td><td>Carac. 2</td><td>Carac. 3</td><td>Carac. 4</td><td>Carac. 5</td><td>Carac. 6</td><td>Imagen</td>
-    <?php
+    <tr><th>Nombre</th><th>Marca</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th><th>Caracteristica 1</th><th>Carac. 2</th><th>Carac. 3</th><th>Carac. 4</th><th>Carac. 5</th><th>Carac. 6</th><th>Imagen</th>    <?php
+    
     $ID = 0;
     if(empty($visado[0]) === false)
     {
@@ -138,8 +150,22 @@ if(empty($aa) === true)
                 $imagen = $ionar[7];
                 $img="imagenes_subidas/".$imagen;
                 ?>
-                <form action="mostrar_productos.php" method="post"> 
-                <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td><button type="submit" id = "var" name = "var" value = <?php echo $ionar[0]?>>Añadir al carrito</button></td><?php if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
+                <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td>
+                <td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td>
+                <?php
+                if(empty($_SESSION['mail']) == false)
+                {
+                    ?>
+                    <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+                    <?php
+                }
+                else
+                {
+                    ?>
+                    <button onclick = "window.location.href='iniciar_sesion2.html'">Añadir al carrito</button></td>
+                    <?php
+                }                    
+                if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
                 <?php
                 $carac[1] = null;
                 $carac[2] = null;
@@ -200,9 +226,23 @@ if(empty($aa) === true)
         }
         $imagen = $ionar[7];
         $img="imagenes_subidas/".$imagen;
-        ?>
-        <form action="mostrar_productos.php" method="post"> 
-        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td><button type="submit" id = "var" name = "var" value = <?php echo $ionar[0]?>>Añadir al carrito</button></td><?php if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
+        ?> 
+        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td>
+        <td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td>
+        <?php
+        if(empty($_SESSION['mail']) == false)
+        {
+            ?>
+            <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+            <?php
+        }
+        else
+        {
+            ?>
+            <button onclick = "window.location.href='iniciar_sesion2.html'">Añadir al carrito</button></td>
+            <?php
+        }
+        if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
         <?php
         $carac[1] = null;
         $carac[2] = null;
@@ -217,5 +257,3 @@ if(empty($aa) === true)
     </table>
 </body>
 </html>
-    <?php
-}

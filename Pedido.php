@@ -13,14 +13,17 @@ $titulo = 'Pedido por pagina web';
 ?>
 <table>
 <?php
-$mensaje = 'Mail: ' . $info[0] . ', Nombre y Apellido: ' . $info[2] . " " . $info[3] . ", Telefono: " . "\n";
+$cliente = 'Mail: ' . $info[0] . ', Nombre y Apellido: ' . $info[2] . " " . $info[3] . ", Telefono: "  . $info[4] . "\n";
 $contar = "SELECT count(*) from carrito where Mail = '$mail'";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
     ?>
-    <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cantidad</td><td>Imagen</td></tr>
+    <td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cantidad</td></tr>
     <?php
     $ID = 0;
+    ?>
+    <p> <?php echo $cliente;?></p>
+    <?php
     for($i = 0; $i < $var[0]; $i ++)
     {
         $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID order by ID_Prod asc";
@@ -40,10 +43,12 @@ $var = $contado -> fetch_array();
             {
                 $valor = "U$"."S";
             }
-            $mensaje .= $ionar2[2] . " " . $ionar2[3] . " " . $valor.$ionar2[8] . " " . $ionar2[10]. " " . $ionar2[11]. " " . $ionar2[12]. " " . $ionar2[4]. " " . $ionar[1] . "\n";
+            $mensaje[$i] = $ionar2[2] . " " . $ionar2[3] . " " . $valor.$ionar2[8] . " " . $ionar2[10]. " " . $ionar2[11]. " " . $ionar2[12]. " " . $ionar2[4]. " " . $ionar[1] . "\n";
+            ?>
+            <p> <?php echo $mensaje[$i];?></p>
+            <?php
         }
     }
-    echo $mensaje;
     ?>
     </table>
     <?php

@@ -15,9 +15,12 @@ $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
 if(empty($info[0]) === true)
 {
-    $in  = "INSERT INTO usuario (Mail, Contrasenia, Nombre, Apellido, Tipo) values 
-    ('$mail', '$contrasenia', '$nombre', '$apellido', 'Cliente')";
-    $con =  $conexion -> query($in);
+    if(empty($_POST['nombres']) === false && empty($_POST['apellidos']) === false && empty($_POST['contrasenia']) === false)
+    {
+        $in  = "INSERT INTO usuario (Mail, Contrasenia, Nombre, Apellido, Tipo, Telefono) values 
+        ('$mail', '$contrasenia', '$nombre', '$apellido', 'Cliente', $tel)";
+        $con =  $conexion -> query($in);   
+    }
 }
 else
 {
