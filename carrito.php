@@ -22,7 +22,7 @@ $var = $contado -> fetch_array();
           </head>
          <body>  
 <section class="menu">
-<h1>Carrito</h1>
+<h1>Carrito de compra:</h1>
 <a href = "index_cliente.html"> Volver </a>
 </section>
 <?php
@@ -75,8 +75,10 @@ if(empty($var[0]) === false)
     }
     ?>
     </table>
-    <a href = "Excelcarrito.php">Exportar a Excel</a>
-    <a href = "Pedido.php">Realizar pedido</a>
+    <section class="abajo">
+    <button><a href = "Excelcarrito.php">Exportar a Excel</a></button>
+    <button><a href = "Pedido.php">Realizar pedido</a></button>
+</section>
 </body>
 </html>
     <?php
