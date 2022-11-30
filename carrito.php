@@ -1,3 +1,4 @@
+
 <?php
 if(!isset($_SESSION))
 {
@@ -9,8 +10,21 @@ $contar = "SELECT count(*) from carrito where Mail = '$mail'";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
-<h1>Carrito</h1>
+<!DOCTYPE html>
+         <html lang="es">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>CARRITO</title>
+            <link rel="stylesheet" href="tablacarrito.css" />
+            
+          </head>
+         <body>  
+<section class="menu">
+<h1>Carrito de compra:</h1>
 <a href = "index_cliente.html"> Volver </a>
+</section>
 <?php
 
 if(empty($var[0]) === false)
@@ -30,7 +44,7 @@ if(empty($var[0]) === false)
     header('Location:carrito.php');
 }
     ?>
-    <table border = "1"><td>Nombre</td><td>Marca</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Codigo</td><td>Cantidad</td><td>Imagen</td></tr>
+    <table border = "1"><th>Nombre</th><th>Marca</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th><th>Codigo</th><th>Cantidad</th><th>Imagen</th></tr>
     <?php
     $ID = 0;
     for($i = 0; $i < $var[0]; $i ++)
@@ -61,8 +75,12 @@ if(empty($var[0]) === false)
     }
     ?>
     </table>
-    <a href = "Excelcarrito.php">Exportar a Excel</a>
-    <a href = "Pedido.php">Realizar pedido</a>
+    <section class="abajo">
+    <button><a href = "Excelcarrito.php">Exportar a Excel</a></button>
+    <button><a href = "Pedido.php">Realizar pedido</a></button>
+</section>
+</body>
+</html>
     <?php
 }
 else
