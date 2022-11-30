@@ -6,6 +6,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
             <link rel="stylesheet" href="panel_control.css" />
+            <link rel="stylesheet" href="tablaempleado.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           </head>
@@ -53,7 +54,7 @@
                   </li>
                   <li>
                     <a href="ver_productos.php">
-                      <i class="fa-solid fa-trash"></i>
+                    <i class="fa-solid fa-list-ul"></i>
                       <span>Ver todos los productos ingresados</span>
                     </a>
                   </li>
@@ -80,13 +81,15 @@ if(empty($aa) === true)
 {
     ?>
     <form action="ver_productos_buscados.php" method="post"  > 
-        <br>
-        <h3>Buscar  :</h3>   
+    <section class="titulo">    
+    <br>
+        <h3>Buscar productos:</h3>   
         <p><input class="controls2" type="text" name="prod" id="prod"></p> 
         <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
+</section>
 </form>
     <table border = 1>
-    <tr><td>Nombre</td><td>Codigo</td><td>ID</td><td>Categoria</td><td>Marca</td><td>Cant. disp.</td><td>Estado</td><td>Valor</td><td>Fecha del valor</td><td>Moneda</td><td>IVA</td><td>Caracteristica 1</td><td>Carac. 2</td><td>Carac. 3</td><td>Carac. 4</td><td>Carac. 5</td><td>Carac. 6</td><td>Imagen</td>
+    <tr><th>Nombre</th><th>Codigo</th><th>ID</th><th>Categoria</th><th>Marca</th><th>Cant. disp.</th><th>Estado</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th><th>Caracteristica 1</th><th>Carac. 2</th><th>Carac. 3</th><th>Carac. 4</th><th>Carac. 5</th><th>Carac. 6</th><th>Imagen</th>
     <?php
     $ID = 0;
     for($i = 0; $i < $visado[0]; $i ++)
