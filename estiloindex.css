@@ -238,7 +238,7 @@ p {
     margin-top: -143px
 }
 .contenedor3 figure{
-   position:relative;
+   position:absolute;
     height: 270px;
     cursor: pointer;
     width: 348px;
@@ -295,8 +295,8 @@ p {
     display:flex;
     justify-content: right;
     height: 20vh;
-    margin-top: 141px;
-    margin-right: 30px;
+    margin-top: 120px;
+    margin-right: 40px;
 }
 .contenedor4 figure{
    position:relative;
