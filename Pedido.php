@@ -8,17 +8,25 @@ $mail = $_SESSION['mail'];
 $seleccionar = "SELECT * FROM usuario where Mail = '$mail'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
-$destino = 'ventas@enerpampa.com';
+$destino = 'equipo.mkjuan@gamil.com';
 $titulo = 'Pedido por pagina web';
-$mensaje = 'Mail: ' . $info[0] . ', Nombre y Apellido: ' . $info[2] . " " . $info[3] . ", Telefono: " . $info[4] . "\n";
+if(empty($info[4]) === true)
+{
+    $info[4] = "-";
+}
+if(empty($info[5]) === true)
+{
+    $info[5] = "-";
+}
+$mensaje = ' <html><body>Mail: ' . $info[0] . ', Nombre y Apellido: ' . $info[2] . " " . $info[3] . ", Telefono: " . $info[4] . ", Celular: " . $info[5] ."\n";
 $contar = "SELECT count(*) from carrito where Mail = '$mail'";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 date_default_timezone_set('America/Argentina/Buenos_Aires');
     $hoy = date("Y-m-d, g:i a");
     $date = new DateTime($hoy );
-    $mensaje .= " " . $date->format(' jS \of F Y h:i:s A');
-    $mensaje .= "<table><td>ID</td><td>Cantidad</td><td>Nombre</td><td>Marca</td><td>Codigo</td><td>Valor</td><td>IVA</td></tr>";
+    $mensaje .= ' ' . $date->format(' jS \of F Y h:i:s A');
+    $mensaje .= '<table><td>ID</td><td>Cantidad</td><td>Nombre</td><td>Marca</td><td>Codigo</td><td>Valor</td><td>IVA</td></tr>';
     $ID = 0;
     for($i = 0; $i < $var[0]; $i ++)
     {
@@ -39,11 +47,20 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
             {
                 $valor = "U$"."S";
             }
-            $mensaje .= "<tr><td>". $ID . "</td><td>" . $ionar[1] . "</td><td>" . $ionar2[2] . "</td><td>" . $ionar2[3] . "</td><td>" .$ionar2[4]. "</td><td>" . $valor.$ionar2[8] . "</td><td>" . $ionar2[12] . "</td></tr>";
+            $mensaje .= '<tr><td>'. $ID . '</td><td>' . $ionar[1] . '</td><td>' . $ionar2[2] . '</td><td>' . $ionar2[3] . '</td><td>' .$ionar2[4]. '</td><td>' . $valor.$ionar2[8] . '</td><td>' . $ionar2[12] . '</td></tr>';
         }
     }
-    $mensaje .= "</table>";
-    mail($destino, $titulo, $mensaje);
+    $mensaje .= '</table></body></html>';
+    echo $mensaje;
+    $hola = mail($destino, $titulo, $mensaje);
+    if($hola === true)
+    {
+        echo ":)";
+    }
+    else
+    {
+        echo ":(";
+    }
     ?>
     </table>
     <?php

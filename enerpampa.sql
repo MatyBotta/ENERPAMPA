@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2022 a las 16:33:05
+-- Tiempo de generación: 01-12-2022 a las 15:45:21
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -224,6 +224,7 @@ CREATE TABLE `usuario` (
   `Nombre` varchar(15) NOT NULL,
   `Apellido` varchar(15) NOT NULL,
   `Telefono` int(11) NOT NULL,
+  `Celular` int(11) NOT NULL,
   `Tipo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -231,11 +232,11 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Tipo`) VALUES
-('a@a.com', 456, 'Matias', 'Nicolas', 54321, 'Trabajador'),
-('bye@a', 321, 'Hola', 'Hola', 123445, 'Cliente'),
-('chau@a.com', 789, 'DOMI', 'NGO', 65432, 'Cliente'),
-('hola@a.com', 123, 'SA', 'BADO', 96787, 'Cliente');
+INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Celular`, `Tipo`) VALUES
+('a@a.com', 456, 'Matias', 'Nicolas', 54321, 0, 'Trabajador'),
+('bye@a', 321, 'Hola', 'Hola', 123445, 0, 'Cliente'),
+('chau@a.com', 789, 'DOMI', 'NGO', 65432, 0, 'Cliente'),
+('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente');
 
 --
 -- Índices para tablas volcadas
