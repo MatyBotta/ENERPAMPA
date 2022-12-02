@@ -98,440 +98,506 @@ p {
     padding: 0 100px;
 }
 /*INICIO DISEÑO DE LAS CAJAS DE LOS PRODUCTOS*/
-.imagenesprod{
-    height: 100%;
-    display: flex;
-    flex-direction:row;
-    align-items:center;
-    background: #101010;
+.containerall{
+    width: 100%;
+    height: 600px;
+    background: rgb(17, 17, 17);
+    position: relative;
 }
-.fondo{
-    margin: 0;
-    background: #101010;
+.box1{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
 }
-.contenedor1{
-    width: 30%;
-    display: flex;
-    justify-content: left 20px;
-    align-items: left;
-    height: 20vh;
+.container1 figure{
+    position:absolute;
+     height: 540px;
+     width: 310px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: 30px;
+     margin-left: 25px;
+ }
+ .container1 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container1 figure .box1{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container1 figure:hover > .box1 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container1 figure:hover > .box1 h3{
+     margin-top: 70px;
+     margin-bottom: 15px;
+ }
+ .container1 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container1 figure .box1 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container1 figure .box1 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .box2{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
 }
-.contenedor1 figure{
-   position:relative;
-    height: 540px;
+.container2 figure{
+    position:absolute;
+     height: 270px;
+     width: 335px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: -570px;
+     margin-left: 335px;
+ }
+ .container2 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container2 figure .box2{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container2 figure:hover > .box2 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container2 figure:hover > .box2 h3{
+     margin-top: 20px;
+     margin-bottom: 15px;
+ }
+ .container2 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container2 figure .box2 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container2 figure .box2 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .box3{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
+}
+.container3 figure{
+    position:absolute;
+     height: 270px;
+     width: 335px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: -300px;
+     margin-left: 335px;
+ }
+ .container3 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container3 figure .box3{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container3 figure:hover > .box3 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container3 figure:hover > .box3 h3{
+     margin-top: 20px;
+     margin-bottom: 15px;
+ }
+ .container3 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container3 figure .box3 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container3 figure .box3 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .box4{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
+}
+.container4 figure{
+    position:absolute;
+     height: 540px;
+     width: 310px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: -570px;
+     margin-left: 670px;
+ }
+ .container4 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container4 figure .box4{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container4 figure:hover > .box4 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container4 figure:hover > .box4 h3{
+     margin-top: 70px;
+     margin-bottom: 15px;
+ }
+ .container4 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container4 figure .box4 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container4 figure .box4 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .box5{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
+}
+.container5 figure{
+    position:absolute;
+     height: 270px;
+     width: 330px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: -570px;
+     margin-left: 980px;
+ }
+ .container5 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container5 figure .box5{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container5 figure:hover > .box5 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container5 figure:hover > .box5 h3{
+     margin-top: 20px;
+     margin-bottom: 15px;
+ }
+ .container5 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container5 figure .box5 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container5 figure .box5 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .box6{
+    width: 540px;
+    height: 310px;
+    margin: 0px;
+    font-size: 20px;
+}
+.container6 figure{
+    position:absolute;
+     height: 270px;
+     width: 330px;
+     overflow: hidden;
+     border-radius: 0px;
+     box-shadow: 0px;
+     margin-top: -300px;
+     margin-left: 980px;
+ }
+ .container6 figure img{
+     width: 100%;
+     height: 100%;
+     transition: all 400ms ease-out;
+     will-change: transform;
+ }
+ .container6 figure .box6{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background: #0B1C6A;
+     transition: all 400ms ease-out;
+     opacity: 0;
+     visibility: hidden;
+     text-align: center;
+ }
+ .container6 figure:hover > .box6 {
+     opacity: 1;
+     visibility: visible;
+ }
+ .container6 figure:hover > .box6 h3{
+     margin-top: 20px;
+     margin-bottom: 15px;
+ }
+ .container6 figure:hover > img{
+     transform: scale(1.3);
+ }
+ .container6 figure .box6 h3{
+     color: #fff;
+     font-family: 'Cocogoose';
+     font-weight: 20;
+     margin-bottom: 120px;
+     transition: all 400ms ease-out;
+     margin-top: 30px;
+ }
+ .container6 figure .box6 p{
+     font-size: 1rem;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     margin: 0;
+     padding: 0 1rem;
+     vertical-align: middle;
+     position: absolute;
+     color: #fff;
+ }
+ .container1 figure button{
+    font-weight: 300;
+    font-size: 20px;
+    font-family: 'Cocogoose';
+    color: #0B1C6A  ;
     cursor: pointer;
-    width: 340px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-    margin-top: -13px;
-}
-.contenedor1 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor1 figure .capa1{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
+    margin-top: 40px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+ }
+ .container2 figure button{
+    font-weight: 300;
+    font-size: 20px;
+    font-family: 'Cocogoose';
+    color: #0B1C6A  ;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
     text-align: center;
-}
-.contenedor1 figure:hover > .capa1 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor1 figure:hover > .capa1 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor1 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor1 figure .capa1 h3{
-    color: #fff;
+ }
+ .container3 figure button{
+    font-weight: 300;
+    font-size: 20px;
     font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-    margin-top: 30px;
-}
-.contenedor1 figure .capa1 p{
-    font-size: 1rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-    position: absolute;
-}
-.contenedor2{
-    width:0%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: -130px;
-
-}
-.contenedor2 figure{
-   position:relative;
-    height: 220px;
+    color: #0B1C6A  ;
     cursor: pointer;
-    width: 220px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-}
-.contenedor2 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor2 figure .capa2{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(42, 14, 168, 0.7);
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-}
-.contenedor2 figure:hover > .capa2 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor2 figure:hover > .capa2 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor2 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor2 figure .capa2 h3{
-    color: #fff;
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor2 figure .capa2 p{
-    color: #fff;
-    font-size: 15px;
-    line-height: 1.5;
-    width: 100%;
-    max-width: 220px;
-    margin: auto;
-}
-.contenedor3{
-    width: 180%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: -143px
-}
-.contenedor3 figure{
-   position:absolute;
-    height: 270px;
-    cursor: pointer;
-    width: 348px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-}
-.contenedor3 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor3 figure .capa3{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-   text-align: center;
-}
-.contenedor3 figure:hover > .capa3 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor3 figure:hover > .capa3 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor3 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor3 figure .capa3 h3{
-    color: #fff;
+    margin-top: 10px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+ }
+ .container4 figure button{
+    font-weight: 300;
+    font-size: 20px;
     font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor3 figure .capa3 p{
-    color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-}
-.contenedor4{
-    width: 180.5%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: 120px;
-    margin-right: 40px;
-}
-.contenedor4 figure{
-   position:relative;
-    height: 270px;
+    color: #0B1C6A  ;
     cursor: pointer;
-    width: 350px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-}
-.contenedor4 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor4 figure .capa4{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-   text-align: center;
-}
-.contenedor4 figure:hover > .capa4 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor4 figure:hover > .capa4 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor4 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor4 figure .capa4 h3{
-    color: #fff;
+    margin-top: 40px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+ }
+ .container5 figure button{
+    font-weight: 300;
+    font-size: 20px;
     font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor4 figure .capa4 p{
-    color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-}
-.contenedor5{
-    width: 268.5%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: -400px;
-    
-}
-.contenedor5 figure{
-   position:relative;
-    height: 540px;
+    color: #0B1C6A  ;
     cursor: pointer;
-    width: 340px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-}
-.contenedor5 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor5 figure .capa5{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-}
-.contenedor5 figure:hover > .capa5 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor5 figure:hover > .capa5 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor5 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor5 figure .capa5 h3{
-    color: #fff;
+    margin-top: 10px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+ }
+ .container6 figure button{
+    font-weight: 300;
+    font-size: 20px;
     font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor5 figure .capa5 p{
-    color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-}
-.contenedor6{
-    width:352%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: -130px
-}
-.contenedor6 figure{
-   position:relative;
-    height: 270px;
+    color: #0B1C6A  ;
     cursor: pointer;
-    width: 320px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
+    margin-top: 10px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+ }
+@media screen and (max-width=1200px){
+    .box{
+        width:40%
+    }
 }
-.contenedor6 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
+@media screen and (max-width=600px){
+    .box{
+        width:40%
+    }
 }
-.contenedor6 figure .capa6{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
+@media screen and (max-width=1200px){
+    .containerall{
+        width:100%
+    }
 }
-.contenedor6 figure:hover > .capa6 {
-    opacity: 1;
-    visibility: visible;
-}
-.contenedor6 figure:hover > .capa6 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor6 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor6 figure .capa6 h3{
-    color: #fff;
-    font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor6 figure .capa6 p{
-    color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
-}
-.contenedor7{
-    width:352%;
-    display:flex;
-    justify-content: right;
-    height: 20vh;
-    margin-top: 140px
-}
-.contenedor7 figure{
-   position:relative;
-    height: 270px;
-    cursor: pointer;
-    width: 320px;
-    overflow: hidden;
-    border-radius: 0px;
-    box-shadow: 0px;
-}
-.contenedor7 figure img{
-    width: 100%;
-    height: 100%;
-    transition: all 400ms ease-out;
-    will-change: transform;
-}
-.contenedor7 figure .capa7{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: #0B1C6A;
-    transition: all 400ms ease-out;
-    opacity: 0;
-    visibility: hidden;
-    text-align: center;
-}
-.contenedor7 figure:hover > .capa7 {
-    opacity: 1;
-    visibility: visible;
-   
-}
-.contenedor7 figure:hover > .capa7 h3{
-    margin-top: 70px;
-    margin-bottom: 15px;
-}
-.contenedor7 figure:hover > img{
-    transform: scale(1.3);
-}
-.contenedor7 figure .capa7 h3{
-    color: #fff;
-    font-family: 'Cocogoose';
-    font-weight: 400;
-    margin-bottom: 120px;
-    transition: all 400ms ease-out;
-     margin-top: 30px;
-}
-.contenedor7 figure .capa7 p{
-    color: #fff;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0 1rem;
-    vertical-align: middle;
+@media screen and (min-width=800px){
+    .containerall{
+        width:100%
+    }
 }
 /*FINAL DISEÑO DE LAS CAJAS DE LOS PRODUCTOS*/
 /*diseño de las letras*/
