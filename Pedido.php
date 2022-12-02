@@ -26,7 +26,7 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
     $hoy = date("Y-m-d, g:i a");
     $date = new DateTime($hoy );
     $mensaje .= ' ' . $date->format(' jS \of F Y h:i:s A');
-    $mensaje .= '<table><td>ID</td><td>Cantidad</td><td>Nombre</td><td>Marca</td><td>Codigo</td><td>Valor</td><td>IVA</td></tr>';
+    $mensaje .= '<table><th>Item</th><th>ID</th><th>Cantidad</th><th>Nombre</th><th>Marca</th><th>Codigo</th><th>Valor</th><th>IVA</th></tr>';
     $ID = 0;
     for($i = 0; $i < $var[0]; $i ++)
     {
@@ -47,7 +47,8 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
             {
                 $valor = "U$"."S";
             }
-            $mensaje .= '<tr><td>'. $ID . '</td><td>' . $ionar[1] . '</td><td>' . $ionar2[2] . '</td><td>' . $ionar2[3] . '</td><td>' .$ionar2[4]. '</td><td>' . $valor.$ionar2[8] . '</td><td>' . $ionar2[12] . '</td></tr>';
+            $a = $i + 1;
+            $mensaje .= '<tr><td>'. $a . '</td><td>' . $ID . '</td><td>' . $ionar[1] . '</td><td>' . $ionar2[2] . '</td><td>' . $ionar2[3] . '</td><td>' .$ionar2[4]. '</td><td>' . $valor.$ionar2[8] . '</td><td>' . $ionar2[12] . '</td></tr>';
         }
     }
     $mensaje .= '</table></body></html>';
