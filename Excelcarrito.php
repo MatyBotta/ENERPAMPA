@@ -24,7 +24,7 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     ?>
-    <h2 style="text-align:left; width:120px; height:120%;  font-weight:60; color:#000a35;">ENERPAMPA S.A.</h2>
+    <h2 style="text-align:left; width:120px; height:120%;  font-weight:60; color:#000a35; font-size: 30;">ENERPAMPA S.A.</h2>
     <li style = "font-style: italic; font-weight: bold; font-size: 15;">Gral. Mansilla 640</li>
     <li style = "font-style: italic; font-weight: bold; font-size: 15;">Lomas del Mirador (1752)</li>
     <li style = "font-style: italic; font-weight: bold; font-size: 15;">ventas@enerpmapa.com - enerpampa.com</li>

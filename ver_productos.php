@@ -53,6 +53,18 @@
                     </a>
                   </li>
                   <li>
+                    <a href="ver_pedidos.php">
+                      <i class="fa-solid fa-list-ul"></i>
+                      <span>Ver pedidos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="ver_usuarios.php">
+                      <i class="fa-solid fa-list-ul"></i>
+                      <span>Ver usuarios que ingresaron</span>
+                    </a>
+                  </li>
+                  <li>
                     <a href="ver_productos.php">
                     <i class="fa-solid fa-list-ul"></i>
                       <span>Ver todos los productos ingresados</span>
@@ -77,14 +89,14 @@ include("db.php");
 $contar = "SELECT count(*) from productos";
 $con =  $conexion -> query($contar);
 $visado = $con -> fetch_array();
-if(empty($aa) === true)
+if(empty($visado[0]) === false)
 {
     ?>
     <form action="ver_productos_buscados.php" method="post"  > 
-    <section class="titulo">    
+    <section class="titulo">
     <br>
-        <h3>Buscar productos:</h3>   
-        <p><input class="controls2" type="text" name="prod" id="prod"></p> 
+        <h3>Buscar productos:</h3>
+        <p><input class="controls2" type="text" name="prod" id="prod"></p>
         <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
 </section>
 </form>
@@ -135,4 +147,8 @@ if(empty($aa) === true)
 </body>
 </html>
     <?php
+}
+else
+{
+  echo "No hay productos ingresados";
 }

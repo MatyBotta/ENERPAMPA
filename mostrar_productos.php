@@ -75,7 +75,6 @@ if(empty($_GET['product_id']) == false)
         $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail'";
         $minar =  $conexion -> query($eli);
     }
-    header('Location:mostrar_productos.php');
 }
     ?>
     <section class="titulo">
@@ -133,7 +132,7 @@ if(empty($_GET['product_id']) == false)
         {
             ?>
             <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
-            <td><button onclick = "window.location.href='mostrar_productos.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
+            <td id = <?php echo $i ?>><button onclick = "window.location.href='mostrar_productos.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
             <?php
         }
         else

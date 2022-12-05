@@ -6,12 +6,13 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
             <link rel="stylesheet" href="panel_control.css" />
+            <link rel="stylesheet" href="tablaempleado.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           </head>
           <body>
-            <h2 class="title" id="productos">Solo el codigo de fabricante, no importa si es repetido</h2>
-           <br>
+            <h2 class="title" id="productos">Seleccionar alguna opcion</h2>
+            <hr>
             <div class="sidebar">
               <img src="imagenes/LOGO.ico"width="80" alt="">
               <ul class="nav">
@@ -79,13 +80,52 @@
             </div>
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <section class="eliminar-producto">
-        <form action="eliminar_producto.php" method="post"  > 
-        <br>
-        <h3>CODIGO DEL PRODUCTO A DESAFECTAR:</h3>   
-        <p><input class="controls2" type="text" name="prod" id="prod"></p> 
-        <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
-    </section>
-    </body>
+<?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
+include("db.php");
+$contar = "SELECT count(*) from ingresos";
+$con =  $conexion -> query($contar);
+$visado = $con -> fetch_array();
+if(empty($visado[0]) === false)
+{
+    ?>
+    <table border = 1>
+    <tr><th>Fecha ingreso</th><th>Nombre y Apellido</th><th>Rubro</th><th>Mail</th><th>Telefono</th><th>Celular</th></tr>
+    <?php
+    $fecha = 10000000000000000000000000000000;
+    for($i = 0; $i < $visado[0]; $i ++)
+    {
+        $sel = "SELECT * from ingresos where Fecha > '$fecha' order by Fecha asc";
+        $ecc =  $conexion -> query($sel);
+        $ionar = $ecc -> fetch_array();
+        $fecha = $ionar[1];
+        echo $ionar[0];
+        $contar2 = "SELECT * from usuario where Mail = '$ionar[0]'";
+        $con2 =  $conexion -> query($contar2);
+        $carac = $con2 -> fetch_array();
+        if(empty($carac[4]) === true)
+        {
+            $carac[4] = "-";
+        }   
+        if(empty($carac[5]) === true)
+        {
+            $carac[5] = "-";
+        }
+        ?>
+        <tr><td><?php echo $ionar[1]?></td><td><?php echo $carac[2] . " " . $carac[3]?></td><td><?php echo $carac[7]?></td><td><?php echo $ionar[0]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td></tr>
+        <?php
+    }
+    
+    ?>
+    </table>
+</body>
 </html>
+    <?php
+}
+else
+{
+    echo "No hay ingresos";
+}

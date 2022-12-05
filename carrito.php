@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 include("db.php");
 $mail = $_SESSION['mail'];
-$contar = "SELECT count(*) from carrito where Mail = '$mail'";
+$contar = "SELECT count(*) from carrito where Mail = '$mail' AND pedido != null";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
