@@ -20,6 +20,12 @@ if(empty($info[0]) === false)
         if($info[2] === 'Trabajador')
         {
             $_SESSION['mail'] = $mail;
+            date_default_timezone_set('America/Argentina/Buenos_Aires');
+            $hoy = date("Y-m-d, g:i a");
+            $date = new DateTime($hoy);
+            $fecha = $date->format('Y/m/d h:i:s A');
+            $in2  = "INSERT INTO ingresos (Mail, Fecha) values ('$mail', '$fecha')";
+            $con2 =  $conexion -> query($in2);
             // inicio de sesion exitoso para trabajador
             include("panel_control.html"); 
         }
@@ -28,29 +34,20 @@ if(empty($info[0]) === false)
             $_SESSION['mail'] = $mail;
             // inicio de sesion exitoso para cliente
             include("index_cliente.html");
-            date_default_timezone_set('America/Argentina/Buenos_Aires');
-            $hoy = date("Y-m-d, g:i a");
-            $date = new DateTime($hoy);
-            $fecha = $date->format('Y/m/d h:i:s A');
-            $in2  = "INSERT INTO ingresos (Mail, Fecha) values ('$mail', '$fecha')";
-            $con2 =  $conexion -> query($in2);
         }
     }
     else
     {
-        echo "chauuu";
-        echo "contraseña erronea";
-        include("iniciar_sesion.html");
+        include("contraseniamal.html");
     }
 }
 else
 {
-    echo "usuario no registrado";
-    include("iniciar_sesion.html");
+    include("usuarionoregistrado.html");
 }
 }
 else
 {
-    echo "usuario no registrado";
-    include("iniciar_sesion.html");
+    
+    include("usuarionoregistrado.html");
 }

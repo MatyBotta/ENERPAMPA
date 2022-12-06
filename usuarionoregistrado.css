@@ -1,0 +1,29 @@
+.agregar-producto {
+    width: 380px;
+    background: #516ba1;
+    padding: 30px;
+    margin-left: 460px;
+    margin-top: 150px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: black;
+    box-shadow: 7px 13px 37px #000;
+  }
+  .agregar-producto h2 {
+    color: white;  
+    margin-left: 50px;
+    }
+.agregar-producto h3 {
+color: white;  
+margin-bottom: 10px;
+}
+.agregar-producto button{
+    width: 50%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin-left: 55px;
+    font-size: 16px;
+    cursor: pointer;
+}
