@@ -42,10 +42,11 @@ if($ionar2[4] == 0)
   }
 ?>
 <html><body>
-<li style = "font-style: italic; font-size: 15;">Fecha: <?php echo $ionar[2]?> - ID Pedido: <?php echo $ID ?></li>
-<li style = "font-style: italic; font-size: 15;"> Contacto: <?php echo $ionar2[2] . " " . $ionar2[3] ?> - Mail: <?php echo $ionar[1]?></li>
-<li style = "font-style: italic; font-size: 15;"> Telefono: <?php echo $ionar2[4] ?> - Celular: <?php echo $ionar2[5]?></li>
-<table border = 1><th>Item</th><th>ID</th><th>Cant.</th><th>Nombre</th><th>Marca</th><th>Codigo</th><th>Valor</th><th>IVA</th></tr>
+<h2 style="text-align:center; width:120px; height:120%;  font-weight:60; color:#000a35; font-size: 30;">Pedido por pagina web</h2>
+<li style = "font-style: italic; font-size: 15; font-weight: bold;">Fecha: <?php echo $ionar[2]?>,  ID Pedido: <?php echo $ID ?></li>
+<li style = "font-style: italic; font-size: 15;"> Contacto: <?php echo $ionar2[2] . " " . $ionar2[3] ?>,  Mail: <?php echo $ionar[1]?></li>
+<li style = "font-style: italic; font-size: 15;"> Telefono: <?php echo $ionar2[4] ?>,  Celular: <?php echo $ionar2[5]?></li>
+<table border = 1><th>Item</th><th>Cant.</th><th>Nombre</th><th>Marca</th><th>Codigo</th><th>ID</th><th>Valor</th><th>IVA</th></tr>
 <?php
 $ID_prod = 0;
 $mail = $ionar[1];
@@ -73,7 +74,7 @@ for($i = 0; $i < $var[0]; $i ++)
         }
         $a = $i + 1;
         ?>
-        <tr><td> <?php echo $a ?></td><td><?php echo $ID_prod ?></td><td><?php echo $ionar[1] ?></td><td><?php echo $ionar2[2] ?></td><td><?php echo $ionar2[3] ?></td><td style="text-align: left;"><?php echo$ionar2[4]?></td><td><?php echo $valor.$ionar2[8] ?></td><td><?php echo $ionar2[12] ?></td></tr>
+        <tr><td> <?php echo $a ?></td><td><?php echo $ionar[1] ?></td><td><?php echo $ionar2[2] ?></td><td><?php echo $ionar2[3] ?></td><td style="text-align: left;"><?php echo$ionar2[4]?></td><td><?php echo $ID_prod ?></td><td><?php echo $valor.$ionar2[8] ?></td><td><?php echo $ionar2[12] ?></td></tr>
         <?php
     }
 }
