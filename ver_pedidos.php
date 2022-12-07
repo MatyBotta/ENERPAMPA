@@ -120,7 +120,7 @@ for($i = 0; $i < $info[0]; $i ++)
     $ionar2[3] = '';
   }
   ?>
-  <tr><td><?php echo $ID?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar2[2] . " " .  $ionar2[3]?></td><td><?php echo $ionar[2]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar2[5]?></td><td><button onclick = "window.location.href='Excelpedido.php?id_pedido=<?php echo $ID;?>'">Exportar a Excel</button></td><td><button onclick = eliminar()>Pedido concretado</button><td><button onclick = "window.location.href='eliminar_pedido.php?id_pedido=<?php echo $ID;?>'">Eliminar</button></td></tr>
+  <tr><td><?php echo $ID?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar2[2] . " " .  $ionar2[3]?></td><td><?php echo $ionar[2]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar2[5]?></td><td><button onclick = "window.location.href='Excelpedido.php?id_pedido=<?php echo $ID;?>'">Exportar a Excel</button></td><td><button onclick = "window.location.href='concretado.php?id_pedido=<?php echo $ID;?>'">Pedido concretado</button><td><button onclick = "window.location.href='eliminar_pedido.php?id_pedido=<?php echo $ID;?>'">Eliminar</button></td></tr>
 <?php
   if(isset($_POST['insert']))
   {

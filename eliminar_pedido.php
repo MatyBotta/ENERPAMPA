@@ -28,12 +28,9 @@ if(!isset($_GET['x']))
 else
 {
     $ID = $_SESSION['ID'];
-    $carrito = "SELECT * from pedido where ID = $ID";
-    $shop =  $conexion -> query($carrito);
-    $ionar = $shop -> fetch_array();
-    $carrito2 = "DELETE from usuario where Mail = '$ionar[1]'";
+    $carrito2 = "DELETE from carrito where Pedido = $ID";
     $shop2 =  $conexion -> query($carrito2);
-    $delete = "DELETE from usuario where ID = $ID";
+    $delete = "DELETE from pedido where ID = $ID";
     $done =  $conexion -> query($delete);
     if($shop === true && $done === true)
     {
