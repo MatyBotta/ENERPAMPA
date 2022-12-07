@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2022 a las 15:45:21
+-- Tiempo de generación: 07-12-2022 a las 15:47:11
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -55,7 +55,7 @@ INSERT INTO `carac_prod` (`ID_Prod`, `Caracteristica`, `Caracteristica2`, `Carac
 (11, 'E27', '15W', '6500K', '', '', ''),
 (12, 'E27', '9W', '6000K', '', '', ''),
 (13, 'GU10', '7W', '3000K', '', '', ''),
-(14, 'GU10', '5W', '3000K', '', '', ''),
+(14, 'GU10', '7W', '6000k', '', '', ''),
 (15, 'GU10', '5W', '3000K', '', '', ''),
 (16, 'GU10', '15W', '6000K', '', '', ''),
 (17, 'GU10', '15W', '6500K', '', '', ''),
@@ -97,7 +97,20 @@ INSERT INTO `carac_prod` (`ID_Prod`, `Caracteristica`, `Caracteristica2`, `Carac
 (54, 'PG 9', 'AJUSTE 4 A 8', 'ORIFICIO 15.3mm Ø', '', '', ''),
 (55, 'PG 21', 'AJUSTE 13 A 18', 'ORIFICIO 28.4mm Ø', '', '', ''),
 (56, 'PG 16', 'AJUSTE 10 A 14', 'ORIFICIO 22.6mm Ø', '', '', ''),
-(57, '16.4mm Ø', 'ANCHO 18.2mm', 'RANGO 15 - 100', '', '', '');
+(57, '16.4mm Ø', 'ANCHO 18.2mm', 'RANGO 15 - 100', '', '', ''),
+(58, '13mm Ø', 'ANCHO 15mm', 'RANGO 12-70', '', '', ''),
+(59, '10.2 mm Ø', 'ANCHO 13.9mm', 'RANGO 9-65', '', '', ''),
+(60, 'ROSCA 1/2\"', 'ELECTRICA', 'AJUSTE 5 A 8 mm', '', '', ''),
+(61, 'ROSCA 3/4\"', 'ELECTRICA', 'AJUSTE 10 A 14 mm', '', '', ''),
+(62, 'ROSCA 1 1/4\"', 'ELECTRICA', 'AJUSTE 15 A 20 mm', '', '', ''),
+(63, 'ROSCA 7/8\"', 'ELECTRICA', 'AJUSTE 12 A 17mm', '', '', ''),
+(64, 'ROSCA 5/8\"', 'ELECTRICA', 'AJUSTE 7 A 11mm', '', '', ''),
+(65, 'ROSCA 1\"', 'ELECTRICA', 'AJUSTE 15 A 20mm', '', '', ''),
+(66, 'ROSCA 3/4\"', 'ELECTRICA', 'PLASTICO', '', '', ''),
+(67, 'ROSCA 7/8\"', 'ELECTRICA', 'PLASTICO', '', '', ''),
+(68, 'ROSCA 1 1/2\"', 'ELECTRICA', 'AJUSTE 23 A 30 mm', '', '', ''),
+(69, 'ROSCA M20', 'METRICA', 'AJUSTE 10 A 14 mm', '', '', ''),
+(70, 'MONOF. 250 VCA - 10 A', 'IRAM 2071', '-', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -116,9 +129,9 @@ CREATE TABLE `carrito` (
 --
 
 INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`) VALUES
+(1, 'a@a.com', 3),
 (1, 'hola', 2),
 (2, 'hola@a.com', 4),
-(3, 'a@a.com', 69),
 (3, 'hola', 1),
 (3, 'hola@a.com', 38),
 (4, 'hola@a.com', 1),
@@ -126,7 +139,8 @@ INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`) VALUES
 (8, 'hola@a.com', 1),
 (9, 'hola@a.com', 1),
 (12, 'hola@a.com', 1),
-(14, 'hola@a.com', 1);
+(14, 'hola@a.com', 1),
+(51, 'a@a.com', 1);
 
 -- --------------------------------------------------------
 
@@ -210,7 +224,20 @@ INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantid
 (54, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'SYBYD', '8102N', 150, 'Vigente', '22.png', 57.663, '2022-11-29', '2022-11-29', 'Pesos', 21),
 (55, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'SYBYD', '8105/1N', 120, 'Vigente', '22.png', 166.397, '2022-11-29', '2022-11-29', 'Pesos', 21),
 (56, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'SYBYD', '8105N', 80, 'Vigente', '22.png', 112, '2022-11-29', '2022-11-29', 'Pesos', 21),
-(57, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'CINTA HELICOIDAL', 'SYBYD', '2504', 80, 'Vigente', '23.png', 179.577, '2022-11-29', '2022-11-29', 'Pesos', 21);
+(57, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'CINTA HELICOIDAL', 'SYBYD', '2506', 60, 'Vigente', '23.png', 179.577, '2022-11-29', '2022-11-29', 'Pesos', 21),
+(58, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'CINTA HELICOIDAL', 'SYBYD', '2505', 40, 'Vigente', '23.png', 261.013, '2022-12-02', '2022-12-02', 'Pesos', 21),
+(59, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'CINTA HELICOIDAL', 'SYBYD', '2504', 60, 'Vigente', '23.png', 292.6, '2022-12-02', '2022-12-02', 'Pesos', 21),
+(60, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'SYBYD', '2PE1T', 350, 'Vigente', '24 PLASTIC.png', 91.36, '2022-12-02', '2022-12-02', 'Pesos', 21),
+(61, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PE3T', 200, 'Vigente', '24 PLASTIC.png', 125.03, '2022-12-02', '2022-12-02', 'Pesos', 21),
+(62, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2AEL6T', 50, 'Vigente', '25 ALUMINIO.png', 649.22, '2022-12-02', '2022-12-02', 'Pesos', 21),
+(63, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PE4T', 225, 'Vigente', '24 PLASTIC.png', 139.61, '2022-12-06', '2022-12-06', 'Pesos', 21),
+(64, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PE2T', 300, 'Vigente', '24 PLASTIC.png', 114.56, '2022-12-06', '2022-12-06', 'Pesos', 21),
+(65, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PE5T', 100, 'Vigente', '24 PLASTIC.png', 167.16, '2022-12-06', '2022-12-06', 'Pesos', 21),
+(66, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CAÑO', 'PAMPACO', '6PE3T', 100, 'Vigente', '26 PCAÑO PLASTIC.png', 141.42, '2022-12-07', '2022-12-07', 'Pesos', 21),
+(67, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CAÑO', 'PAMPACO', '6PE4T', 75, 'Vigente', '26 PCAÑO PLASTIC.png', 162.87, '2022-12-07', '2022-12-07', 'Pesos', 21),
+(68, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PE7T', 25, 'Vigente', '24 PLASTIC.png', 335.86, '2022-12-07', '2022-12-07', 'Pesos', 21),
+(69, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'PRENSA CABLES', 'PAMPACO', '2PM3T', 100, 'Vigente', '27 PLASTIC METRICA.png', 231.31, '2022-12-07', '2022-12-07', 'Pesos', 21),
+(70, 'Distribución eléctrica industrial y monitoreo de redes e instrumentos', 'SOPORTE Y TOMA CON TIERRA', 'KALOP', 'KL48251', 45, 'Vigente', '28.png', 309.66, '2022-12-07', '2022-12-07', 'Pesos', 21);
 
 -- --------------------------------------------------------
 
@@ -224,7 +251,6 @@ CREATE TABLE `usuario` (
   `Nombre` varchar(15) NOT NULL,
   `Apellido` varchar(15) NOT NULL,
   `Telefono` int(11) NOT NULL,
-  `Celular` int(11) NOT NULL,
   `Tipo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -232,11 +258,12 @@ CREATE TABLE `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Celular`, `Tipo`) VALUES
-('a@a.com', 456, 'Matias', 'Nicolas', 54321, 0, 'Trabajador'),
-('bye@a', 321, 'Hola', 'Hola', 123445, 0, 'Cliente'),
-('chau@a.com', 789, 'DOMI', 'NGO', 65432, 0, 'Cliente'),
-('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente');
+INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Tipo`) VALUES
+('a@a.com', 456, 'Matias', 'Nicolas', 54321, 'Trabajador'),
+('bye@a', 321, 'Hola', 'Hola', 123445, 'Cliente'),
+('chau@a.com', 789, 'DOMI', 'NGO', 65432, 'Cliente'),
+('hola@a.com', 123, 'SA', 'BADO', 96787, 'Cliente'),
+('leanderiver', 1234, 'lean', 'arnaldi', 1167823327, 'Cliente');
 
 --
 -- Índices para tablas volcadas
