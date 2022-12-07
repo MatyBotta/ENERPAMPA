@@ -67,7 +67,7 @@
                   <li>
                     <a href="ver_productos.php">
                       <i class="fa-solid fa-list-ul"></i>
-                      <span>Ver todos los productos ingresados</span>
+                      <span>Ver todos los productos</span>
                     </a>
                   </li>
                 <li>
@@ -102,7 +102,6 @@ if(empty($visado[0]) === false)
         $ecc =  $conexion -> query($sel);
         $ionar = $ecc -> fetch_array();
         $fecha = $ionar[1];
-        echo $ionar[0];
         $contar2 = "SELECT * from usuario where Mail = '$ionar[0]'";
         $con2 =  $conexion -> query($contar2);
         $carac = $con2 -> fetch_array();

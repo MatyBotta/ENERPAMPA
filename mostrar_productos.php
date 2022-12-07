@@ -49,11 +49,25 @@ if(empty($_GET['product_id']) == false)
 
     if(empty($_SESSION['mail']) == false)
         {
-            ?>
-             <section class="menu">
-            <a href = "index_cliente.html"> Volver </a>
-            </section>
-            <?php
+            $select = "SELECT Tipo from usuario where Mail = '$_SESSION[mail]'";
+            $done =  $conexion -> query($select);
+            $array = $done -> fetch_array();
+            if($array[0] === 'Cliente') 
+            {
+                ?>
+                <section class="menu">
+                <a href = "index_cliente.html"> Volver </a>
+                </section>
+                <?php
+            }
+            else
+            {
+                ?>
+                <section class="menu">
+                <a href = "index_trabajador.html"> Volver </a>
+                </section>
+                <?php
+            }
         }
         else
         {

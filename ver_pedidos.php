@@ -67,7 +67,7 @@
                   <li>
                     <a href="ver_productos.php">
                       <i class="fa-solid fa-list-ul"></i>
-                      <span>Ver todos los productos ingresados</span>
+                      <span>Ver todos los productos </span>
                     </a>
                   </li>
                 <li>
@@ -86,3 +86,51 @@ if(!isset($_SESSION))
     session_start();
 }
 include("db.php");
+$seleccionar = "SELECT count(*) FROM pedido";
+$elegir =  $conexion -> query($seleccionar);
+$info = $elegir -> fetch_array();
+$ID = 0;
+?>
+<table border = "1">
+<tr font = "bold"><th>ID Pedido</th><th>Fecha</th><th>Contacto</th><th>Mail</th><th>Telefono</th><th>Celular</th></tr>
+<?php
+for($i = 0; $i < $info[0]; $i ++)
+{
+  $carrito = "SELECT * from pedido where ID > $ID order by ID asc";
+  $shop =  $conexion -> query($carrito);
+  $ionar = $shop -> fetch_array();
+  $ID = $ionar[0];
+  $carrito2 = "SELECT * from usuario where Mail = '$ionar[1]'";
+  $shop2 =  $conexion -> query($carrito2);
+  $ionar2 = $shop2 -> fetch_array();
+  if($ionar2[4] == 0)
+  {
+    $ionar2[4] = '-';
+  }
+  if($ionar2[5] == 0)
+  {
+    $ionar2[5] = '-';
+  }
+  if($ionar2[2] == null)
+  {
+    $ionar2[2] = '';
+  }
+  if($ionar2[3] == null)
+  {
+    $ionar2[3] = '';
+  }
+  ?>
+  <tr><td><?php echo $ID?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar2[2] . " " .  $ionar2[3]?></td><td><?php echo $ionar[2]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar2[5]?></td><td><button onclick = "window.location.href='Excelpedido.php?id_pedido=<?php echo $ID;?>'">Exportar a Excel</button></td><td><button onclick = eliminar()>Pedido concretado</button><td><button onclick = "window.location.href='eliminar_pedido.php?id_pedido=<?php echo $ID;?>'">Eliminar</button></td></tr>
+<?php
+  if(isset($_POST['insert']))
+  {
+    function eliminar()
+    {
+      $ID = $_SESSION["ID"];
+      $var = "DELETE FROM carrito where Pedido = $ID";
+      $a = $conexion -> query($carrito);
+      $var2 = "DELETE FROM pedido where ID = $ID";
+      $a2 = $conexion -> query($carrito2);
+    }
+  }
+}
