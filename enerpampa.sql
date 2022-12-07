@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2022 a las 15:47:11
+-- Tiempo de generación: 07-12-2022 a las 15:51:16
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.0.23
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -121,26 +121,87 @@ INSERT INTO `carac_prod` (`ID_Prod`, `Caracteristica`, `Caracteristica2`, `Carac
 CREATE TABLE `carrito` (
   `ID_Prod` int(11) NOT NULL,
   `Mail` varchar(50) NOT NULL,
-  `Cantidad` int(11) NOT NULL
+  `Cantidad` int(11) NOT NULL,
+  `Pedido` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `carrito`
 --
 
-INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`) VALUES
-(1, 'a@a.com', 3),
-(1, 'hola', 2),
-(2, 'hola@a.com', 4),
-(3, 'hola', 1),
-(3, 'hola@a.com', 38),
-(4, 'hola@a.com', 1),
-(6, 'hola@a.com', 3),
-(8, 'hola@a.com', 1),
-(9, 'hola@a.com', 1),
-(12, 'hola@a.com', 1),
-(14, 'hola@a.com', 1),
-(51, 'a@a.com', 1);
+INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`, `Pedido`) VALUES
+(1, 'bye@a', 1, 2),
+(1, 'hola', 2, NULL),
+(1, 'hola@a.com', 8, 1),
+(2, 'a@a.com', 2, NULL),
+(2, 'hola@a.com', 7, 1),
+(3, 'a@a.com', 69, NULL),
+(3, 'hola', 1, NULL),
+(3, 'hola@a.com', 2, 1),
+(4, 'hola@a.com', 5, 1),
+(5, 'bye@a', 1, 2),
+(5, 'hola@a.com', 5, 1),
+(6, 'hola@a.com', 4, 1),
+(7, 'hola@a.com', 1, 1),
+(8, 'bye@a', 1, 2),
+(8, 'hola@a.com', 1, 1),
+(9, 'hola@a.com', 1, 1),
+(10, 'hola@a.com', 2, 1),
+(11, 'bye@a', 2, 2),
+(11, 'hola@a.com', 1, 1),
+(12, 'hola@a.com', 2, 1),
+(13, 'a@a.com', 1, NULL),
+(13, 'bye@a', 2, 2),
+(14, 'hola@a.com', 1, 1),
+(15, 'bye@a', 2, 2),
+(17, 'a@a.com', 1, NULL),
+(17, 'bye@a', 1, 2),
+(20, 'bye@a', 1, 2),
+(31, 'bye@a', 1, 2),
+(32, 'a@a.com', 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ingresos`
+--
+
+CREATE TABLE `ingresos` (
+  `Mail` varchar(50) NOT NULL,
+  `Fecha` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `ingresos`
+--
+
+INSERT INTO `ingresos` (`Mail`, `Fecha`) VALUES
+('a@a.com', '2022-12-07 09:12:00'),
+('a@a.com', '2022-12-07 09:44:00'),
+('bye@a', '2022-12-05 10:34:00'),
+('bye@a', '2022-12-06 09:53:00'),
+('hola@a.com', '2022-12-05 10:28:00'),
+('hola@a.com', '2022-12-06 08:43:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedido`
+--
+
+CREATE TABLE `pedido` (
+  `ID` int(11) NOT NULL,
+  `Mail` varchar(50) NOT NULL,
+  `Hora` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`ID`, `Mail`, `Hora`) VALUES
+(1, 'hola@a.com', '2022-12-06'),
+(2, 'bye@a', '2022-12-07');
 
 -- --------------------------------------------------------
 
@@ -251,19 +312,21 @@ CREATE TABLE `usuario` (
   `Nombre` varchar(15) NOT NULL,
   `Apellido` varchar(15) NOT NULL,
   `Telefono` int(11) NOT NULL,
-  `Tipo` varchar(10) NOT NULL
+  `Celular` int(11) NOT NULL,
+  `Tipo` varchar(10) NOT NULL,
+  `Rubro` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Tipo`) VALUES
-('a@a.com', 456, 'Matias', 'Nicolas', 54321, 'Trabajador'),
-('bye@a', 321, 'Hola', 'Hola', 123445, 'Cliente'),
-('chau@a.com', 789, 'DOMI', 'NGO', 65432, 'Cliente'),
-('hola@a.com', 123, 'SA', 'BADO', 96787, 'Cliente'),
-('leanderiver', 1234, 'lean', 'arnaldi', 1167823327, 'Cliente');
+INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Celular`, `Tipo`, `Rubro`) VALUES
+('a@a.com', 456, 'Matias', 'Nicolas', 54321, 0, 'Trabajador', ''),
+('bye@a', 321, 'Hola', 'Hola', 123445, 0, 'Cliente', ''),
+('chau@a.com', 789, 'DOMI', 'NGO', 65432, 0, 'Cliente', ''),
+('fdf@tgh', 654, 'Hola', 'Hola', 123456, 654321, 'Cliente', ''),
+('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente', '');
 
 --
 -- Índices para tablas volcadas
@@ -282,9 +345,15 @@ ALTER TABLE `carrito`
   ADD PRIMARY KEY (`ID_Prod`,`Mail`);
 
 --
--- Indices de la tabla `productos`
+-- Indices de la tabla `ingresos`
 --
-ALTER TABLE `productos`
+ALTER TABLE `ingresos`
+  ADD PRIMARY KEY (`Mail`,`Fecha`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
   ADD PRIMARY KEY (`ID`);
 
 --
