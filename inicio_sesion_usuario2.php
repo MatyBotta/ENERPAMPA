@@ -11,22 +11,31 @@ $contrasenia = $_POST['contrasenia'];
 $seleccionar = "SELECT Mail, Contrasenia, Tipo FROM usuario where Mail = '$mail'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
-if($info[0] === $mail)
+if(empty($info[0]) == false)
 {
-    if($info[1] === $contrasenia)
+    if($info[0] === $mail)
     {
-            $_SESSION['mail'] = $mail;
-            // inicio de sesion exitoso para cliente
-            include("mostrar_productos.php");
+        if($info[1] === $contrasenia)
+        {
+                $_SESSION['mail'] = $mail;
+                // inicio de sesion exitoso para cliente
+                include("mostrar_productos.php");
+        }
+        else
+        {
+            echo '<script>alert("Contraseña erronea")</script>';
+            include('iniciar_sesion2.html');
+        }
     }
     else
     {
-        //contrasenia erronea
-        include("iniciar_sesion2.html");
+        echo '<script>alert("Usuario no registrado")</script>';
+        include('registrarse.html');
     }
 }
 else
 {
-    //usuario no registrado";
-    include("iniciar_sesion2.html");
+    echo '<script>alert("Usuario no registrado")</script>';
+    include('registrarse.html');
 }
+

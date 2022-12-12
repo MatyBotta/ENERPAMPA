@@ -31,14 +31,15 @@ if(empty($info[0]) === true)
     }
     else
     {
-        echo "Por favor, ingrese todos los campos obligatorios";
-        include("registrarse.html");
+        include('registrarse.html');
+        echo '<script>alert("Por favor, ingrese todos los campos obligatorios")</script>';
+
     }
 }
 else
 {
-    echo "mail ya utilizado";
-    include("registrarse.html");
+    echo '<script>alert("Mail ya utilizado")</script>';
+    include('registrarse.html');
 }
 if($con === true)
 {

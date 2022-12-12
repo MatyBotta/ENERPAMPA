@@ -59,13 +59,13 @@
                   </li>
                   <li>
                     <a href="ver_usuarios.php">
-                      <i class="fa-solid fa-users"></i>
+                      <i class="fa-solid fa-list-ul"></i>
                       <span>Ver usuarios que ingresaron</span>
                     </a>
                   </li>
                   <li>
                     <a href="ver_productos.php">
-                      <i class="fa-solid fa-box-open"></i>
+                      <i class="fa-solid fa-list-ul"></i>
                       <span>Ver todos los productos</span>
                     </a>
                   </li>
@@ -90,6 +90,14 @@
               </ul>
             </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-          </body>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
+            <section class="agregar-producto">
+                <form action="crear_trabajador.php" method="post"> 
+                <br>
+                <h3>Ingrese el mail del nuevo usuario trabajador:</h3>   
+                <br>
+                <p><input class="controls" type="mail" name="usuario" id="usuario"></p> 
+                <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
+            </section>               
+        </body>
         </html>
