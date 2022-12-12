@@ -41,7 +41,7 @@ else
     if($ancho != 100 || $alto != 100)
     {
         include("agregar_datos_productos.php");
-        echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
+        echo '<script>alert("Por favor, la imagen debe tener algun lado la medida de 100")</script>';
     }
     else
     {
