@@ -41,9 +41,7 @@ else
         $update = "UPDATE productos set Cantidad = Cantidad - $ionar[1] where ID = $id_prod";
         $done2 =  $conexion -> query($update);
     }
-    $carrito2 = "DELETE from carrito where Pedido = $ID";
-    $shop2 =  $conexion -> query($carrito2);
-    $delete = "DELETE from pedido where ID = $ID";
+    $delete = "UPDATE pedido set Estado = 'Concretado' where ID = $ID";
     $done =  $conexion -> query($delete);
     echo "¡Pedido concretado!";
     header('Location:ver_pedidos.php');

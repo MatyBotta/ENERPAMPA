@@ -34,7 +34,7 @@ else
     <input step="any" type="text" name="apellido" value="" >
     <br>
     <h3>Contraseña (obligatorio)</h3>
-    <input step="any" type="text" name="contrasenia" value="" >
+    <input step="any" type="password" name="contrasenia" value="" >
     <br>
     <h3>Telefono (opcional)</h3>
     <input step="any" type="number" name="telefono" value="" >

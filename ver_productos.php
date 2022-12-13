@@ -71,7 +71,7 @@ body{
             <h2 class="title" id="productos">Seleccionar alguna opcion</h2>
             <hr>
             <div class="sidebar">
-              <img src="imagenes/LOGO.ico"width="80" alt="">
+            <a href = "index_trabajador.html"><img src="imagenes/LOGO.ico"width="80" alt=""></a>
               <ul class="nav">
                 <li>
                   <a href="agregar-producto.html">
@@ -113,6 +113,12 @@ body{
                     <a href="ver_pedidos.php">
                       <i class="fa-solid fa-list-ul"></i>
                       <span>Ver pedidos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="ver_pedidos_archivados.php">
+                      <i class="fa-solid fa-list-ul"></i>
+                      <span>Ver definicion pedidos</span>
                     </a>
                   </li>
                   <li>
