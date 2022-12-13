@@ -71,7 +71,7 @@ body{
             <h2 class="title" id="productos">Seleccionar alguna opcion</h2>
             <hr>
             <div class="sidebar">
-              <img src="imagenes/LOGO.ico"width="80" alt="">
+            <a href = "index_trabajador.html"><img src="imagenes/LOGO.ico"width="80" alt=""></a>
               <ul class="nav">
                 <li>
                   <a href="agregar-producto.html">
@@ -116,6 +116,12 @@ body{
                     </a>
                   </li>
                   <li>
+                    <a href="ver_pedidos_archivados.php">
+                      <i class="fa-solid fa-list-ul"></i>
+                      <span>Ver definicion pedidos</span>
+                    </a>
+                  </li>
+                  <li>
                     <a href="ver_usuarios.php">
                     <i class="fa-solid fa-users"></i>
                       <span>Ver usuarios que ingresaron</span>
@@ -151,7 +157,7 @@ body{
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <?php
 include("db.php");
-$seleccionar = "SELECT count(*) FROM pedido";
+$seleccionar = "SELECT count(*) FROM pedido where Estado = 'Activo'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
 $ID = 0;
@@ -161,7 +167,7 @@ $ID = 0;
 <?php
 for($i = 0; $i < $info[0]; $i ++)
 {
-  $carrito = "SELECT * from pedido where ID > $ID order by ID asc";
+  $carrito = "SELECT * from pedido where ID > $ID  AND Estado = 'Activo' order by ID asc";
   $shop =  $conexion -> query($carrito);
   $ionar = $shop -> fetch_array();
   $ID = $ionar[0];
@@ -185,7 +191,7 @@ for($i = 0; $i < $info[0]; $i ++)
     $ionar2[3] = '';
   }
   ?>
-  <tr><td><?php echo $ID?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar2[2] . " " .  $ionar2[3]?></td><td><?php echo $ionar[2]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar2[5]?></td><td><button onclick = "window.location.href='Excelpedido.php?id_pedido=<?php echo $ID;?>'">Exportar a Excel</button></td><td><button onclick = "window.location.href='concretado.php?id_pedido=<?php echo $ID;?>'">Pedido concretado</button><td><button onclick = "window.location.href='eliminar_pedido.php?id_pedido=<?php echo $ID;?>'">Eliminar</button></td></tr>
+  <tr><td><?php echo $ID?></td><td><?php echo $ionar[2]?></td><td><?php echo $ionar2[2] . " " .  $ionar2[3]?></td><td><?php echo $ionar[1]?></td><td><?php echo $ionar2[4]?></td><td><?php echo $ionar2[5]?></td><td><button onclick = "window.location.href='Excelpedido.php?id_pedido=<?php echo $ID;?>'">Exportar a Excel</button></td><td><button onclick = "window.location.href='concretado.php?id_pedido=<?php echo $ID;?>'">Pedido concretado</button><td><button onclick = "window.location.href='archivar_pedido.php?id_pedido=<?php echo $ID;?>'">Archivar</button></td></tr>
 <?php
   if(isset($_POST['insert']))
   {
