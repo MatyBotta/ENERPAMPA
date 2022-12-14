@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2022 a las 15:51:16
+-- Tiempo de generación: 14-12-2022 a las 14:05:40
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -130,35 +130,40 @@ CREATE TABLE `carrito` (
 --
 
 INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`, `Pedido`) VALUES
-(1, 'bye@a', 1, 2),
+(1, 'a@a.com', 2, 4),
+(1, 'bye@a', 5, 3),
 (1, 'hola', 2, NULL),
 (1, 'hola@a.com', 8, 1),
-(2, 'a@a.com', 2, NULL),
+(2, 'a@a.com', 2, 4),
+(2, 'bye@a', 6, 3),
 (2, 'hola@a.com', 7, 1),
-(3, 'a@a.com', 69, NULL),
+(3, 'a@a.com', 69, 4),
 (3, 'hola', 1, NULL),
 (3, 'hola@a.com', 2, 1),
 (4, 'hola@a.com', 5, 1),
-(5, 'bye@a', 1, 2),
+(5, 'bye@a', 1, 3),
 (5, 'hola@a.com', 5, 1),
 (6, 'hola@a.com', 4, 1),
 (7, 'hola@a.com', 1, 1),
-(8, 'bye@a', 1, 2),
+(8, 'bye@a', 1, 3),
 (8, 'hola@a.com', 1, 1),
 (9, 'hola@a.com', 1, 1),
 (10, 'hola@a.com', 2, 1),
-(11, 'bye@a', 2, 2),
+(11, 'bye@a', 2, 3),
 (11, 'hola@a.com', 1, 1),
 (12, 'hola@a.com', 2, 1),
-(13, 'a@a.com', 1, NULL),
-(13, 'bye@a', 2, 2),
+(13, 'a@a.com', 1, 4),
+(13, 'bye@a', 2, 3),
+(14, 'bye@a', 1, 3),
 (14, 'hola@a.com', 1, 1),
-(15, 'bye@a', 2, 2),
-(17, 'a@a.com', 1, NULL),
-(17, 'bye@a', 1, 2),
-(20, 'bye@a', 1, 2),
-(31, 'bye@a', 1, 2),
-(32, 'a@a.com', 1, NULL);
+(15, 'bye@a', 2, 3),
+(17, 'a@a.com', 1, 4),
+(17, 'bye@a', 1, 3),
+(20, 'bye@a', 1, 3),
+(30, 'bye@a', 1, 3),
+(31, 'bye@a', 1, 3),
+(32, 'a@a.com', 1, 4),
+(32, 'bye@a', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -178,8 +183,27 @@ CREATE TABLE `ingresos` (
 INSERT INTO `ingresos` (`Mail`, `Fecha`) VALUES
 ('a@a.com', '2022-12-07 09:12:00'),
 ('a@a.com', '2022-12-07 09:44:00'),
+('a@a.com', '2022-12-12 08:42:00'),
+('a@a.com', '2022-12-12 10:54:00'),
+('a@a.com', '2022-12-12 10:55:00'),
+('a@a.com', '2022-12-12 10:56:00'),
+('a@a.com', '2022-12-12 11:01:00'),
+('a@a.com', '2022-12-12 11:03:00'),
+('a@a.com', '2022-12-12 11:04:00'),
+('a@a.com', '2022-12-12 11:05:15'),
+('a@a.com', '2022-12-12 11:05:17'),
+('a@a.com', '2022-12-12 11:08:59'),
+('a@a.com', '2022-12-12 11:50:33'),
+('a@a.com', '2022-12-12 11:50:53'),
+('a@a.com', '2022-12-13 08:32:23'),
+('a@a.com', '2022-12-13 10:41:20'),
+('a@a.com', '2022-12-13 11:25:44'),
+('a@a.com', '2022-12-13 11:32:54'),
 ('bye@a', '2022-12-05 10:34:00'),
 ('bye@a', '2022-12-06 09:53:00'),
+('bye@a', '2022-12-13 11:26:00'),
+('gleviu@enerpampa.com', '2022-12-13 09:55:54'),
+('gleviu@enerpampa.com', '2022-12-13 10:16:56'),
 ('hola@a.com', '2022-12-05 10:28:00'),
 ('hola@a.com', '2022-12-06 08:43:00');
 
@@ -192,16 +216,19 @@ INSERT INTO `ingresos` (`Mail`, `Fecha`) VALUES
 CREATE TABLE `pedido` (
   `ID` int(11) NOT NULL,
   `Mail` varchar(50) NOT NULL,
-  `Hora` date NOT NULL
+  `Hora` date NOT NULL,
+  `Estado` varchar(20) NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `pedido`
 --
 
-INSERT INTO `pedido` (`ID`, `Mail`, `Hora`) VALUES
-(1, 'hola@a.com', '2022-12-06'),
-(2, 'bye@a', '2022-12-07');
+INSERT INTO `pedido` (`ID`, `Mail`, `Hora`, `Estado`) VALUES
+(1, 'hola@a.com', '2022-12-06', 'Activo'),
+(2, 'bye@a', '2022-12-07', 'Activo'),
+(3, 'bye@a', '2022-12-13', 'Concretado'),
+(4, 'a@a.com', '2022-12-13', 'Archivado');
 
 -- --------------------------------------------------------
 
@@ -230,19 +257,19 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantidad`, `Estado`, `Imagen`, `Precio`, `Ult. Act.`, `Fecha_Prec`, `Moneda`, `IVA`) VALUES
-(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 40, 'Vigente', '1.png', 1318, '2022-11-02', '2022-11-07', 'Pesos', 21),
-(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 20, 'Vigente', '1.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', 30, 'Vigente', '1.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 18, 'Vigente', 'Bowling.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 9, 'Vigente', 'Longneck.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 10, 'Vigente', 'Magnolia.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 240, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 100, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 120, 'Vigente', '5.png', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 100, 'Vigente', '5.png', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 110, 'Vigente', '5.png', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 1000, 'Vigente', '5.png', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
-(13, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'GU10 7W PH', 120, 'Vigente', 'Dicro.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
+(1, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404206', 38, 'Vigente', '1.png', 1318, '2022-11-02', '2022-11-07', 'Pesos', 21),
+(2, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404204', 18, 'Vigente', '1.png', 992, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(3, 'Iluminacion', 'PROYECTOR LED', 'INTERELEC', '404202', -39, 'Vigente', '1.png', 636, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(4, 'Iluminacion', 'LAMPARA BOWLING', 'INTERELEC', '402220', 13, 'Vigente', 'Bowling.png', 3415, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(5, 'Iluminacion', 'LAMPARA LONGNECK', 'INTERELEC', '401791', 8, 'Vigente', 'Longneck.png', 4635, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(6, 'Iluminacion', 'LAMPARA MAGNOLIA', 'INTERELEC', '402207', 6, 'Vigente', 'Magnolia.png', 1603, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(7, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403000', 239, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(8, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403001', 99, 'Vigente', '5.png', 81, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(9, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403004', 119, 'Vigente', '5.png', 98, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(10, 'Iluminacion', 'LAMPARA LED A60', 'INTERELEC', '403011', 98, 'Vigente', '5.png', 147, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(11, 'Iluminacion', 'LAMPARA LED A60', 'NRV', 'A1060-ST 15W', 108, 'Vigente', '5.png', 265, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(12, 'Iluminacion', 'LAMPARA LED A60', 'SYBYD', 'SYBULE9F', 998, 'Vigente', '5.png', 183, '2022-11-02', '2022-11-02', 'Pesos', 21),
+(13, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'GU10 7W PH', 119, 'Vigente', 'Dicro.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
 (14, 'Iluminacion', 'LAMPARA LED DICRO', 'IDOLER', 'R1=GU10 7W PH', 180, 'Vigente', 'Dicro.png', 388, '2022-11-02', '2022-11-02', 'Pesos', 10.5),
 (15, 'Iluminacion', 'LAMPARA LED DICRO', 'INTERELEC', '402290', 30, 'Vigente', 'Dicro.png', 118, '2022-11-02', '2022-11-02', 'Pesos', 21),
 (16, 'Iluminacion', 'LAMPARA LED AR111', 'INTERELEC', '403653', 28, 'Vigente', 'AR111.png', 527, '2022-11-02', '2022-11-02', 'Pesos', 21),
@@ -307,7 +334,7 @@ INSERT INTO `productos` (`ID`, `Categoria`, `Nombre`, `Marca`, `Codigo`, `Cantid
 --
 
 CREATE TABLE `usuario` (
-  `Mail` varchar(11) NOT NULL,
+  `Mail` varchar(40) NOT NULL,
   `Contrasenia` int(11) NOT NULL,
   `Nombre` varchar(15) NOT NULL,
   `Apellido` varchar(15) NOT NULL,
@@ -322,10 +349,11 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Celular`, `Tipo`, `Rubro`) VALUES
+('123@123', 1010, 'Leandro', 'Arnaldi', 0, 0, 'Trabajador', ''),
 ('a@a.com', 456, 'Matias', 'Nicolas', 54321, 0, 'Trabajador', ''),
 ('bye@a', 321, 'Hola', 'Hola', 123445, 0, 'Cliente', ''),
 ('chau@a.com', 789, 'DOMI', 'NGO', 65432, 0, 'Cliente', ''),
-('fdf@tgh', 654, 'Hola', 'Hola', 123456, 654321, 'Cliente', ''),
+('gleviu@enerpampa.com', 1234, 'Gonzalo', 'Leviu', 1234, 0, 'Trabajador', ''),
 ('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente', '');
 
 --
