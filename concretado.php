@@ -3,7 +3,10 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
             <title>SECCION PRODUCTO</title>
+        
           </head> 
 <body> 
 <?php
@@ -19,7 +22,7 @@ if(!isset($_GET['y']))
     $_SESSION['ID'] = $ID;
     ?>
     <section class="editar">
-    <p> ¿Está seguro de que desea dar por concretado el pedido Nº <?PHP ECHO $ID ?>?</p>
+    <h2> ¿Está seguro de que desea dar por concretado el pedido Nº <?PHP ECHO $ID ?>?</h2>
     <button onclick = "window.location.href='concretado.php?y=1'">Continuar</a></button>
     <button><a href = "ver_pedidos.php">Cancelar</a></button>
     </section>

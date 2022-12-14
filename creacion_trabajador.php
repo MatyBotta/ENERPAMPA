@@ -37,7 +37,11 @@ else
     ('$usuario','$nombre','$apellido','$contra', $telefono, 'Trabajador')";
     $con =  $conexion -> query($in);
     if($con == true)
-    {
-        echo "Usuario creado exitosamente";
+    {  ?>
+
+        <section class="msg">
+        <h2>Usuario creado exitosamente.</h2>
+        <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "panel_control.html"></i>Volver</button>
+        <?php
     }
 }

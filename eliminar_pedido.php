@@ -3,6 +3,8 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
             <title>SECCION PRODUCTO</title>
           </head> 
 <body> 
@@ -19,7 +21,7 @@ if(!isset($_GET['x']))
     $_SESSION['ID'] = $ID;
     ?>
     <section class="editar">
-    <p> ¿Está seguro de eliminar el pedido Nº <?PHP ECHO $ID ?>?</p>
+    <h2> ¿Está seguro de eliminar el pedido Nº <?PHP ECHO $ID ?>?</h2>
     <button onclick = "window.location.href='eliminar_pedido.php?x=1'">Continuar</a></button>
     <button><a href = "ver_pedidos.php">Cancelar</a></button>
     </section>
@@ -34,7 +36,13 @@ else
     $done =  $conexion -> query($delete);
     if($shop === true && $done === true)
     {
-        echo "eliminado con exito";
+        ?>
+        <section class="msg">
+        <h2>Producto eliminado exitosamente.</h2>
+        <button onclick = "window.location.href='eliminar_pedido.php?x=1'">Continuar</a></button>
+        <button><a href = "ver_pedidos.php">Cancelar</a></button>
+        </section>
+        <?php
         header('Location:ver_pedidos.php');
     }
 }

@@ -51,7 +51,7 @@ body{
 
 
 .sidebar ul li {
-    margin: 20px 0;
+    margin: 16px 0;
 }
 
 .sidebar ul li a{
@@ -117,7 +117,7 @@ body{
                   </li>
                   <li>
                     <a href="ver_pedidos_archivados.php">
-                      <i class="fa-solid fa-list-ul"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                       <span>Ver definicion pedidos</span>
                     </a>
                   </li>

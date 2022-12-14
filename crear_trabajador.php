@@ -21,11 +21,17 @@ $revisar =  $conexion -> query($comprobacion);
 $info = $revisar -> fetch_array();
 if(empty($info[0]) === false)
 {
-    echo "Este mail se encuentra ocupado por otro trabajador";
+    ?>
+    <section class="msg">
+    <h2>Este mail se encuentra ocupado por otro trabajador.</h2>
+        <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "panel_control.html"></i>Volver</button>
+    </section>
+    <?php
 }
 else
 {
     ?>
+    <section class="selec">
     <form action="creacion_trabajador.php" method="post">
     <h3>Nombre (obligatorio)</h3>
     <input step="any" type="text"  name="nombre" value="">           
@@ -34,10 +40,11 @@ else
     <input step="any" type="text" name="apellido" value="" >
     <br>
     <h3>Contraseña (obligatorio)</h3>
-    <input step="any" type="password" name="contrasenia" value="" >
+    <input step="any" type="text" name="contrasenia" value="" >
     <br>
-    <h3>Telefono (opcional)</h3>
+    <h4>Telefono (opcional)</h4>
     <input step="any" type="number" name="telefono" value="" >
     <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
+</section>
     <?php
 }

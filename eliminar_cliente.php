@@ -23,7 +23,12 @@ if(!isset($_GET['cliente']))
     $info = $revisar -> fetch_array();
     if(empty($info[0]) === true)
     {
-        echo "No existe usuario con ese mail";
+        ?>
+    <section class="msg">
+    <h2>No existe ningun cliente con este correo.</h2>
+        <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "panel_control.html"></i>Volver</button>
+    </section>
+    <?php
     }
     else
     {
@@ -32,7 +37,7 @@ if(!isset($_GET['cliente']))
             <p> ¿Desea eliminar a:</p>
             <p> Nombre y Apellido: <?php echo $info[2] . " " . $info[3] ?></p>
             <p> Mail: <?php echo $info[0] ?></p>
-            <button onclick = "window.location.href='eliminar_cliente.php?id_pedido=<?php echo $cliente;?>'">Continuar</a></button>
+            <button onclick = "window.location.href='eliminar_cliente.php?cliente=<?php echo $cliente;?>'">Continuar</a></button>
             <button><a href = "eliminar_cliente.html">Cancelar</a></button>
             </section>
         <?php
@@ -49,5 +54,10 @@ else
     $done3 =  $conexion -> query($delete3);
     $delete4 = "DELETE from pedido where Mail = '$cliente'";
     $done4 =  $conexion -> query($delete4);
-    echo "Cliente eliminado con exito";
+    ?>
+    <section class="msg">
+    <h2>Cliente eliminado correctamente.</h2>
+        <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "panel_control.html"></i>Volver</button>
+    </section>
+    <?php
 }
