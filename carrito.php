@@ -19,7 +19,7 @@ if(empty($var[0]) === false)
     {
         $var = $_GET['product_id2'];
         $mail = $_SESSION['mail'];
-        $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail'";
+        $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail' and Pedido = 0";
         $validacion =  $conexion -> query($validar);
         $ok = $validacion -> fetch_array();
         if(empty($ok[0]) === false)
@@ -35,7 +35,7 @@ if(empty($var[0]) === false)
     $ID = 0;
     for($i = 0; $i < $var[0]; $i ++)
     {
-        $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID order by ID_Prod asc";
+        $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID and Pedido = 0 order by ID_Prod asc";
         $shop =  $conexion -> query($carrito);
         $ionar = $shop -> fetch_array();
         $ID = $ionar[0];
