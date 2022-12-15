@@ -26,67 +26,48 @@ else
 }
 $contar = "SELECT count(*) from productos where Categoria = '$categoria' and Estado = 'Vigente'";
 $con =  $conexion -> query($contar);
-$visado = $con -> fetch_array();    
-if(empty($_GET['product_id']) == false)
+$visado = $con -> fetch_array();   
+if(empty($_SESSION['mail']) == false)
 {
-    $var = $_GET['product_id'];
-    $mail = $_SESSION['mail'];
-    $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
-    $validacion =  $conexion -> query($validar);
-    $ok = $validacion -> fetch_array();
-    if(empty($ok) === false)
+    $select = "SELECT Tipo from usuario where Mail = '$_SESSION[mail]'";
+    $done =  $conexion -> query($select);
+    $array = $done -> fetch_array();
+    if($array[0] === 'Cliente') 
     {
-        $mas = "UPDATE carrito set Cantidad = Cantidad + 1 where ID_Prod = $var and Mail = '$mail'";
-        $total =  $conexion -> query($mas);
+        ?>
+        <section class="menu">
+        <a href = "index_cliente.html"> Volver </a>
+        </section>
+        <?php
     }
     else
     {
-        $agregar = "INSERT into carrito (ID_Prod, Mail, Cantidad) values ($var, '$mail', 1)";
-        $agregado =  $conexion -> query($agregar);
+        ?>
+        <section class="menu">
+        <a href = "index_trabajador.html"> Volver </a>
+        </section>
+        <?php
     }
-    header('Location:mostrar_productos.php');
 }
-
-    if(empty($_SESSION['mail']) == false)
-        {
-            $select = "SELECT Tipo from usuario where Mail = '$_SESSION[mail]'";
-            $done =  $conexion -> query($select);
-            $array = $done -> fetch_array();
-            if($array[0] === 'Cliente') 
-            {
-                ?>
-                <section class="menu">
-                <a href = "index_cliente.html"> Volver </a>
-                </section>
-                <?php
-            }
-            else
-            {
-                ?>
-                <section class="menu">
-                <a href = "index_trabajador.html"> Volver </a>
-                </section>
-                <?php
-            }
-        }
-        else
-        {
-            ?>
-             <section class="menu">
-            <a href = "index.html"> Volver </a>
-            </section>
-            <?php
-        }
-        if(empty($_GET['product_id2']) == false)
+else
 {
+    ?>
+     <section class="menu">
+    <a href = "index.html"> Volver </a>
+    </section>
+    <?php
+}   
+if(empty($_GET['product_id2']) == false)
+{
+    echo "holaaaaa";
     $var = $_GET['product_id2'];
     $mail = $_SESSION['mail'];
-    $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail'";
+    $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail' and Pedido = 0";
     $validacion =  $conexion -> query($validar);
     $ok = $validacion -> fetch_array();
     if(empty($ok[0]) === false)
     {
-        $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail'";
+        $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail' and Pedido = 0";
         $minar =  $conexion -> query($eli);
     }
 }
@@ -111,7 +92,7 @@ if(empty($_GET['product_id']) == false)
         $ID = $ionar[0];
         if(empty($_SESSION['mail']) == false)
         {
-            $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]'";
+            $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]' and Pedido = 0";
             $agarrado =  $conexion -> query($agarrar);
             $taken = $agarrado -> fetch_array();
             if(empty($taken[0]) === true)
@@ -140,19 +121,19 @@ if(empty($_GET['product_id']) == false)
         $imagen = $ionar[7];
         $img="imagenes_subidas/".$imagen;
         ?>
-        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td><td>   
+        <tr><td><?php echo $ionar[2]?></td><td><?php echo $ionar[3]?></td><td><?php echo $valor.$ionar[8]?></td><td><?php echo $ionar[10]?></td><td><?php echo $ionar[11]?></td><td><?php echo $ionar[12]?></td><td><?php echo $carac[1]?></td><td><?php echo $carac[2]?></td><td><?php echo $carac[3]?></td><td><?php echo $carac[4]?></td><td><?php echo $carac[5]?></td><td><?php echo $carac[6]?></td><td><?php echo '<img src= "'.$img.'">'?></td> 
         <?php
         if(empty($_SESSION['mail']) == false)
         {
             ?>
-            <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
-            <td id = <?php echo $i ?>><button onclick = "window.location.href='mostrar_productos.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
+            <td><button onclick = "window.location.href='agregar_carrito.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+            <td><button onclick = "window.location.href='mostrar_productos.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
             <?php
         }
         else
         {
             ?>
-            <button onclick = "window.location.href='iniciar_sesion2.html'">Añadir al carrito</button></td>
+            <td><button onclick = "window.location.href='iniciar_sesion.php?x=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
             <?php
         }
         if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
@@ -162,7 +143,7 @@ if(empty($_GET['product_id']) == false)
         $carac[3] = null;
         $carac[4] = null;
         $carac[5] = null;
-        $carac[6] = null;;
+        $carac[6] = null;
     }
     
     ?>

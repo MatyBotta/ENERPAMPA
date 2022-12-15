@@ -60,7 +60,7 @@ if(empty($_SESSION['D']) === false)
     <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
     <input  id = "boton" name = "boton" class="botons" type="submit" value="Registrar">
     </form>
-    <p><a href="iniciar_sesion.html">Ya tengo Cuenta</a></p>
+    <p><a href="iniciar_sesion.php">Ya tengo Cuenta</a></p>
   </section>
 
 </body>

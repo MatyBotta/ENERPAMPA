@@ -14,10 +14,8 @@ $info = $elegir -> fetch_array();
 if(empty($info[0]) === false)
 {
     if($info[0] === $mail)
-{
-    if($info[1] === $contrasenia)
     {
-        if($info[2] === 'Trabajador')
+        if($info[1] === $contrasenia)
         {
             $_SESSION['mail'] = $mail;
             date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -26,32 +24,33 @@ if(empty($info[0]) === false)
             $fecha = $date->format('Y/m/d h:i:s');
             $in2  = "INSERT INTO ingresos (Mail, Fecha) values ('$mail', '$fecha')";
             $con2 =  $conexion -> query($in2);
-            // inicio de sesion exitoso para trabajador
-            header('Location:panel_control.html'); 
+            if($info[2] === 'Trabajador')
+            {
+                // inicio de sesion exitoso para trabajador
+                header('Location:panel_control.html'); 
+            }
+            else
+            {
+                if(isset($_SESSION['x']))
+                {
+                    header('Location:mostrar_productos.php');
+                }
+                else
+                {
+                    // inicio de sesion exitoso para cliente
+                    header('Location:index_cliente.html'); 
+                }
+            }
         }
         else
         {
-            $_SESSION['mail'] = $mail;
-            date_default_timezone_set('America/Argentina/Buenos_Aires');
-            $hoy = date("Y-m-d, g:i a");
-            $date = new DateTime($hoy);
-            $fecha = $date->format('Y/m/d h:i:s');
-            $in2  = "INSERT INTO ingresos (Mail, Fecha) values ('$mail', '$fecha')";
-            $con2 =  $conexion -> query($in2);
-            $_SESSION['mail'] = $mail;
-            // inicio de sesion exitoso para cliente
-            header('Location:index_cliente.html'); 
+            header('Location:contraseniamal.html'); 
         }
     }
     else
     {
-        header('Location:contraseniamal.html'); 
+        header('Location:usuarionoregistrado.html');
     }
-}
-else
-{
-    header('Location:usuarionoregistrado.html');
-}
 }
 else
 {

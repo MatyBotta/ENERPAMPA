@@ -51,28 +51,6 @@ else
 {
     echo "No ha realizado ninguna busqueda";
 }
-if (isset ($_GET['product_id']))
-{
-if(empty($_SESSION['mail']) == false)
-        {
-            $var = $_GET['product_id'];
-            $mail = $_SESSION['mail'];
-            $validar = "SELECT * FROM carrito where ID_Prod = $var and Mail = '$mail'";
-            $validacion =  $conexion -> query($validar);
-            $ok = $validacion -> fetch_array();
-            if(empty($ok) === false)
-            {
-                $mas = "UPDATE carrito set Cantidad = Cantidad + 1 where ID_Prod = $var and Mail = '$mail'";
-                $total =  $conexion -> query($mas);
-            }
-            else
-            {
-                $agregar = "INSERT into carrito (ID_Prod, Mail, Cantidad) values ($var, '$mail', 1)";
-                $agregado =  $conexion -> query($agregar);
-            }
-        }
-        header('Location:mostrar_productos.php');
-    }
     if(empty($_SESSION['mail']) == false)
         {
             $select = "SELECT Tipo from usuario where Mail = '$_SESSION[mail]'";
@@ -106,6 +84,19 @@ if(empty($_SESSION['mail']) == false)
             </section>
             <?php
         }
+    if(empty($_GET['product_id2']) == false)
+    {
+        $var = $_GET['product_id2'];
+        $mail = $_SESSION['mail'];
+        $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail' and Pedido = 0";
+        $validacion =  $conexion -> query($validar);
+        $ok = $validacion -> fetch_array();
+        if(empty($ok[0]) === false)
+        {
+            $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail' and Pedido = 0";
+            $minar =  $conexion -> query($eli);
+        }
+    }
     ?>
     <section class="titulo">
     <h1><?php echo $categoria ?> </h1>
@@ -135,7 +126,7 @@ if(empty($_SESSION['mail']) == false)
                 $ID = $ionar[0];
                 if(empty($_SESSION['mail']) == false)
                 {
-                    $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]'";
+                    $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]' and Pedido = 0";
                     $agarrado =  $conexion -> query($agarrar);
                     $taken = $agarrado -> fetch_array();
                     if(empty($taken[0]) === true)
@@ -170,13 +161,14 @@ if(empty($_SESSION['mail']) == false)
                 if(empty($_SESSION['mail']) == false)
                 {
                     ?>
-                    <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+                    <button onclick = "window.location.href='agregar_carrito_buscado.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+                    <td><button onclick = "window.location.href='mostrar_productos_buscados.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
                     <?php
                 }
                 else
                 {
                     ?>
-                    <button onclick = "window.location.href='iniciar_sesion2.html'">Añadir al carrito</button></td>
+                    <button onclick = "window.location.href='iniciar_sesion.php?x=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
                     <?php
                 }                    
                 if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>
@@ -212,7 +204,7 @@ if(empty($_SESSION['mail']) == false)
         $ID = $ionar[0];
         if(empty($_SESSION['mail']) == false)
         {
-            $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]'";
+            $agarrar = "SELECT Cantidad from carrito where ID_prod = $ID and Mail = '$_SESSION[mail]' and Pedido = 0";
             $agarrado =  $conexion -> query($agarrar);
             $taken = $agarrado -> fetch_array();
             if(empty($taken[0]) === true)
@@ -247,13 +239,14 @@ if(empty($_SESSION['mail']) == false)
         if(empty($_SESSION['mail']) == false)
         {
             ?>
-            <button onclick = "window.location.href='mostrar_productos.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+            <button onclick = "window.location.href='agregar_carrito_buscado.php?product_id=<?php echo $ionar[0];?>'">Añadir al carrito</button></td>
+            <td><button onclick = "window.location.href='mostrar_productos_buscados.php?product_id2=<?php echo $ionar[0];?>'">Eliminar del carrito</button></td>
             <?php
         }
         else
         {
             ?>
-            <button onclick = "window.location.href='iniciar_sesion2.html'">Añadir al carrito</button></td>
+            <button onclick = "window.location.href='iniciar_sesion.php?x=<?php echo $ionar[0];?>''">Añadir al carrito</button></td>
             <?php
         }
         if(empty($_SESSION['mail']) == false){?><td>Al carrito: <?php echo $taken[0]?></td><?php } ?></tr>

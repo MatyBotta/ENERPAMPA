@@ -181,11 +181,14 @@ width: 10px;
         transform: translateX(calc(-200px * 7));
     }
 }
+.titulo{
+    background: #fff;
+}
 .prov{
    
    display: flex;
    padding: 20px;
-   background: #171717;
+   background: #fff;
    flex-flow: row wrap;
    justify-content: space-between;
    width: 100%;
@@ -193,9 +196,9 @@ width: 10px;
 }
 
 .c1{
-   border: 1px solid rgb(70,69,69);
-   background-color:#fff;
-   color: #000;
+   border: 1px solid rgb(92, 123, 189);
+   background: #f3f3f3;
+   
    width: 120px;
    height: 120px;
    margin: 5px;
@@ -735,6 +738,39 @@ h2{
     text-align: center;
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+.slider {
+    width: 95vw;
+    height: 6,5vw;
+    margin-top: -5px;
+    margin-bottom: -30px;
+    overflow: hidden;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(200px * 14);
+}
+
+.slider .slide {
+    width: 200px;
+}
+
+.slider .slide img {
+    width: 90%;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    90% {
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+}
 *{
     margin: 0;
     padding: 0;
@@ -864,7 +900,7 @@ h2{
             <a href="#nosotros">Nosotros</a>
             <a href="#pie-pagina">ConTacto</a>
             <a href="#productos">Productos</a>
-            <a href="iniciar_sesion.html">Iniciar sesion</a>
+            <a href="iniciar_sesion.php">Iniciar sesion</a>
         </nav>
     </div>
     
@@ -881,7 +917,7 @@ h2{
             <img src="imagenes/inicio/asd.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="imagenes/inicio/prueba-02.jpg" class="d-block w-100" alt="...">
+            <img src="imagenes/inicio/120.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="imagenes/inicio/slidder3.jpg" class="d-block w-100" alt="...">
@@ -1061,31 +1097,31 @@ h2{
     </section>
     <section class="prov">
     <div class="c1">
-        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1x/ABB.jpg" width="120"></a>
+        <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="https://zoloda.com.ar/es/productos/"><img src="imagenes/1x/ZOLOCA.jpg" width="120"></a>
+        <a href="https://zoloda.com.ar/es/productos/"><img src="imagenes/2.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="https://www.se.com/ar/es/all-products"><img src="imagenes/1x/SCHNEIDER.jpg" width="120"></a>
+        <a href="https://www.se.com/ar/es/all-products"><img src="imagenes/3.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="http://samet.com.ar/#productoss"><img src="imagenes/1x/SAMET.jpg" width="120"></a>
+        <a href="http://samet.com.ar/#productoss"><img src="imagenes/4.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="https://www.3m.com.ar/3M/es_AR/p/c/electrico/"><img src="imagenes/1x/3M.jpg" width="120"></a>
+        <a href="https://www.3m.com.ar/3M/es_AR/p/c/electrico/"><img src="imagenes/5.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="https://www.microcontrol.com.ar/"><img src="imagenes/1x/MICROCONTROL.jpg" width="120"></a>
+        <a href="https://www.microcontrol.com.ar/"><img src="imagenes/6.png" width="120"></a>
     </div>
     <div class="c1">
-        <a href="https://www.genrod.com.ar/productos/"><img src="imagenes/1x/GENROD.jpg" width="120"></a>
+        <a href="https://www.genrod.com.ar/productos/"><img src="imagenes/7.png" width="120"></a>
     </div> <div class="c1">
-        <a href="https://imsa.com.ar/productos-cables-electricos/"><img src="imagenes/1x/IMSA.jpg" width="120"></a>
+        <a href="https://imsa.com.ar/productos-cables-electricos/"><img src="imagenes/8.png" width="120"></a>
     </div> <div class="c1">
-        <a href="https://cambre.com.ar/catalogo/"><img src="imagenes/1x/CAMBRE.jpg" width="120"></a>
+        <a href="https://cambre.com.ar/catalogo/"><img src="imagenes/9.png" width="120"></a>
     </div> <div class="c1">
-        <a href="https://new.siemens.com/ar/es.html"><img src="imagenes/1x/SIEMENS.jpg" width="120"></a>
+        <a href="https://new.siemens.com/ar/es.html"><img src="imagenes/10.png" width="120"></a>
     </div> 
     </section>
     <section class="nosotros">

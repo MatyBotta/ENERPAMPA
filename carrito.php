@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 include("db.php");
 $mail = $_SESSION['mail'];
-$contar = "SELECT count(*) from carrito where Mail = '$mail' AND pedido != null";
+$contar = "SELECT count(*) from carrito where Mail = '$mail' AND pedido = 0";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
@@ -16,19 +16,19 @@ $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
 {
     if(empty($_GET['product_id2']) == false)
-{
-    $var = $_GET['product_id2'];
-    $mail = $_SESSION['mail'];
-    $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail'";
-    $validacion =  $conexion -> query($validar);
-    $ok = $validacion -> fetch_array();
-    if(empty($ok[0]) === false)
     {
-        $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail'";
-        $minar =  $conexion -> query($eli);
+        $var = $_GET['product_id2'];
+        $mail = $_SESSION['mail'];
+        $validar = "SELECT count(*) FROM carrito where ID_Prod = $var and Mail = '$mail'";
+        $validacion =  $conexion -> query($validar);
+        $ok = $validacion -> fetch_array();
+        if(empty($ok[0]) === false)
+        {
+            $eli = "DELETE FROM carrito where ID_Prod = $var and Mail = '$mail'";
+            $minar =  $conexion -> query($eli);
+        }
+        header('Location:carrito.php');
     }
-    header('Location:carrito.php');
-}
     ?>
     <table border = "1"><th>Item</th><th>Cantidad</th><th>Nombre</th><th>Marca</th><th>Codigo</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th></tr>
     <?php
@@ -67,6 +67,5 @@ if(empty($var[0]) === false)
 }
 else
 {
-    echo $_SESSION['mail'];
     echo "Aun no ha seleccionado ningun producto";
 }

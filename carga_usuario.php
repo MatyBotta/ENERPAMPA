@@ -32,5 +32,5 @@ if(empty($con) === false)
 else
 {
     echo "Mail ya utilizado";
-    include("registrarse.html");
+    include("registrarse.php");
 }
