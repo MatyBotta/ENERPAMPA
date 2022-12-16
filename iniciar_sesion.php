@@ -12,7 +12,12 @@
 <body>
   <section class="form-register">
     <?php
-    if(isset($_GET['x']))
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
+    include("db.php");
+    if(isset($_GET['x']) && empty($_GET['x']) == false)
     {
       $_SESSION['x'] = $_GET['x'];
     }

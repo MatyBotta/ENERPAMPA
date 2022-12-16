@@ -50,12 +50,12 @@ if($ionar2[4] == 0)
 <?php
 $ID_prod = 0;
 $mail = $ionar[1];
-$contar = "SELECT count(*) from carrito where Mail = '$mail'";
+$contar = "SELECT count(*) from carrito where Mail = '$mail' and Pedido = $ID";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 for($i = 0; $i < $var[0]; $i ++)
 {
-    $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID_prod order by ID_Prod asc";
+    $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID_prod and Pedido = $ID order by ID_Prod asc";
     $shop =  $conexion -> query($carrito);
     $ionar = $shop -> fetch_array();
     $ID_prod = $ionar[0];

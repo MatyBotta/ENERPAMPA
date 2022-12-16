@@ -31,8 +31,10 @@ if(empty($info[0]) === false)
             }
             else
             {
-                if(isset($_SESSION['x']))
+                if(isset($_SESSION['x']) && empty($_SESSION['x']) == false)
                 {
+                    $_GET['x'] = null;
+                    $_SESSION['x'] = null;
                     header('Location:mostrar_productos.php');
                 }
                 else
