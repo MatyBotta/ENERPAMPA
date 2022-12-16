@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-12-2022 a las 14:05:40
+-- Tiempo de generación: 16-12-2022 a las 12:33:30
 -- Versión del servidor: 10.4.25-MariaDB
--- Versión de PHP: 8.1.10
+-- Versión de PHP: 8.0.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -122,7 +122,7 @@ CREATE TABLE `carrito` (
   `ID_Prod` int(11) NOT NULL,
   `Mail` varchar(50) NOT NULL,
   `Cantidad` int(11) NOT NULL,
-  `Pedido` int(11) DEFAULT NULL
+  `Pedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -132,17 +132,21 @@ CREATE TABLE `carrito` (
 INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`, `Pedido`) VALUES
 (1, 'a@a.com', 2, 4),
 (1, 'bye@a', 5, 3),
-(1, 'hola', 2, NULL),
-(1, 'hola@a.com', 8, 1),
+(1, 'hola', 2, 0),
+(1, 'hola@a.com', 2, 0),
+(1, 'hola@a.com', 10, 1),
 (2, 'a@a.com', 2, 4),
 (2, 'bye@a', 6, 3),
-(2, 'hola@a.com', 7, 1),
+(2, 'hola@a.com', 1, 0),
+(2, 'hola@a.com', 8, 1),
 (3, 'a@a.com', 69, 4),
-(3, 'hola', 1, NULL),
-(3, 'hola@a.com', 2, 1),
-(4, 'hola@a.com', 5, 1),
+(3, 'hola', 1, 0),
+(3, 'hola@a.com', 3, 1),
+(4, 'hola@a.com', 6, 1),
 (5, 'bye@a', 1, 3),
+(5, 'hola@a.com', 1, 0),
 (5, 'hola@a.com', 5, 1),
+(6, 'hola@a.com', 1, 0),
 (6, 'hola@a.com', 4, 1),
 (7, 'hola@a.com', 1, 1),
 (8, 'bye@a', 1, 3),
@@ -157,13 +161,15 @@ INSERT INTO `carrito` (`ID_Prod`, `Mail`, `Cantidad`, `Pedido`) VALUES
 (14, 'bye@a', 1, 3),
 (14, 'hola@a.com', 1, 1),
 (15, 'bye@a', 2, 3),
+(16, 'hola@a.com', 1, 0),
 (17, 'a@a.com', 1, 4),
 (17, 'bye@a', 1, 3),
 (20, 'bye@a', 1, 3),
 (30, 'bye@a', 1, 3),
 (31, 'bye@a', 1, 3),
 (32, 'a@a.com', 1, 4),
-(32, 'bye@a', 1, 3);
+(32, 'bye@a', 1, 3),
+(33, 'hola@a.com', 5, 0);
 
 -- --------------------------------------------------------
 
@@ -199,13 +205,24 @@ INSERT INTO `ingresos` (`Mail`, `Fecha`) VALUES
 ('a@a.com', '2022-12-13 10:41:20'),
 ('a@a.com', '2022-12-13 11:25:44'),
 ('a@a.com', '2022-12-13 11:32:54'),
+('a@a.com', '2022-12-15 08:51:19'),
+('adasd@gmail.com', '2022-12-14 10:37:00'),
+('adasd@gmail.com', '2022-12-14 10:39:00'),
+('adasd@gmail.com', '2022-12-14 10:40:00'),
+('adasd@gmail.com', '2022-12-14 10:42:00'),
+('adasd@gmail.com', '2022-12-14 10:43:00'),
+('adasd@gmail.com', '2022-12-14 10:49:00'),
+('adasd@gmail.com', '2022-12-14 10:53:00'),
+('adasd@gmail.com', '2022-12-14 11:09:00'),
+('asdf@gmail.com', '2022-12-14 10:55:00'),
 ('bye@a', '2022-12-05 10:34:00'),
 ('bye@a', '2022-12-06 09:53:00'),
 ('bye@a', '2022-12-13 11:26:00'),
 ('gleviu@enerpampa.com', '2022-12-13 09:55:54'),
 ('gleviu@enerpampa.com', '2022-12-13 10:16:56'),
 ('hola@a.com', '2022-12-05 10:28:00'),
-('hola@a.com', '2022-12-06 08:43:00');
+('hola@a.com', '2022-12-06 08:43:00'),
+('hola@a.com', '2022-12-15 11:35:57');
 
 -- --------------------------------------------------------
 
@@ -351,10 +368,15 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`Mail`, `Contrasenia`, `Nombre`, `Apellido`, `Telefono`, `Celular`, `Tipo`, `Rubro`) VALUES
 ('123@123', 1010, 'Leandro', 'Arnaldi', 0, 0, 'Trabajador', ''),
 ('a@a.com', 456, 'Matias', 'Nicolas', 54321, 0, 'Trabajador', ''),
+('adasd@gmail.com', 45345, 'lean', 'arnaldi', 0, 0, 'Cliente', 'Instalador electricista'),
+('asdf@gmail.com', 123, 'lamamadejuan', 'arnaldi', 123, 0, 'Cliente', 'Instalador electricista'),
 ('bye@a', 321, 'Hola', 'Hola', 123445, 0, 'Cliente', ''),
 ('chau@a.com', 789, 'DOMI', 'NGO', 65432, 0, 'Cliente', ''),
+('dmoya1', 1234, 'juanjose', 'mortadela', 11223344, 0, 'Trabajador', ''),
 ('gleviu@enerpampa.com', 1234, 'Gonzalo', 'Leviu', 1234, 0, 'Trabajador', ''),
-('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente', '');
+('hola@a.com', 123, 'SA', 'BADO', 96787, 0, 'Cliente', ''),
+('lean', 1234, 'PRENSA CABLES', 'mortadela', 12312, 0, 'Trabajador', ''),
+('lean2', 1231, 'PRENSA CABLES', 'asd', 1312, 0, 'Trabajador', '');
 
 --
 -- Índices para tablas volcadas
@@ -370,7 +392,7 @@ ALTER TABLE `carac_prod`
 -- Indices de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  ADD PRIMARY KEY (`ID_Prod`,`Mail`);
+  ADD PRIMARY KEY (`ID_Prod`,`Mail`,`Pedido`);
 
 --
 -- Indices de la tabla `ingresos`
