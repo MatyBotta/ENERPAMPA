@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="panel_control.css" />
+            <link rel="stylesheet" href="tablaempleado.css" />
+            <link rel="stylesheet" href="carrito.css"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          </head>
+
 <?php
 if(!isset($_SESSION))
 {
@@ -9,10 +23,11 @@ $contar = "SELECT count(*) from carrito where Mail = '$mail' AND pedido = 0";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 ?> 
+<body>
 <h1>Carrito</h1>
-<a href = "index_cliente.html"> Volver </a>
+<button><a href = "index_cliente.html"> Volver </a></button>
 <?php
-
+ 
 if(empty($var[0]) === false)
 {
     if(empty($_GET['product_id2']) == false)
@@ -61,8 +76,9 @@ if(empty($var[0]) === false)
     }
     ?>
     </table>
-    <a href = "Excelcarrito.php">Exportar a Excel</a>
-    <a href = "Pedido.php">Realizar pedido</a>
+    <button><a href = "Excelcarrito.php">Exportar a Excel</a></button>
+    <button><a href = "Pedido.php">Realizar pedido</a></button>
+</body>
     <?php
 }
 else

@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="estilocards.css">
     <link rel="stylesheet" href="slider.css">
     <style>
+@media screen and (max-width: 1280px){
+    
+}
+@media screen and (max-width: 970px){
+    nav ul li a{
+        padding: 10px;
+    }
+}        
+@media screen and (max-width: 767px){   
+   
+}        
+@media screen and (max-width: 600px){
+    nav, nav ul{
+        padding: 0;
+    }
+    nav ul li{
+        text-align: center;
+        width: 100%;
+    }
+
+    nav li a{
+        display: block !important;
+    }
+    
+
+}                
+@media screen and (max-width: 400px){
+    
+}        
         .navbar a {
     display: block;
     padding: 20px 20px;
@@ -897,18 +926,43 @@ h2{
         <div class="logo">
             <img src="Imagenes/logo modificado.png" width="280" alt="">
         </div>
-
-        <nav class="navbar">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#pie-pagina">ConTacto</a>
-            <a href="#productos">Productos</a>
-            <a href="carrito.php">Carrito</a>
-            <a href="cerrar_sesion.php">Cerrar sesion</a>
+        <nav>
+            <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#pie-pagina">ConTacto</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="iniciar_sesion.php">Iniciar sesion</a></li>
+        </ul>
         </nav>
     </div>
-    
-        
+       <style>
+        nav{
+    background-color: black;
+}
+
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    color: white;
+    font-size: 0.8em;
+    display: inline;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+nav li a:hover{
+    background-color: cornflowerblue;
+    color: white;
+}
+       </style> 
     </header>
     <div id="carouselExampleIndicators" class="carousel slide vh-100 overflow-hidden" data-bs-ride="true">
         <div class="carousel-indicators">
@@ -1138,7 +1192,7 @@ h2{
         
     <div class="card">
         <figure>
-            <img src="imagenes/objetivo.jpeg">
+            <img src="imagenes/1x/cua1.jpg">
         </figure>
         <div class="contenido-card">
             <h3>COMPROMISO</h3>
@@ -1149,7 +1203,7 @@ h2{
     </div>
     <div class="card">
         <figure>
-            <img src="imagenes/compromiso.jpg">
+            <img src="imagenes/1x/fondo.jpeg">
         </figure>
         <div class="contenido-card">
             <h3>OBJETIVO</h3>
@@ -1159,7 +1213,7 @@ h2{
     </div>
     <div class="card">
         <figure>
-            <img src="imagenes/soporte.jpg  ">
+            <img src="https://image.freepik.com/foto-gratis/desarrollo-programadores-desarrollo-tecnologias-diseno-codificacion-sitios-web_18497-1090.jpg">
         </figure>
         <div class="contenido-card">
             <h3>ASESORAMIENTO TECNICO</h3>
