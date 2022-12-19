@@ -18,7 +18,7 @@ header("Content-Disposition: attachment; filename=Lista_Pedido.xls");
 header("Pragma: no-cache");  
 header("Expires: 0");
 $mail = $_SESSION['mail'];
-$contar = "SELECT count(*) from carrito where Mail = '$mail'";
+$contar = "SELECT count(*) from carrito where Mail = '$mail' AND pedido = 0";
 $contado =  $conexion -> query($contar);
 $var = $contado -> fetch_array();
 if(empty($var[0]) === false)
@@ -35,10 +35,10 @@ if(empty($var[0]) === false)
 <table border = "1">
     <tr font = "bold" style = "background-color:#D3D3D3;"><th>Item</th><th>Cant.</th><th>Nombre</th><th>Marca</th><th>Codigo</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th></tr>
     <?php
-    $ID = 0;
+    $ID = 0; 
     for($i = 0; $i < $var[0]; $i ++)
     {
-        $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID order by ID_Prod asc";
+        $carrito = "SELECT ID_Prod, Cantidad from carrito where Mail = '$mail' and ID_Prod > $ID AND pedido = 0 order by ID_Prod asc";
         $shop =  $conexion -> query($carrito);
         $ionar = $shop -> fetch_array();
         $ID = $ionar[0];
