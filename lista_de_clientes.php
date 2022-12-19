@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION))
+{
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,6 +12,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>SECCION PRODUCTO</title>
             <link rel="stylesheet" href="panel_control.css" />
+            <link rel="stylesheet" href="tablaempleado.css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           </head>
@@ -64,7 +71,7 @@ body{
             <h2 class="title" id="productos">Seleccionar alguna opcion</h2>
             <hr>
             <div class="sidebar">
-              <a href = "index_trabajador.html"><img src="imagenes/LOGO.ico"width="80" alt=""></a>
+            <a href = "index_trabajador.html"><img src="imagenes/LOGO.ico"width="80" alt=""></a>
               <ul class="nav">
                 <li>
                   <a href="agregar-producto.html">
@@ -110,13 +117,13 @@ body{
                   </li>
                   <li>
                     <a href="ver_pedidos_archivados.php">
-                      <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                       <span>Ver definicion pedidos</span>
                     </a>
                   </li>
                   <li>
                     <a href="ver_usuarios.php">
-                      <i class="fa-solid fa-users"></i>
+                    <i class="fa-solid fa-users"></i>
                       <span>Ver usuarios que ingresaron</span>
                     </a>
                   </li>
@@ -128,19 +135,19 @@ body{
                   </li>
                   <li>
                     <a href="ver_productos.php">
-                      <i class="fa-solid fa-box-open"></i>
+                    <i class="fa-solid fa-box-open"></i>
                       <span>Ver todos los productos</span>
                     </a>
                   </li>
                   <li>
                     <a href="eliminar_cliente.html">
-                      <i class="fa-solid fa-user-minus"></i>
+                    <i class="fa-solid fa-user-minus"></i>
                       <span>Eliminar clientes</span>
                     </a>
                   </li>
                   <li>
                     <a href="crear_trabajador.html">
-                      <i class="fa-solid fa-user-pen"></i>
+                    <i class="fa-solid fa-user-pen"></i>
                       <span>Crear usuario trabajador</span>
                     </a>
                   </li>
@@ -150,9 +157,50 @@ body{
                       <span>Volver</span>
                     </a>
                   </li>
+                  
               </ul>
             </div>
             </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-          </body>
-        </html>
+<?php
+include("db.php");
+$contar = "SELECT count(*) from usuario where Tipo = 'Cliente'";
+$con =  $conexion -> query($contar);
+$visado = $con -> fetch_array();
+if(empty($visado[0]) === false)
+{
+    ?>
+    <table border = 1>
+    <tr><th>Nombre y Apellido</th><th>Rubro</th><th>Mail</th><th>Telefono</th><th>Celular</th></tr>
+    <?php
+    $mail = 'AAAAAAAAAA';
+    for($i = 0; $i < $visado[0]; $i ++)
+    {
+        $sel = "SELECT * from usuario where Mail > '$mail' and  Tipo = 'Cliente' order by Mail asc";
+        $ecc =  $conexion -> query($sel);
+        $ionar = $ecc -> fetch_array();
+        $mail = $ionar[0];
+        if(empty($carac[4]) === true)
+        {
+            $ionar[4] = "-";
+        }   
+        if(empty($carac[5]) === true)
+        {
+            $ionar[5] = "-";
+        }
+        ?>
+        <tr><td><?php echo $ionar[2] . " " . $ionar[3]?></td><td><?php echo $ionar[7]?></td><td><?php echo $ionar[0]?></td><td><?php echo $ionar[4]?></td><td><?php echo $ionar[5]?></td></tr>
+        <?php
+    }
+    
+    ?>
+    </table>
+    <button><a href = "Excelclientes.php">Exportar a Excel</a></button>
+</body>
+</html>
+    <?php
+}
+else
+{
+    echo "No hay ingresos";
+}

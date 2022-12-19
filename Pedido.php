@@ -17,4 +17,4 @@ $in = "INSERT INTO pedido (ID, Hora, Mail) values ($ID, '$fecha', '$mail')";
 $greso =  $conexion -> query($in);
 $in2 = "UPDATE carrito set pedido = $ID where Mail = '$mail' and Pedido = 0";
 $greso2 =  $conexion -> query($in2);
-echo "Pedido ya realizado, en los proximos estaremos brindando una respuesta";
+echo "Estamos evaluando su pedido, a la brevedad nos comuniacaremos con usted";
