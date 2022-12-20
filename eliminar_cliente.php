@@ -23,7 +23,7 @@ if(!isset($_GET['cliente']))
     $info = $revisar -> fetch_array();
     if(empty($info[0]) === true)
     {
-        ?>
+        ?> 
     <section class="msg">
     <h2>No existe ningun cliente con este correo.</h2>
         <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "panel_control.html"></i>Volver</button>

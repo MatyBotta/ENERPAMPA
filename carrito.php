@@ -8,6 +8,9 @@
             <link rel="stylesheet" href="panel_control.css" />
             <link rel="stylesheet" href="tablaempleado.css" />
             <link rel="stylesheet" href="carrito.css"/>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+            
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
           </head>
@@ -25,7 +28,6 @@ $var = $contado -> fetch_array();
 ?> 
 <body>
 <h1>Carrito</h1>
-<button><a href = "index_cliente.html"> Volver </a></button>
 <?php
  
 if(empty($var[0]) === false)
@@ -74,7 +76,7 @@ if(empty($var[0]) === false)
             <?php
         }
     }
-    ?>
+    ?> 
     </table>
     <button><a href = "Excelcarrito.php">Exportar a Excel</a></button>
     <button><a href = "Pedido.php">Realizar pedido</a></button>
@@ -82,6 +84,11 @@ if(empty($var[0]) === false)
     <?php
 }
 else
-{
-    echo "Aun no ha seleccionado ningun producto";
+{ 
+    ?>
+    <section class="msg">
+    <h2>Aun no ha seleccionado ningun producto.</h2>
+        <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "index_cliente.html"></i>Volver</button>
+    </section>
+    <?php
 }

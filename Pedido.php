@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+          </head>
 <?php
 if(!isset($_SESSION))
 {
@@ -17,4 +30,9 @@ $in = "INSERT INTO pedido (ID, Hora, Mail) values ($ID, '$fecha', '$mail')";
 $greso =  $conexion -> query($in);
 $in2 = "UPDATE carrito set pedido = $ID where Mail = '$mail' and Pedido = 0";
 $greso2 =  $conexion -> query($in2);
-echo "Estamos evaluando su pedido, a la brevedad nos comuniacaremos con usted";
+?>
+<section class="msg">
+<h2>Estamos evaluando su pedido, a la brevedad nos comuniacaremos con usted.</h2>
+    <button type="submit"><i class="fa-solid fa-right-to-bracket"><a href = "index_cliente.html"></i>Volver</button>
+</section>
+<?php

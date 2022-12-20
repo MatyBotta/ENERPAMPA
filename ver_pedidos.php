@@ -51,7 +51,7 @@ body{
 
 
 .sidebar ul li {
-    margin: 18px 0;
+    margin: 16px 0;
 }
 
 .sidebar ul li a{
@@ -125,6 +125,12 @@ body{
                     <a href="ver_usuarios.php">
                     <i class="fa-solid fa-users"></i>
                       <span>Ver usuarios que ingresaron</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="lista_de_clientes.php">
+                      <i class="fa-regular fa-address-book"></i>
+                      <span>Lista de clientes registrados</span>
                     </a>
                   </li>
                   <li>
