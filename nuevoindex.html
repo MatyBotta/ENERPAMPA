@@ -22,6 +22,97 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rubik+Dirt&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   </head>
+  <style>
+  /* Proyectos */
+  
+  .proyectos-recientes {
+    padding: 40px;
+  }
+  
+  .proyectos-recientes img {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.2s ease;
+  }
+  
+  .proyectos-contenedor {
+    padding-top: 60px;
+    margin-bottom: 40px;
+  }
+  
+  .overlay {
+    transition: all 0.2s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .overlay h2{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .overlay p {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .proyecto {
+    position: relative;
+  }
+  .proyecto:hover{
+    background: #0B1C6A;
+    cursor: pointer;
+    
+  }
+  .proyecto:hover img {
+    opacity: 0.2;
+    
+  }
+  
+  .proyecto:hover .overlay {
+    opacity: 1;
+  }
+  
+  .overlay .iconos-contenedor {
+    display: flex;
+    
+  }
+    .overlay h2{
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0;
+}
+.overlay button{
+font-weight: 300;
+    font-size: 20px;
+    font-family: 'Cocogoose';
+    cursor: pointer;
+    margin-top: 40px;
+    width: 200px;
+    height: 80px;
+    padding-bottom:15px;    
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#f1f2f3;
+    border-color: #d8d8d8;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+}
+.overlay button a{
+  text-decoration: none;
+  color: black;
+}
+  </style>
   <body>
     <!-- Barra de navegacion -->
     <nav class="navbar navbar-expand-md navbar-light">
@@ -65,13 +156,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="imagenes/imagennn2.jpg" class="d-block w-100" alt="">
+        <img src="imagenes/Recurso 2.png" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/imagennn.jpg" class="d-block w-100" alt="">
+        <img src="imagenes/Recurso 3.png" class="d-block w-100" alt="">
       </div>
       <div class="carousel-item">
-        <img src="imagenes/imagennn3.jpg" class="d-block w-100" alt="">
+        <img src="imagenes/Recurso 4.png" class="d-block w-100" alt="">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -185,16 +276,12 @@
             <!-- Proyecto 1 -->
             <div class="col-12 col-md-6 col-lg-4">
               <div class="proyecto">
-                <img src="imagenes/1x/DIST. INDUSTRIAL.jpg" alt="Proyecto 1">
+                <img src="imagenes/1x/Recurso industriañ.png" alt="Proyecto 1">
                 <div class="overlay">
-                  <p>Proyecto 1</p>
+                  <h2>Todo lo necesario en maniobra y monitoreo de redes de baja tensión, interruptores de potencia, ductos, bandejas, cables subterraneos y protecciones</h2>
                   <div class="iconos-contenedor">
-                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                      <i class="bi bi-github"></i>
-                    </a>
-                    <a href="https://www.freecodecamp.org/espanol/" target="_blank" rel="noopener noreferrer">
-                      <i class="bi bi-laptop"></i>
-                    </a>
+                    <button><a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                      Ver productos</a>
                   </div>
                 </div>
               </div>
@@ -236,7 +323,7 @@
             <!-- Proyecto 4 -->
             <div class="col-12 col-md-6 col-lg-4">
               <div class="proyecto">
-                <img src="imagenes/1x/DIST. COMERCIAL.jpg" alt="Proyecto 1">
+                <img src="imagenes/1x/Recurso dom.png" alt="Proyecto 1">
                 <div class="overlay">
                   <p>Proyecto 4</p>
                   <div class="iconos-contenedor">
@@ -255,7 +342,7 @@
               <div class="proyecto">
                 <img src="imagenes/1x/ILUMINACIÓN.jpg" alt="Proyecto 1">
                 <div class="overlay">
-                  <p>Proyecto 5</p>
+                  <p>Proyecto 5</p> 
                   <div class="iconos-contenedor">
                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
                       <i class="bi bi-github"></i>
@@ -286,15 +373,9 @@
             </div>
           </div>
         </div>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-          <button type="button" class="btn btn-info">
-            Ver más proyectos
-            <i class="bi bi-arrow-right-circle-fill"></i>
-          </button>
-        </a>
       </section>
   
-    <!-- Seccion Hero -->
+    <!-- Seccion aliados comerciales -->
     <section class="hero align-items-stretch">
       <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
         <img class="hero-imagen-desarrollador rounded-circle" src="imagenes/imagenes-desarrolladores/desarrollador-ejemplo.svg" alt="Foto de Jane Doe">

@@ -5,7 +5,7 @@
  .container-fluid{
     background: #516ba1;
  }
-
+ 
 .navbar {
     padding: 1rem;
     background-color: #516ba1;
@@ -191,9 +191,14 @@ section {
     transform: translate(-50%, -50%);
     text-align: center;
   }
-  
+  .overlay h2{
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0;
+  }
   .overlay p {
-    font-size: 25px;
+    font-size: 10px;
     font-weight: bold;
     margin-bottom: 0;
   }
@@ -212,12 +217,6 @@ section {
   
   .overlay .iconos-contenedor {
     display: flex;
-  }
-  
-  .overlay i {
-    color: black;
-    font-size: 60px;
-    margin: 10px;
   }
   
   /* Articulos */
