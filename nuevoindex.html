@@ -27,8 +27,11 @@
   
   .proyectos-recientes {
     padding: 40px;
+    background: rgb(17, 17, 17);
   }
-  
+  h2.seccion-titulo{
+    color: #fff;
+  }
   .proyectos-recientes img {
     height: 100%;
     width: 100%;
@@ -112,6 +115,86 @@ font-weight: 300;
   text-decoration: none;
   color: black;
 }
+.titulo{
+    background: #fff;
+}
+.prov{
+   
+   display: flex;
+   padding: 20px;
+   background: #fff;
+   flex-flow: row wrap;
+   justify-content: space-between;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.c1{
+   border: 1px solid rgb(92, 123, 189);
+   background: #f3f3f3;
+   
+   width: 120px;
+   height: 120px;
+   margin: 5px;
+}
+@media screen and (max-width: 500px) {
+  h2{
+    text-align: center;
+  }
+} 
+/*Cards*/
+h2#nosotros.title {
+  margin-top: 3vh;
+  color: #000;
+  text-align: center;
+}
+.experiencia .columna:hover {
+      box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+      transform: translateY(-3%);
+    }
+  
+/*Fin-Cards*/
+/*slide marcas*/
+.slider {
+    width: 98vw;
+    height: 7vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(200px * 14);
+}
+
+.slider .slide {
+    width: 200px;
+}
+
+.slider .slide img {
+    width: 90%;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    90% {
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+}
+@media screen and (max-width: 500px) {
+    .slider1{
+      width: 0%;
+    }
+    .slider{
+      width: 0%;
+    }
+  }
   </style>
   <body>
     <!-- Barra de navegacion -->
@@ -376,156 +459,171 @@ font-weight: 300;
       </section>
   
     <!-- Seccion aliados comerciales -->
-    <section class="hero align-items-stretch">
-      <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
-        <img class="hero-imagen-desarrollador rounded-circle" src="imagenes/imagenes-desarrolladores/desarrollador-ejemplo.svg" alt="Foto de Jane Doe">
-        <h1>Hola, soy Jane Doe</h1>
-        <h2>Desarrollo sitios web y escribo artículos sobre programación.</h2>
+    <section class="titulo">
+      <h2>Nuestros principales aliados comerciales</h2>
+      </section>
+      <section class="prov">
+      <div class="c1">
+          <a href="https://new.abb.com/south-america/productos-y-servicios"><img src="imagenes/1.png" width="120"></a>
       </div>
-      <div class="hero-inferior">
-        <img class="hero-inferior-imagen img-fluid" src="imagenes/hero-inferior.svg" alt="Monitor, laptop y logos de HTML, CSS, JavaScript y React.">
+      <div class="c1">
+          <a href="https://zoloda.com.ar/es/productos/"><img src="imagenes/2.png" width="120"></a>
       </div>
-    </section>
-
-    <!-- Sobre mi -->
-    <section id="sobre-mi" class="sobre-mi seccion-oscura">
-      <div class="contenedor">
-        <h2 class="seccion-titulo">Conoce a Jane Doe</h2>
-        <p class="seccion-texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. Donec et venenatis nunc, vel hendrerit ex. Vestibulum sapien ipsum, rutrum eget est et, ultricies sagittis urna. In non volutpat est. Vestibulum diam sapien, ultrices et euismod at, ultrices ut odio. Nullam in massa et elit ultrices suscipit. Proin lacinia leo ac posuere placerat.</p>
+      <div class="c1">
+          <a href="https://www.se.com/ar/es/all-products"><img src="imagenes/3.png" width="120"></a>
       </div>
-    </section>
-
+      <div class="c1">
+          <a href="http://samet.com.ar/#productoss"><img src="imagenes/4.png" width="120"></a>
+      </div>
+      <div class="c1">
+          <a href="https://www.3m.com.ar/3M/es_AR/p/c/electrico/"><img src="imagenes/5.png" width="120"></a>
+      </div>
+      <div class="c1">
+          <a href="https://www.microcontrol.com.ar/"><img src="imagenes/6.png" width="120"></a>
+      </div>
+      <div class="c1">
+          <a href="https://www.genrod.com.ar/productos/"><img src="imagenes/7.png" width="120"></a>
+      </div> <div class="c1">
+          <a href="https://imsa.com.ar/productos-cables-electricos/"><img src="imagenes/8.png" width="120"></a>
+      </div> <div class="c1">
+          <a href="https://cambre.com.ar/catalogo/"><img src="imagenes/9.png" width="120"></a>
+      </div> <div class="c1">
+          <a href="https://new.siemens.com/ar/es.html"><img src="imagenes/10.png" width="120"></a>
+      </div> 
+      </section>
+    <!-- Nosotros -->
+  <h2 class="title" id="nosotros">Nosotros</h2>
+  <div class="title-cards">
+  </div>
     <!-- Experiencia -->
     <section class="experiencia seccion-clara">
       <div class="container text-center">
         <div class="row">
-          <!-- Desarrollo Web -->
+          <!-- COMPROMISO -->
           <div class="columna col-12 col-md-4">
-            <i class="bi bi-laptop"></i>
-            <p class="experiencia-titulo">Desarrollo Web</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. </p>
+            <img src="imagenes/objetivo.jpeg " width="300" height="220">
+            <p class="experiencia-titulo">COMPROMISO</p>
+            <p>Brindar a nuestros clientes la provicion de materiales y soluciones electricas para la vivienda, el comercio y la industria.</p>
             <div class="badges-contenedor">
-              <span class="badge text-bg-primary">HTML</span>
-              <span class="badge text-bg-primary">CSS</span>
-              <span class="badge text-bg-primary">JavaScript</span>
-              <span class="badge text-bg-primary">React</span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
             </div>
           </div>
-          <!-- Articulos -->
+          <!-- OBJETIVO -->
           <div class="columna col-12 col-md-4">
-            <i class="bi bi-laptop"></i>
-            <p class="experiencia-titulo">Artículos</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. </p>
+            <img src="imagenes/compromiso.jpg " width="300">
+            <p class="experiencia-titulo">OBJETIVO</p>
+            <p>Brindar siempre el mejor asesoramiento en cuanto a precio y las variantes que ofrece el mercadol mercado, logrando asi la confianza necesaria para extender la relacion comercial en el tiempo</p>
             <div class="badges-contenedor">
-              <span class="badge text-bg-primary">Escribir</span>
-              <span class="badge text-bg-primary">Editar</span>
-              <span class="badge text-bg-primary">Blogs</span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
             </div>
           </div>
-          <!-- Estudiante -->
+          <!-- ASESORAMIENTO TECNICO -->
           <div class="columna col-12 col-md-4">
-            <i class="bi bi-laptop"></i>
-            <p class="experiencia-titulo">Estudiante</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras laoreet, odio eget fringilla scelerisque, sem purus fringilla mauris, nec ultricies nisl nisl sit amet dolor. </p>
+            <img src="imagenes/soporte.jpg  " width="300">
+            <p class="experiencia-titulo">ASESORAMIENTO TECNICO</p>
+            <p>Estar atento a la necesidad especifica del cliente. Asesorandolo constantemente en las variables tecnicas que surgan.Acompañando con nuestro conocimiento profesional para la realizacion del proyecto. </p>
             <div class="badges-contenedor">
-              <span class="badge text-bg-primary">freeCodeCamp</span>
-              <span class="badge text-bg-primary">Desarrollo Web</span>
-              <span class="badge text-bg-primary">Python</span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
+              <span class="badge text-bg-primary"></span>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- SLIDDER MARCAS  -->
+    <section class="slidermarcas">
 
-    <!-- Articulos -->
-    <section class="articulos justify-content-start">
-      <h2 class="seccion-titulo texto-negro">Artículos</h2>
-      <div class="card">
-        <div class="card-header">
-          Más recientes
-        </div>
-        <ul class="list-group list-group-flush">
-          <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-            <li class="list-group-item">
-              El decorador @property en Python - cómo usarlo, ventajas y sintaxis
-            </li>
-          </a>
-          <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-            <li class="list-group-item">
-              Python tutorial ciclos while - while True ejemplos de sintaxis y ciclos infinitos
-            </li>
-          </a>
-          <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-            <li class="list-group-item">
-              Python leer archivo JSON - cómo cargar JSON desde un archivo y procesar dumps
-            </li>
-          </a>
-          <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-            <li class="list-group-item">
-              Python cómo escribir en un archivo - abrir, leer, escribir y otras funciones de archivos explicadas
-            </li>
-          </a>
-          <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-            <li class="list-group-item">
-              ¿Para qué se usa Python? 10+ usos del lenguaje de programación Python
-            </li>
-          </a>
-        </ul>
-      </div>
-      <a href="https://www.freecodecamp.org/espanol/news/" target="_blank" rel="noopener noreferrer">
-        <button type="button" class="btn btn-info">
-          Ver más artículos
-          <i class="bi bi-arrow-right-circle-fill"></i>
-        </button>
-      </a>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contacto seccion-oscura">
-      <div class="container">
-        <div class="container text-center rectangulo d-flex justify-content-evenly">
-          <div class="row">
-            <div class="col-12 col-md-4 seccion-titulo">
-              ¡Hablemos!
-            </div>
-            <div class="col-12 col-md-4 descripcion">
-              Contáctame para iniciar tu proyecto de desarrollo web y haré que tu visión se vuelva realidad.
-            </div>
-            <div class="col-12 col-md-4">
-              <a href="mailto:janedoe@micorreo.com">
-                <button type="button">  
-                  Contacto
-                  <i class="bi bi-envelope-check-fill"></i>
-                </button>
-              </a>
-            </div>
+      <article class="contain">
+          <h2 class="title"></h2>
+          <div class="slider">
+              <div class="slide-track">
+                  <div class="slide">
+                      <img src="imagenes/1x/3M.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/ABB.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/CAMBRE.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/CHINT.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/GENROD.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/IMSA.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/JELUZ.jpg" alt="">
+                  </div>
+      
+                  <div class="slide">
+                      <img src="imagenes/1x/LCT.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/LS.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/MACROLED.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/MASTECH.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/SAMET.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/SCHNEIDER.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/SICA.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/SIEMENS.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/STANLEY.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/WENTINCK.jpg" alt="">
+                  </div>
+                  <div class="slide">
+                      <img src="imagenes/1x/ZOLOCA.jpg" alt="">
+                  </div>
+              </div>
           </div>
-        </div>
-      </div>
-    </section>
-    
+      </article>
+
+  </section>
+  <br>
+  <br>    
     <!-- Pie de pagina (footer) -->
     <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center"> 
-      <img class="footer-logo" src="imagenes/icono-blanco.svg" alt="Logo del portafolio">
-      <p class="footer-texto text-center">Aprendo y creo todos los días.<br>Creemos un proyecto juntos.</p>
+      <p class="footer-texto text-center">Aprendo y creo todos los días.
+        <br>Creemos un proyecto juntos.</p>
       <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
         <a href="https://twitter.com/freecodecampES" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-twitter"></i>
+          <i class="bi bi-facebook"></i>
         </a>
-        <a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener noreferrer">
-          <i class="bi bi-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/enerpampa-s-a-355a45254/" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a href="https://www.instagram.com/freecodecamp/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/enerpampa.sa/" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-instagram"></i>
         </a>
-        <a href="mailto:janedoe@micorreo.com" target="_blank" rel="noopener noreferrer">
+        <a href="mailto:ventas@enerpampa.com" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope"></i>
         </a>
       </div>
-      <div class="derechos-de-autor">Creado por Jane Doe (2022) &#169;</div>
+      <div class="derechos-de-autor">Desarrolladores: Leandro Arnaldi y Matias Bottarini &#169;</div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
