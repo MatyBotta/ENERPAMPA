@@ -89,10 +89,10 @@
     
   }
     .overlay h2{
-  font-size: 15px;
+  font-size: 2vh;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 0;
+  margin-bottom: 10;
 }
 .overlay button{
 font-weight: 300;
@@ -195,6 +195,20 @@ h2#nosotros.title {
       width: 0%;
     }
   }
+		.btn-productos{
+			border-radius: 3px;
+			display: inline-block;
+			padding: 20px 15px;
+			text-decoration: none;
+			text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+      margin-left: 15%; 
+      color: #fff;
+      background-color: #0B1C6A;
+      text-align: center;
+      margin-top: 10%;
+		}
+		
   </style>
   <body>
     <!-- Barra de navegacion -->
@@ -209,22 +223,19 @@ h2#nosotros.title {
           </a>
           <ul class="navbar-nav d-flex justify-content-center align-items-center">
             <li class="nav-item">
-                <a class="nav-link" href="#proyectos">Inicio</a>
+                <a class="nav-link" href="#inicio">Inicio</a>
               </li>
             <li class="nav-item">
               <a class="nav-link" href="#proyectos">Productos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#testimonios">Nosotros</a>
+              <a class="nav-link" href="#nosotros">Nosotros</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contacto">Contacto</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contacto">Carrito</a>
-              </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contacto">Iniciar sesion</a>
+                <a class="nav-link" href="iniciar_sesion.php">Iniciar sesion</a>
               </li>
           </ul>
         </div>
@@ -237,7 +248,7 @@ h2#nosotros.title {
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner" id="inicio">
       <div class="carousel-item active">
         <img src="imagenes/Recurso 2.png" class="d-block w-100" alt="">
       </div>
@@ -363,8 +374,7 @@ h2#nosotros.title {
                 <div class="overlay">
                   <h2>Todo lo necesario en maniobra y monitoreo de redes de baja tensión, interruptores de potencia, ductos, bandejas, cables subterraneos y protecciones</h2>
                   <div class="iconos-contenedor">
-                    <button><a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                      Ver productos</a>
+                      <a href="#" class="btn-productos">Ver productos</a>
                   </div>
                 </div>
               </div>
@@ -374,7 +384,7 @@ h2#nosotros.title {
               <div class="proyecto">
                 <img src="imagenes/1x/AUTOMATIZACION.jpg" alt="Proyecto 1">
                 <div class="overlay">
-                  <p>Proyecto 2</p>
+                  <h2>Arquitecturas de sistemas automatizados con PLC, HMI, sensores y sistemas scada.</h2>
                   <div class="iconos-contenedor">
                     <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
                       <i class="bi bi-github"></i>
@@ -603,14 +613,14 @@ h2#nosotros.title {
       </article>
 
   </section>
-  <br>
-  <br>    
+ <br>
+ <br>
     <!-- Pie de pagina (footer) -->
-    <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center"> 
-      <p class="footer-texto text-center">Aprendo y creo todos los días.
-        <br>Creemos un proyecto juntos.</p>
+    <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center" id="contacto"> 
+      <p class="footer-texto text-center">Enerpampa.sa
+        <br>Nuestras redes sociales, contacto y ubicacion:</p>
       <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-        <a href="https://twitter.com/freecodecampES" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/people/Enerpampa-SA-Distribuidor-de-Materiales-El%C3%A9ctricos/100063664860017/?ref=page_internal&mt_nav=0" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-facebook"></i>
         </a>
         <a href="https://www.linkedin.com/in/enerpampa-s-a-355a45254/" target="_blank" rel="noopener noreferrer">
@@ -621,6 +631,12 @@ h2#nosotros.title {
         </a>
         <a href="mailto:ventas@enerpampa.com" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope"></i>
+        </a>
+        <a href="https://www.google.com.ar/maps/place/ENERPAMPA+S.+A./@-34.6585469,-58.5362871,16z/data=!4m12!1m6!3m5!1s0x95bcc90a8b940961:0xf3487b128b69db7f!2sENERPAMPA+S.+A.!8m2!3d-34.6583674!4d-58.5330233!3m4!1s0x95bcc90a8b940961:0xf3487b128b69db7f!8m2!3d-34.6583674!4d-58.5330233"target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-phone"></i>
+        </a>
+        <a href="https://www.google.com.ar/maps/place/ENERPAMPA+S.+A./@-34.6585469,-58.5362871,16z/data=!4m12!1m6!3m5!1s0x95bcc90a8b940961:0xf3487b128b69db7f!2sENERPAMPA+S.+A.!8m2!3d-34.6583674!4d-58.5330233!3m4!1s0x95bcc90a8b940961:0xf3487b128b69db7f!8m2!3d-34.6583674!4d-58.5330233"target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-geo-alt-fill"></i>
         </a>
       </div>
       <div class="derechos-de-autor">Desarrolladores: Leandro Arnaldi y Matias Bottarini &#169;</div>
