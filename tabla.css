@@ -64,8 +64,8 @@ tr:hover td{
     margin-left: 420px;
     font-size: 16px;
  }
- .titulo h1{
-    margin-left: 550px;
+ h1{
+    text-align: center;
     font-size: 30px;
     color: #fff;
  }
@@ -78,3 +78,4 @@ tr:hover td{
  text-transform: uppercase;
  font-size: 15px;
  }
+  

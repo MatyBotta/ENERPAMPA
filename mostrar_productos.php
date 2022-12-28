@@ -72,15 +72,14 @@ if(empty($_GET['product_id2']) == false)
     }
 }
     ?>
-    <section class="titulo">
+   
     <h1><?php echo $categoria; ?> </h1>
     <form action="mostrar_productos_buscados.php" method="post"  > 
         <br>
         <h3>Buscar productos:</h3>   
         <p><input class="controls2" type="text" name="prod" id="prod"></p> 
-        <ul><button type="submit"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</button></ul>
+
 </form>
-</section>
     <table border = 1>
     <tr><th>Nombre</th><th>Marca</th><th>Valor</th><th>Fecha del valor</th><th>Moneda</th><th>IVA</th><th>Caracteristica 1</th><th>Carac. 2</th><th>Carac. 3</th><th>Carac. 4</th><th>Carac. 5</th><th>Carac. 6</th><th>Imagen</th>    <?php
     $ID = 0;
@@ -145,7 +144,7 @@ if(empty($_GET['product_id2']) == false)
         $carac[5] = null;
         $carac[6] = null;
     }
-    
+     
     ?>
     </table>
 </body>
