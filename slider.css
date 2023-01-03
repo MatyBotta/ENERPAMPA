@@ -1,6 +1,6 @@
 .slider {
     width: 100vw;
-    height: 8vw;
+    height: 7vw;
     margin: auto;
     overflow: hidden;
 }
@@ -17,7 +17,7 @@
 }
 
 .slider .slide img {
-    width: 100%;
+    width: 90%;
 }
 
 @keyframes scroll {
@@ -25,7 +25,7 @@
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
-    100% {
+    90% {
         -webkit-transform: translateX(calc(-200px * 7));
         transform: translateX(calc(-200px * 7));
     }

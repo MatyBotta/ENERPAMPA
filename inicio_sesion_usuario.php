@@ -11,35 +11,50 @@ $contrasenia = $_POST['contrasenia'];
 $seleccionar = "SELECT Mail, Contrasenia, Tipo FROM usuario where Mail = '$mail'";
 $elegir =  $conexion -> query($seleccionar);
 $info = $elegir -> fetch_array();
-if($info[0] === $mail)
+if(empty($info[0]) === false)
 {
-    if($info[1] === $contrasenia)
+    if($info[0] === $mail)
     {
-        if($info[2] === 'Trabajador')
+        if($info[1] === $contrasenia)
         {
             $_SESSION['mail'] = $mail;
-            $hola = 1;
-            // inicio de sesion exitoso para trabajador
-            include("panel_control.html"); 
+            date_default_timezone_set('America/Argentina/Buenos_Aires');
+            $hoy = date("Y-m-d, g:i:s");
+            $date = new DateTime($hoy);
+            $fecha = $date->format('Y/m/d h:i:s');
+            $in2  = "INSERT INTO ingresos (Mail, Fecha) values ('$mail', '$fecha')";
+            $con2 =  $conexion -> query($in2);
+            if($info[2] === 'Trabajador')
+            {
+                // inicio de sesion exitoso para trabajador
+                header('Location:panel_control.html'); 
+            }
+            else
+            {
+                if(isset($_SESSION['x']) && empty($_SESSION['x']) == false)
+                {
+                    $_GET['x'] = null;
+                    $_SESSION['x'] = null;
+                    header('Location:mostrar_productos.php');
+                }
+                else
+                {
+                    // inicio de sesion exitoso para cliente
+                    header('Location:index_cliente.html'); 
+                }
+            }
         }
         else
         {
-            $_SESSION['mail'] = $mail;
-            // inicio de sesion exitoso para cliente
-            include("index.php");
+            header('Location:contraseniamal.html'); 
         }
     }
     else
     {
-        echo "chauuu";
-        echo "contraseña erronea";
-        $hola = 1;
-        include("iniciar_sesion.html");
+        header('Location:usuarionoregistrado.html');
     }
 }
 else
 {
-    echo "usuario no registrado";
-    $hola = 1;
-    include("iniciar_sesion.html");
+    header('Location:usuarionoregistrado.html');
 }

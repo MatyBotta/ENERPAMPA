@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+         <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>SECCION PRODUCTO</title>
+            <link rel="stylesheet" href="diseñodesafprod.css"/>
+            <link rel="stylesheet" href="diseñoagregarprod.css"/>
+          </head>
+         <body>  
 <?php
 if(!isset($_SESSION))
 {
@@ -46,14 +56,15 @@ if(!isset($_SESSION))
     {
         $file = $_FILES['imagen']['name'];
         $ruta = 'imagenes_subidas/'.$file;
-        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
-        $imagen = getimagesize($file);
+        $archivo = $_FILES["imagen"]["tmp_name"];
+        $imagen = getimagesize($archivo);
         $ancho = $imagen[0];
         $alto = $imagen[1];
-        if($ancho != 100 || $alto != 100)
+        move_uploaded_file($_FILES["imagen"]["tmp_name"],$ruta);
+        if($ancho != 100 && $alto != 100)
         {
             include("edicion.php");
-            echo '<script>alert("Por favor, la imagen debe de ser 100x100")</script>';
+            echo '<script>alert("Por favor, la imagen debe tener algun lado la medida de 100")</script>';
         }
     }
     if(empty($_POST['precio']) == true)
@@ -155,7 +166,15 @@ if(!isset($_SESSION))
     $actua2 = "UPDATE carac_prod set Caracteristica = '$carac[1]', Caracteristica2 = '$carac[2]', Caracteristica3 = '$carac[3]', Caracteristica4 = '$carac[4]', Caracteristica5 = '$carac[5]', Caracteristica6 = '$carac[6]' where ID_Prod = $ID";
     $lizacion2 =  $conexion -> query($actua2);
     if($lizacion == true && $lizacion2 == true)
-    {
-        echo ":)";
+    { ?>
+        <section class="msg">
+        <h2>Producto editado correctamente.</h2>
+        <br>
+        <button><a href = "panel_control.html">Volver</a></button>
+        </section>
+        </body>
+        </html>
+        <?php
     }
+
     

@@ -4,4 +4,4 @@ if(!isset($_SESSION))
     session_start();
 }
 $_SESSION['mail'] = null;
-include("index.php");
+header("Location:index.html");

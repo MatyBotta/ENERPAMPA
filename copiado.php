@@ -21,12 +21,9 @@ if(empty($_POST['eleccion']) === false || empty($_SESSION['eleccion']) === false
     $comprobacion2 = "SELECT * from carac_prod where ID_prod = $ID";
     $revisar2 =  $conexion -> query($comprobacion2);
     $info2 = $revisar2 -> fetch_array();
-    for($i = 1; $i <= $info2[0]; $i++)
-    {
-        $comprobacion3 = "SELECT Caracteristica from carac_prod where ID_prod = $ID and ID_carac_prod = $i";
-        $revisar3 =  $conexion -> query($comprobacion3);
-        $info3[$i] = $revisar3 -> fetch_array();
-    }
+    $comprobacion3 = "SELECT * from carac_prod where ID_prod = $ID";
+    $revisar3 =  $conexion -> query($comprobacion3);
+    $info3 = $revisar3 -> fetch_array();
 ?>
 <h2 id="h2">Ingresar datos del producto a editar con codigo: <?php echo $info1[4] ?></h2>
             <form action="subir_copiado.php" method="post" enctype = "multipart/form-data">
